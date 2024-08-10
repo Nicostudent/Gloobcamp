@@ -2,6 +2,7 @@ const BurgerButton = ({ isOpen, toggleDropdown }) => (
     <button
       onClick={toggleDropdown}
       type="button"
+      aria-label="toggle Dropdown"
       className="text-white hover:text-gray-400 focus:outline-none focus:text-gray-400"
     >
       <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">

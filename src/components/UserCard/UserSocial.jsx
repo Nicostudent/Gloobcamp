@@ -4,6 +4,7 @@ const UserSocial = ({ href, src, alt }) => {
   return (
     <div className="flex gap-3">
       <Link
+        aria-label={alt}
         href={href}
         target="_blank"
         rel="noopener noreferrer"

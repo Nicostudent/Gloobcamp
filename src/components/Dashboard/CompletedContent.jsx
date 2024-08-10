@@ -14,9 +14,7 @@ const CompletedContent = ({ title }) => {
         <Paragraph>
           Congratulations, you have completed all the topics of {title}!
         </Paragraph>
-        <LinkButton dark href="/content">
-          View other contents
-        </LinkButton>
+        <LinkButton dark href="/content" label={"View other contents"} />
       </section>
     )
   );

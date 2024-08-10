@@ -51,7 +51,7 @@ const Quiz = ({ questions, nextTopicPath }) => {
           </div>
         </div>
         <div className="flex justify-center">
-          <LinkButton dark href={nextTopicPath} >Next Topic</LinkButton>
+          <LinkButton dark href={nextTopicPath} label={"Next topic"} />
         </div>
       </div>
     );

@@ -10,9 +10,7 @@ const page = () => {
       <Paragraph>Choose your content</Paragraph>
 
       <div className="flex justify-between items-center gap-8">
-        <LinkButton dark href={"/content/javascript"}>
-          JavaScript
-        </LinkButton>
+        <LinkButton dark href={"/content/javascript"} label={"JavaScript"} arialLabelProp={"JavaScript content"} />
       </div>
     </section>
   );
