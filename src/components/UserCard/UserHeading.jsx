@@ -1,12 +1,10 @@
-import React from "react";
-
 const UserHeading = ({ lastname, name, position }) => {
   return (
-    <div className="p-4">
-      <p className="text-lg">
-        {name} {lastname}{" "}
+    <div className="bg-white p-4 text-center">
+      <p className="font-bold text-secondary text-xl">
+        {lastname}, <span className="text-primary">{name}</span>
       </p>
-      <span className="text-sm">{position}</span>
+      <span className="text-md text-tertiary">{position}</span>
     </div>
   );
 };
