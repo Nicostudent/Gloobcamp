@@ -5,15 +5,15 @@ export const LinkButton = ({ href, children, dark }) => {
 
   return (
     <Link href={href}>
-      <p
+      <span
         className={`${
           dark
             ? colored
-            : "py-2 lg:max-w-28 text-sm text-tertiary sm:text-md hover:text-secondary hover:underline duration-100 ease-in-out"
+            : "px- text-sm text-tertiary sm:text-md hover:text-secondary hover:underline duration-100 ease-in-out"
         }`}
       >
         {children}
-      </p>
+      </span>
     </Link>
   );
 };
