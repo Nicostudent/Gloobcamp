@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LinkButton } from "@/components/LinkButton";
 import SocialMedia from "@/components/Footer/SocialMedia";
 import NavigationLink from "@/components/Footer/NavigationLink";
 import Container from "@/components/Footer/Container";
@@ -25,12 +25,12 @@ const Footer = () => {
           <p className="font-bold text-md text-tertiary">
             Do you want to work with us?
           </p>
-          <Link
-            href="/contactus"
-            className="bg-primary hover:bg-opacity-90 px-4 py-2 w-fit font-bold text-white transition-all duration-300 ease-in-out"
-          >
-            Get in touch
-          </Link>
+          <LinkButton
+            dark
+            href="/contact-us"
+            label="Get in touch"
+            aria-label="Get in touch"
+          />
         </div>
         <div>
           <p className="text-sm text-tertiary">© 2024. All rights reserved.</p>
