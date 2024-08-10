@@ -5,12 +5,17 @@ import Paragraph from "@/components/Writing/Paragraph";
 
 const page = () => {
   return (
-    <section className="flex flex-col justify-center items-center space-y-8 h-[calc(100vh-256px)]">
+    <section className="flex flex-col justify-center items-center space-y-8 h-[calc(100vh-128px)]">
       <Heading addClass={"text-center"}>What do you want to learn now?</Heading>
       <Paragraph>Choose your content</Paragraph>
 
       <div className="flex justify-between items-center gap-8">
-        <LinkButton dark href={"/content/javascript"} label={"JavaScript"} arialLabelProp={"JavaScript content"} />
+        <LinkButton
+          dark
+          href={"/content/javascript"}
+          label={"JavaScript"}
+          arialLabelProp={"JavaScript content"}
+        />
       </div>
     </section>
   );
