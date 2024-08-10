@@ -5,30 +5,36 @@ import MapUsers from "@/components/UserCard/MapUsers.jsx";
 const AboutUs = () => {
   return (
     <section className="space-y-4 py-24">
-      <SubTitle>A little introduction of Our Project</SubTitle>
+      <SubTitle>
+        A little introduction of Our Project
+        <span className="text-primary">.</span>
+      </SubTitle>
       <Paragraph>
-        Introduction Lorem ipsum odor amet, consectetuer adipiscing elit.
-        Aliquam nostra orci euismod cursus efficitur vehicula. Neque aliquet
-        condimentum amet tortor faucibus cubilia. Metus cubilia quis id magna
-        porttitor. Pulvinar facilisi quis adipiscing class risus. Et orci
-        accumsan feugiat ad suspendisse. Lobortis sapien amet consequat
-        hendrerit fusce nec molestie. Litora ut pharetra rutrum pharetra
-        molestie sit accumsan in. Sit per lobortis auctor neque; mattis gravida
-        penatibus montes taciti. Ante magna blandit at scelerisque ipsum.
-        Interdum curabitur platea nulla ridiculus sed suscipit himenaeos.
-        Maximus ad consequat semper magnis tellus ullamcorper id fringilla? Ex
-        nisi at lacus venenatis ultrices magnis tincidunt ullamcorper. Tempor
-        aliquet sodales morbi facilisi est blandit natoque odio. Primis egestas
-        elementum vitae sodales ac. Consequat ipsum himenaeos facilisi dolor
-        nisl aliquam habitasse massa. Eros tellus senectus eros tempus aptent
-        molestie amet. Neque hendrerit iaculis accumsan justo pellentesque
+        In the project we are developing as part of the bootcamp at Globant, we
+        are building a learning platform focused on ReactJS and JavaScript. The
+        main goal of this platform is to provide users with an interactive
+        environment where they can deepen their knowledge of these key
+        technologies and self-assess their progress through exercises and
+        practical evaluations.
+        <br />
+        The platform is designed to offer structured content that covers
+        everything from fundamental concepts to more advanced topics, allowing
+        users to learn at their own pace.
+        <br />
+        Our team is utilizing technologies such as React, TailwindCSS, and
+        Next.js to ensure that the platform is both functional and visually
+        appealing, while always adhering to best practices in web development
+        and user experience. We are excited about the progress we’re making and
+        are committed to creating a tool that truly benefits students on their
+        journey to mastering JavaScript
       </Paragraph>
-      <SubTitle>Our Team</SubTitle>
+      <SubTitle>
+        Our Team<span className="text-primary">.</span>
+      </SubTitle>
       <Paragraph>
-        Our team Lorem ipsum odor amet, consectetuer adipiscing elit. Imperdiet
-        augue natoque mi sit pulvinar etiam imperdiet convallis. Suspendisse
-        aliquet ad a a himenaeos nisl? Quis elit nam at habitasse mus enim arcu.
-        Laoreet velit dictumst neque ullamcorper habitant.
+        Our team consists of a talented and passionate group of frontend
+        developers, each with great dedication and experience in creating modern
+        and efficient web applications. Here we are:
       </Paragraph>
 
       <MapUsers />
