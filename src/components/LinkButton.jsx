@@ -9,7 +9,7 @@ export const LinkButton = ({ href, children, dark }) => {
       className={`${
         dark
           ? colored
-          : "px-4 max-w-fit text-pretty text-sm text-tertiary sm:text-md hover:text-secondary hover:underline duration-100 ease-in-out"
+          : "px-4 max-w-fit text-pretty text-tertiary text-md hover:text-secondary hover:underline duration-100 ease-in-out"
       }`}
     >
       {children}

@@ -17,6 +17,7 @@ const Subject = () => {
   const { progress, selectedTopics, handleCheckboxChange } = useProgress(
     jsTopics.length
   );
+
   const PROGRESS_MAX_VALUE = 100;
   const PROGRESS_VALUE = progress.toFixed();
 
