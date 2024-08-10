@@ -1,9 +1,15 @@
 "use client";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useState } from "react";
 
 const useProgress = (limit) => {
-  const [progress, setProgress] = useState(0);
-  const [selectedTopics, setSelectedTopics] = useState({});
+  const [progress, setProgress] = useLocalStorage("progress", 0);
+  console.log("Progress initial value:", progress);
+
+  const [selectedTopics, setSelectedTopics] = useLocalStorage(
+    "selectedTopics",
+    {}
+  );
 
   const handleCheckboxChange = (event) => {
     const percentage = 100 / limit;
@@ -23,7 +29,7 @@ const useProgress = (limit) => {
 
     setSelectedTopics((prevSelected) => ({
       ...prevSelected,
-      [topicId]: isChecked
+      [topicId]: isChecked,
     }));
   };
 
