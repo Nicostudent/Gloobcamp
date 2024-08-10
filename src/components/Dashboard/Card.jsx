@@ -11,12 +11,11 @@ const Card = ({ handleCheckboxChange, topics, selectedTopics }) => {
           inputId={topic.id}
           inputOnClick={handleCheckboxChange}
           isChecked={!!selectedTopics[topic.id]}
-          childrenText={
-            <LinkButton href={`/content/javascript/${topic.path}`}>
-              {topic.id}. {topic.title}
-            </LinkButton>
-          }
-        />
+        >
+          <LinkButton href={`/content/javascript/${topic.path}`}>
+            {topic.id}. {topic.title}
+          </LinkButton>
+        </LabelWithCheckbox>
       ))}
     </Container>
   );

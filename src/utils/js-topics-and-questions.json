@@ -37,7 +37,7 @@
     ],
     "image": "/path/to/image1.jpg",
     "path": "/execution-context",
-    "next" : "/var-let-const"
+    "next": "/var-let-const"
   },
   {
     "id": "2",
@@ -77,7 +77,7 @@
     ],
     "image": "/path/to/image2.jpg",
     "path": "/var-let-const",
-    "next" : "/this-keyword"
+    "next": "/this-keyword"
   },
   {
     "id": "3",
@@ -127,11 +127,11 @@
     ],
     "image": "/path/to/image3.jpg",
     "path": "/this-keyword",
-    "next" : "/async-await"
+    "next": "/async-await"
   },
   {
     "id": "4",
-    "title": "Asynchronous JavaScript: From Callbacks to Async/Await",
+    "title": "Asynchronous JavaScript",
     "content": "Asynchronous programming in JavaScript has evolved significantly over time. Here we explore key concepts and their evolution, from callbacks to async/await.\n\n1. **Callbacks**: Callbacks are functions that are passed as arguments to other functions and are executed after an asynchronous operation has completed. While callbacks allow handling asynchronous operations, they can lead to code that is difficult to read and maintain, especially when many callbacks are nested.\n\n2. **Callback Hell**: Also known as the 'pyramid of doom', this occurs when multiple callbacks are nested within other callbacks. This makes the code difficult to read, understand, and debug. As complexity increases, the code becomes more error-prone.\n\n3. **Promises**: Promises represent the result of an asynchronous operation that may complete in the future. Promises provide a more structured way to handle the result of an asynchronous operation, allowing chaining operations using `then()` and handling errors with `catch()`. This improves code readability and maintainability compared to callbacks.\n\n4. **Async/Await**: Introduced in ECMAScript 2017, `async/await` further simplifies handling asynchronous operations. `async` turns a function into an asynchronous function, which always returns a promise. Within an `async` function, `await` can be used to wait for a promise to resolve, allowing writing asynchronous code that resembles synchronous code in structure. This makes the code more readable and intuitive for handling errors.",
     "questions": [
       {
@@ -177,7 +177,7 @@
     ],
     "image": "/path/to/image5.jpg",
     "path": "/async-await",
-    "next" : "/prototypes"
+    "next": "/prototypes"
   },
   {
     "id": "5",
@@ -227,7 +227,7 @@
     ],
     "image": "/path/to/image6.jpg",
     "path": "/prototypes",
-    "next" : "/inheritance"
+    "next": "/inheritance"
   },
   {
     "id": "6",
@@ -277,7 +277,7 @@
     ],
     "image": "/path/to/image7.jpg",
     "path": "/inheritance",
-    "next" : "/descrtucturing"
+    "next": "/descrtucturing"
   },
   {
     "id": "7",
@@ -327,7 +327,7 @@
     ],
     "image": "/path/to/image8.jpg",
     "path": "/descrtucturing",
-    "next" : "/arrow-functions"
+    "next": "/arrow-functions"
   },
   {
     "id": "8",
@@ -377,7 +377,7 @@
     ],
     "image": "/path/to/image9.jpg",
     "path": "/arrow-functions",
-    "next" : "/closures"
+    "next": "/closures"
   },
   {
     "id": "9",
@@ -427,9 +427,9 @@
     ],
     "image": "/path/to/image10.jpg",
     "path": "/closures",
-    "next" : "/call-stack"
+    "next": "/call-stack"
   },
-  
+
   {
     "id": "11",
     "title": "JavaScript Call Stack",
@@ -488,7 +488,7 @@
     ],
     "image": "/path/to/image5.jpg",
     "path": "/call-stack",
-    "next" : "/value-types-reference-types"
+    "next": "/value-types-reference-types"
   },
   {
     "id": "12",
@@ -528,7 +528,7 @@
     ],
     "image": "/path/to/image12.jpg",
     "path": "/value-types-reference-types",
-    "next" : "/typing-systems"
+    "next": "/typing-systems"
   },
   {
     "id": "13",
@@ -578,7 +578,7 @@
     ],
     "image": "/path/to/image13.jpg",
     "path": "/typing-systems",
-    "next" : "/comparison-operators"
+    "next": "/comparison-operators"
   },
   {
     "id": "14",
@@ -623,7 +623,7 @@
     ],
     "image": "/path/to/image14.jpg",
     "path": "/comparison-operators",
-    "next" : "/expressions-vs-statements"
+    "next": "/expressions-vs-statements"
   },
   {
     "id": "15",
@@ -668,7 +668,7 @@
     ],
     "image": "/path/to/image15.jpg",
     "path": "/expressions-vs-statements",
-    "next" : "/iife-modules-namespaces"
+    "next": "/iife-modules-namespaces"
   },
   {
     "id": "16",
@@ -718,7 +718,7 @@
     ],
     "image": "/path/to/image16.jpg",
     "path": "/iife-modules-namespaces",
-    "next" : "/timeout-interval-animationframe"
+    "next": "/timeout-interval-animationframe"
   },
   {
     "id": "17",
@@ -768,7 +768,7 @@
     ],
     "image": "/path/to/image17.jpg",
     "path": "/timeout-interval-animationframe",
-    "next" : "/javascript-engines"
+    "next": "/javascript-engines"
   },
   {
     "id": "18",
@@ -808,7 +808,7 @@
     ],
     "image": "/path/to/image18.jpg",
     "path": "/javascript-engines",
-    "next" : "/bitwise-operators-typed-arrays-array-buffers"
+    "next": "/bitwise-operators-typed-arrays-array-buffers"
   },
   {
     "id": "19",
@@ -853,7 +853,7 @@
     ],
     "image": "/path/to/image19.jpg",
     "path": "/bitwise-operators-typed-arrays-array-buffers",
-    "next" : "/dom-layout-trees"
+    "next": "/dom-layout-trees"
   },
   {
     "id": "20",
@@ -903,7 +903,7 @@
     ],
     "image": "/path/to/image20.jpg",
     "path": "/dom-layout-trees",
-    "next" : "/this-call-apply-binds"
+    "next": "/this-call-apply-binds"
   },
   {
     "id": "21",
@@ -953,7 +953,7 @@
     ],
     "image": "/path/to/image21.jpg",
     "path": "/this-call-apply-bind",
-    "next" : "/new-constructor-instanceof-instancess"
+    "next": "/new-constructor-instanceof-instancess"
   },
   {
     "id": "22",
@@ -1003,7 +1003,7 @@
     ],
     "image": "/path/to/image22.jpg",
     "path": "/new-constructor-instanceof-instances",
-    "next" : "/object-create-assign"
+    "next": "/object-create-assign"
   },
   {
     "id": "23",
@@ -1053,7 +1053,7 @@
     ],
     "image": "/path/to/image23.jpg",
     "path": "/object-create-assign",
-    "next" : "/map-reduce-filter"
+    "next": "/map-reduce-filter"
   },
   {
     "id": "24",
@@ -1103,7 +1103,7 @@
     ],
     "image": "/path/to/image24.jpg",
     "path": "/map-reduce-filter",
-    "next" : "/pure-functions-side-effects-state-mutation"
+    "next": "/pure-functions-side-effects-state-mutation"
   },
   {
     "id": "25",
@@ -1153,7 +1153,7 @@
     ],
     "image": "/path/to/image25.jpg",
     "path": "/pure-functions-side-effects-state-mutation",
-    "next" : "/higher-order-functions"
+    "next": "/higher-order-functions"
   },
   {
     "id": "26",
@@ -1198,7 +1198,7 @@
     ],
     "image": "/path/to/image26.jpg",
     "path": "/higher-order-functions",
-    "next" : "/recursion"
+    "next": "/recursion"
   },
   {
     "id": "27",
@@ -1248,7 +1248,7 @@
     ],
     "image": "/path/to/image27.jpg",
     "path": "/recursion",
-    "next" : "/collections-generators"
+    "next": "/collections-generators"
   },
   {
     "id": "28",
@@ -1293,7 +1293,7 @@
     ],
     "image": "/path/to/image28.jpg",
     "path": "/collections-generators",
-    "next" : "/data-structure"
+    "next": "/data-structure"
   },
   {
     "id": "29",
@@ -1343,7 +1343,7 @@
     ],
     "image": "/path/to/image29.jpg",
     "path": "/data-structures",
-    "next" : "/design-patterns"
+    "next": "/design-patterns"
   },
   {
     "id": "30",
@@ -1403,7 +1403,7 @@
     ],
     "image": "/path/to/image30.jpg",
     "path": "/design-patterns",
-    "next" : "/tpartial-applications-currying-compose-pipe"
+    "next": "/tpartial-applications-currying-compose-pipe"
   },
   {
     "id": "32",
@@ -1453,7 +1453,7 @@
     ],
     "image": "/path/to/image32.jpg",
     "path": "/partial-applications-currying-compose-pipe",
-    "next" : "/clean-code"
+    "next": "/clean-code"
   },
   {
     "id": "33",
@@ -1503,6 +1503,6 @@
     ],
     "image": "/path/to/image34.jpg",
     "path": "/clean-code",
-    "next" : "/end"
+    "next": "/end"
   }
 ]
