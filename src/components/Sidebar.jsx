@@ -12,8 +12,9 @@ const Sidebar = () => {
               return (
                 <li key={topic.id} className="hover:bg-gray-300 rounded-md">
                   <Link
-                    href={`/content/javascript/${topic.path}`}
-                    className="block p-2 text-gray-800 text-xs"
+                    aria-label={`go to ${content.path}`}
+                    href={content.path}
+                    className="block p-2 text-gray-800 text-sm"
                   >
                     {topic.title}
                   </Link>
