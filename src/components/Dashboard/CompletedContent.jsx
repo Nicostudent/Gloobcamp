@@ -6,12 +6,13 @@ import { LinkButton } from "../LinkButton";
 
 const CompletedContent = ({ title }) => {
   const jsConfetti = new JSConfetti();
+  window.localStorage.clear();
   return (
     jsConfetti.addConfetti() && (
-      <section className="flex flex-col justify-center items-center space-y-4 py-24 h-screen">
+      <section className="flex flex-col justify-center items-center space-y-4 py-24 h-[calc(100vh-256px)]">
         <Heading>{title}</Heading>
         <Paragraph>
-          Congratulations, you have completed all the topics!
+          Congratulations, you have completed all the topics of {title}!
         </Paragraph>
         <LinkButton dark href="/content">
           View other contents
