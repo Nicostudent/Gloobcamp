@@ -20,9 +20,7 @@ const App = () => {
       <div className="flex flex-col justify-center items-center px-4 max-w-lg text-center">
         <Paragraph>Start your learning journey!</Paragraph>
       </div>
-      <LinkButton dark href={"/content"}>
-        Click here
-      </LinkButton>
+      <LinkButton dark href={"/content"} label={"Click here"} arialLabelProp={"Click here and start you learning journey"}/>
     </main>
   );
 };

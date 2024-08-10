@@ -33,6 +33,7 @@ const Navbar = () => {
             <Link
               key={page.to}
               href={page.to}
+              aria-label={page.label}
               className="px-3 py-2 rounded-md font-medium text-sm text-white"
             >
               {page.label}
@@ -47,6 +48,7 @@ const Navbar = () => {
         <div className="flex flex-col justify-center items-center md:hidden">
           {pages.map((page) => (
             <Link
+              aria-label={page.label}
               onClick={toggleDropdown}
               key={page.to}
               href={page.to}

@@ -5,7 +5,7 @@ const EndTopic = ({paragraph = null}) => {
     <div>
       <div>
         <Paragraph>{paragraph}</Paragraph>
-        <Link href="/">Volver</Link>
+        <Link href="/" aria-label="back to homepage" >Volver</Link>
       </div>
     </div>
   );
