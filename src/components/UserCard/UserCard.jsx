@@ -8,8 +8,17 @@ const UserCard = ({ picture, lastname, name, position, github, linkedin }) => {
     <div className="relative max-w-fit overflow-hidden">
       <div className="relative group">
         <UserImage source={picture} />
-        <div className="absolute inset-0 flex flex-col justify-start items-start gap-4 bg-indigo-500 bg-opacity-100 opacity-0 group-hover:opacity-100 p-8 transition-opacity duration-300 ease-in-out">
-          <UserSocial github={github} linkedin={linkedin} />
+        <div className="absolute inset-0 flex flex-row justify-center items-center gap-4 bg-primary opacity-0 group-hover:opacity-100 p-8 transition-opacity duration-300 ease-in-out">
+          <UserSocial
+            href={github}
+            src="/github.svg"
+            alt={`Github link to ${name} ${lastname} profile`}
+          />
+          <UserSocial
+            href={linkedin}
+            src="/linkedin.svg"
+            alt={`Linkedin link to ${name} ${lastname} profile`}
+          />
         </div>
       </div>
       <UserHeading lastname={lastname} name={name} position={position} />

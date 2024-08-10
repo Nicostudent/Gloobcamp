@@ -1,6 +1,6 @@
 const UserHeading = ({ lastname, name, position }) => {
   return (
-    <div className="p-4 text-center">
+    <div className="bg-white p-4 text-center">
       <p className="font-bold text-secondary text-xl">
         {lastname}, <span className="text-primary">{name}</span>
       </p>
