@@ -1,6 +1,6 @@
-const LabelWithCheckbox = ({ childrenText, inputId, inputOnClick, isChecked }) => {
+const LabelWithCheckbox = ({ children, inputId, inputOnClick, isChecked }) => {
   return (
-    <label className="flex items-center hover:bg-slate-100 rounded-md duration-100 ease-in-out">
+    <label className="flex items-center hover:bg-slate-100 p-2 rounded-md duration-100 cursor-pointer ease-in-out">
       <input
         type="checkbox"
         id={inputId}
@@ -8,7 +8,7 @@ const LabelWithCheckbox = ({ childrenText, inputId, inputOnClick, isChecked }) =
         onClick={inputOnClick}
         checked={isChecked}
       />
-      {childrenText}
+      {children}
     </label>
   );
 };
