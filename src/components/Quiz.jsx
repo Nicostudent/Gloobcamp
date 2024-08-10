@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { LinkButton } from "./LinkButton";
-import CustomButton from "./CustomButton";
 import Link from "next/link";
 
 const Quiz = ({ questions, nextTopicPath }) => {
@@ -44,64 +42,50 @@ const Quiz = ({ questions, nextTopicPath }) => {
 
   if (isFinished) {
     return (
-      <div className="w-full rounded-xl bg-gradient-to-br from-primary via-purple-100 to-primary p-1 m-1">
-        <div className="flex flex-col h-full w-full bg-black p-6 rounded-xl text-indigo-300 justify-center items-center text-center">
-          <h1 className="text-2xl md:text-4xl font-black text-center mb-3">
-            Quiz Result!
-          </h1>
-          <div className="mb-3">
-            <p className="text-xl">Correct Answers: {correctChoices}</p>
-          </div>
-          <div className="mb-3">
-            <p className="text-xl">Incorrect Answers: {incorrectChoices}</p>
-          </div>
-          <div className="flex justify-center flex-col items-center md:flex-row">
-            <button
-              className="w-fit p-3  text-center font-semibold rounded-md text-white hover:opacity-90 bg-primary md:mx-3 mb-3 md:mb-0"
-              onClick={handleRestartQuiz}
-            >
-              Try again
-            </button>
-            <Link
-              href={nextTopicPath}
-              className="w-fit p-3  text-center font-semibold rounded-md text-white hover:opacity-90 bg-primary"
-            >
-              Next Topic
-            </Link>
-          </div>
+      <div className="flex flex-col h-full w-full p-6 rounded-xl justify-center items-center border-2 text-center bg-primary text-gray-100">
+        <h2 className="text-2xl md:text-4xl font-black text-center mb-6">
+          Quiz Result!
+        </h2>
+        <div className="mb-6">
+          <p className="text-xl">Correct Answers: {correctChoices}</p>
+        </div>
+        <div className="mb-6">
+          <p className="text-xl">Incorrect Answers: {incorrectChoices}</p>
+        </div>
+        <div className="flex justify-center flex-col items-center md:flex-row">
+          <button
+            className="w-fit p-3  text-center font-semibold rounded-md bg-gray-100 hover:opacity-90 text-primary md:mx-3 mb-3 md:mb-0"
+            onClick={handleRestartQuiz}
+          >
+            Try again
+          </button>
+          <Link
+            href={nextTopicPath}
+            className="w-fit p-3  text-center font-semibold rounded-md hover:opacity-90  bg-gray-100 text-primary"
+          >
+            Next Topic
+          </Link>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full rounded-xl bg-gradient-to-br from-primary via-purple-100 to-primary p-1 m-1">
-      <div className="flex flex-col h-full w-full bg-black p-6 rounded-xl text-indigo-300">
-        <h1 className="text-2xl md:text-4xl font-black text-center mb-6">
-          ¡Quiz!
-        </h1>
-        <p className="text-center md:text-end text-xl mb-3">
-          {questionIndex + 1} of {totalQuestions} Questions
+    <div className="w-ful border-x-2 border-b-2 border-t border-primary drop-shadow-xl rounded-xl">
+      <div className="flex flex-col h-full w-full p-6 rounded-xl text-black text-start">
+        <p className="text-center md:text-start mb-3">
+          QUESTION {questionIndex + 1}/{totalQuestions}
         </p>
-        <div className="flex flex-col md:flex-row justify-center items-center">
-          <span className="bg-gradient-to-br from-primary via-purple-100 to-primary rounded-full inline-flex p-1 mx-3 w-fit text-4xl mb-3 md:mb-0">
-            <button className="bg-black  rounded-full px-4">
-              {questionIndex + 1}
-            </button>
-          </span>
-          <h2 className="text-xl md:text-2xl text-center text-pretty">
-            {currentQuestion.question}
-          </h2>
-        </div>
+        <hr className="border-primary mb-6" />
+        <h2 className="text-xl md:text-2xl text-pretty text-center md:text-start">
+          {currentQuestion.question}
+        </h2>
         <section className="text-center h-auto flex flex-col justify-center items-center">
-          <ul className="w-full md:w-3/4 md:text-xl text-pretty">
+          <ul className="w-full md:text-xl text-pretty">
             {currentQuestion.choices.map((choices, index) => (
-              <li
-                className="bg-gradient-to-br from-primary via-purple-100 to-primary p-1 w-full my-6 rounded-full hover:font-bold hover:animate-pulse"
-                key={index}
-              >
+              <li className="w-full my-6 rounded-xl border-2" key={index}>
                 <button
-                  className="bg-black py-3 rounded-full w-full"
+                  className="p-4 rounded-xl w-full text-center md:text-start text-black hover:bg-primary hover:text-white duration-200 ease-in-out"
                   onClick={handleIsCorrectChoice}
                 >
                   {choices}
