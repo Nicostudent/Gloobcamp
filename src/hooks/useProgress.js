@@ -4,7 +4,6 @@ import { useState } from "react";
 
 const useProgress = (limit) => {
   const [progress, setProgress] = useLocalStorage("progress", 0);
-  console.log("Progress initial value:", progress);
 
   const [selectedTopics, setSelectedTopics] = useLocalStorage(
     "selectedTopics",
