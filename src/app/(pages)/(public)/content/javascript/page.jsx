@@ -8,7 +8,7 @@ import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
 import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
-import SearchModal from "@/components/SearchBar";
+import SearchBar from "@/components/SearchBar";
 import CustomButton from "@/components/CustomButton";
 import { FaSearch } from "react-icons/fa";
 
@@ -47,7 +47,7 @@ const Subject = () => {
         text="Search..."
         icon={<FaSearch />} 
       /> 
-      <SearchModal
+      <SearchBar
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         searchValue={searchTopic}

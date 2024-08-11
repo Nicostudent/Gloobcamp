@@ -3,7 +3,7 @@ import Link from "next/link";
 import Input from "./Input";
 import HighlightText from "@/helpers/HighlightText";
 
-const SearchModal = ({ isOpen, onClose, searchValue, setSearchValue, results, topicPath }) => {
+const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topicPath }) => {
   const inputRef = useRef(null);
 
   const handleClose = () => {
@@ -80,4 +80,4 @@ const SearchModal = ({ isOpen, onClose, searchValue, setSearchValue, results, to
   );
 };
 
-export default SearchModal;
+export default SearchBar;
