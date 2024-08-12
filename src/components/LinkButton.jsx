@@ -1,7 +1,7 @@
 import Link from "next/link";
 export const LinkButton = ({ href, label, dark, arialLabelProp }) => {
   const colored =
-    "bg-primary hover:opacity-95 mt-5 px-4 py-2 rounded font-bold text-white ease-in-out duration-300";
+    "bg-primary hover:opacity-95 px-4 py-2 rounded font-bold text-white ease-in-out duration-300";
 
   return (
     <Link
