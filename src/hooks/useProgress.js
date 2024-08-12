@@ -1,6 +1,5 @@
 "use client";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { useState } from "react";
 
 const useProgress = (limit) => {
   const [progress, setProgress] = useLocalStorage("progress", 0);
