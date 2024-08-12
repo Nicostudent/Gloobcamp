@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Gloobcamp",
   description:
     "Improve your knowledge of JavaScript and ReactJS with Gloobcamp.",
+  keywords: [
+    "HTML, CSS, NEXTJS, REACTJS, LEARN, JS, REACT, react next js tutorial, next.js react, learn next js, react next js typescript tutorial, next js react essentials, next js react native, next js react query, next js react router, next js react bootstrap, next js react context, next js react testing library, next js react three fiber, next.js react app, next js react admin, next js react api, next js react developer tools, next js react server components, next.js el framework de react para producción",
+  ],
 };
 
 export default function RootLayout({
