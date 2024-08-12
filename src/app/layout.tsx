@@ -12,12 +12,19 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Gloobcamp",
+  title: "Gloobcamp | Learn JavaScript and React.js from scratch",
   description:
-    "Improve your knowledge of JavaScript and ReactJS with Gloobcamp.",
+    "Improve your knowledge of JavaScript and ReactJS with Gloobcamp. Learn JavaScript and React.js from scratch with our tutorials and guides. Master the fundamentals of JavaScript and build frontend applications with React.js.",
   keywords: [
-    "HTML, CSS, NEXTJS, REACTJS, LEARN, JS, REACT, react next js tutorial, next.js react, learn next js, react next js typescript tutorial, next js react essentials, next js react native, next js react query, next js react router, next js react bootstrap, next js react context, next js react testing library, next js react three fiber, next.js react app, next js react admin, next js react api, next js react developer tools, next js react server components, next.js el framework de react para producción",
+    "learn JavaScript from scratch, JavaScript tutorial, online JavaScript course, complete JavaScript guide, JavaScript basics, JavaScript fundamentals, JavaScript best practices, advanced JavaScript, JavaScript projects, JavaScript exercises, how to learn React.js, React.js tutorial for beginners, online React.js course, complete React.js guide, React.js components, React.js hooks, React.js and JavaScript ES6, React.js best practices, state and props in React.js, React.js projects, how to use React.js with JavaScript, best resources to learn React.js, frontend development with React.js and JavaScript, React.js code examples, debugging in JavaScript and React.js",
   ],
+  alternates: {
+    canonical: "https://gloobcamp.vercel.app/",
+    languages: {
+      en: "https://gloobcamp.vercel.app/",
+      es: "https://gloobcamp.vercel.app/",
+    },
+  },
 };
 
 export default function RootLayout({
