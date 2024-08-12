@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://gloobcamp.vercel.app/",
     languages: {
-      "en-US": "/en-US",
-      "es-ES": "/es-ES",
+      en: "https://gloobcamp.vercel.app/",
+      es: "https://gloobcamp.vercel.app/",
     },
   },
 };
