@@ -1,7 +1,6 @@
 "use client";
 import Heading from "@/components/Writing/Heading";
 import SubTitle from "@/components/Writing/SubTitle";
-
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import Card from "@/components/Dashboard/Card";
 
@@ -9,10 +8,13 @@ import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
 import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
-import Input from "@/components/Input";
+import SearchBar from "@/components/SearchBar";
+import CustomButton from "@/components/CustomButton";
+import { FaSearch } from "react-icons/fa";
 
 const Subject = () => {
   const [searchTopic, setSearchTopic] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { progress, selectedTopics, handleCheckboxChange } = useProgress(
     jsTopics.length
@@ -29,29 +31,37 @@ const Subject = () => {
     topic.title.toLocaleLowerCase().includes(searchTopic.toLocaleLowerCase())
   );
 
+  const handleInputClick = () => {
+    setIsModalOpen(true);
+  };
+  
+
   return (
-    <section className="space-y-4 py-10">
+    <section className="flex flex-col gap-4 py-10">
       <Heading>JavaScript</Heading>
       <SubTitle>Content</SubTitle>
-      <Input
-        className="lg-w-1/3 md:w-1/4"
-        type="text"
-        value={searchTopic}
-        onChange={(e) => setSearchTopic(e.target.value)}
-        placeholder="Search..."
+      <CustomButton
+        arialLabelProp="Search JavaScript content"
+        purple
+        onClick={handleInputClick}
+        className="gap-4 p-4 w-40 text-white"
+        text="Search..."
+        icon={<FaSearch />} 
       />
-      {filteredTopics.length === 0 ? (
-        <p className="text-center">Not page found</p>
-      ) : (
-        <>
-          <ProgressBar progress={progress} />
-          <Card
-            handleCheckboxChange={handleCheckboxChange}
-            topics={filteredTopics}
-            selectedTopics={selectedTopics}
-          />
-        </>
-      )}
+      <SearchBar
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        searchValue={searchTopic}
+        setSearchValue={setSearchTopic}
+        results={filteredTopics}
+        topicPath="/content/javascript"
+      />
+      <ProgressBar progress={progress} />
+      <Card
+        handleCheckboxChange={handleCheckboxChange}
+        topics={jsTopics}
+        selectedTopics={selectedTopics}
+      />
     </section>
   );
 };
