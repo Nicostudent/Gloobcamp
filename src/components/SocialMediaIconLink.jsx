@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-const UserSocial = ({ href, src, alt, styles }) => {
+const UserSocial = ({ href, src, alt,  styles }) => {
   return (
     <div className="flex gap-3">
       <Link
