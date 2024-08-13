@@ -1,7 +1,7 @@
 import React from "react";
 import UserImage from "./UserImage.jsx";
 import UserHeading from "./UserHeading.jsx";
-import UserSocial from "./UserSocial.jsx";
+import SocialMediaIconLink from "../SocialMediaIconLink.jsx";
 
 const UserCard = ({ picture, lastname, name, position, github, linkedin }) => {
   return (
@@ -9,12 +9,12 @@ const UserCard = ({ picture, lastname, name, position, github, linkedin }) => {
       <div className="relative group">
         <UserImage source={picture} />
         <div className="absolute inset-0 flex flex-row justify-center items-center gap-4 bg-primary opacity-0 group-hover:opacity-100 p-8 transition-opacity duration-300 ease-in-out">
-          <UserSocial
+          <SocialMediaIconLink
             href={github}
             src="/github.svg"
             alt={`Github link to ${name} ${lastname} profile`}
           />
-          <UserSocial
+          <SocialMediaIconLink
             href={linkedin}
             src="/linkedin.svg"
             alt={`Linkedin link to ${name} ${lastname} profile`}
