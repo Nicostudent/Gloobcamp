@@ -42,7 +42,7 @@ const Quiz = ({ questions, nextTopicPath }) => {
 
   if (isFinished) {
     return (
-      <div className="flex flex-col h-full w-full p-6 rounded-xl justify-center items-center border-2 text-center bg-primary text-gray-100">
+      <div className="flex flex-col h-full max-w-7xl p-6 rounded-xl justify-center items-center border-2 text-center bg-primary text-gray-100">
         <h2 className="text-2xl md:text-4xl font-black text-center mb-6">
           Quiz Result!
         </h2>
@@ -71,7 +71,7 @@ const Quiz = ({ questions, nextTopicPath }) => {
   }
 
   return (
-    <div className="w-ful border-x-2 border-b-2 border-t border-primary drop-shadow-xl rounded-xl">
+    <div className="max-w-7xl border-x-2 border-b-2 border-t border-primary drop-shadow-xl rounded-xl">
       <div className="flex flex-col h-full w-full p-6 rounded-xl text-black text-start">
         <p className="text-center md:text-start mb-3">
           QUESTION {questionIndex + 1}/{totalQuestions}
