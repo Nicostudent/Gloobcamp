@@ -8,6 +8,7 @@ export const Logo = () => {
           <Link
             href="/"
             className="flex items-center text-white font-bold ml-3 text-lg gap-3"
+            aria-label='back to homepage'
           >
             <Image
               src="/icon.svg"

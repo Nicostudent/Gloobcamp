@@ -2,7 +2,7 @@ import React from "react";
 
 const Container = ({ children }) => {
   return (
-    <article className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-white shadow-xl p-2 rounded-lg">
+    <article className="flex sm:flex-row flex-col justify-center sm:justify-between items-center gap-2">
       {children}
     </article>
   );
