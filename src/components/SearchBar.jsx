@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import Input from "./Input";
 import HighlightText from "@/helpers/HighlightText";
@@ -6,10 +6,10 @@ import HighlightText from "@/helpers/HighlightText";
 const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topicPath }) => {
   const inputRef = useRef(null);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setSearchValue("");
     onClose();
-  };
+  }, [setSearchValue, onClose]);
   
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -30,7 +30,7 @@ const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topi
       document.body.style.overflow = "auto";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, handleClose]);
 
   if (!isOpen) return null;
 
@@ -40,6 +40,7 @@ const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topi
         <div className="relative border-gray-700 p-4 border-b">
           <div className="flex items-center gap-4">
             <Input
+              ref={inputRef}
               type="text"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
@@ -47,6 +48,7 @@ const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topi
               className="flex bg-white p-2 border rounded w-full text-black focus:outline-none"
             />
             <button 
+              aria-label="Close"
               className="flex items-center bg-indigo-300 px-2 rounded h-5"
               onClick={handleClose} type="button"
             >
@@ -66,7 +68,7 @@ const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topi
                   </Link>
                 ))
               ) : (
-                <p className="p-2 text-center">No results found for "{searchValue}"</p>
+                <p className="p-2 text-center">{`No results found for "${searchValue}"`}</p>
               )}
             </div>
             :

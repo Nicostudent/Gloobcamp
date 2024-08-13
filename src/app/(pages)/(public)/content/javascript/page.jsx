@@ -41,12 +41,13 @@ const Subject = () => {
       <Heading>JavaScript</Heading>
       <SubTitle>Content</SubTitle>
       <CustomButton
+        arialLabelProp="Search JavaScript content"
         purple
         onClick={handleInputClick}
-        className="gap-4 p-4 w-44 text-white"
+        className="gap-4 p-4 w-40 text-white"
         text="Search..."
         icon={<FaSearch />} 
-      /> 
+      />
       <SearchBar
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

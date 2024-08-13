@@ -113,7 +113,7 @@ const ContactUs = () => {
                   )}
                 </div>
                 <CustomButton
-                  className="justify-center mt-8"
+                  className="justify-center mt-8 w-full"
                   purple
                   text="Submit"
                   type="submit"
