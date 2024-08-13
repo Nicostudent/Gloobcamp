@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 export function useLocalStorage(key, initialValue) {
+  // Initialize state from localStorage or use the initial value
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key);
@@ -13,14 +14,17 @@ export function useLocalStorage(key, initialValue) {
     }
   });
 
+  // Effect to synchronize localStorage with storedValue
   useEffect(() => {
     try {
       const item = window.localStorage.getItem(key);
-      setStoredValue(item ? JSON.parse(item) : initialValue);
+      if (item !== null) {
+        setStoredValue(JSON.parse(item));
+      }
     } catch (error) {
       console.error(error);
     }
-  }, [key]);
+  }, [key]); // Only update if key changes
 
   const setValue = (value) => {
     try {
