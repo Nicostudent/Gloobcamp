@@ -5,11 +5,23 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 const GloobcampContext = createContext();
 
 export const GloobcampProvider = ({ children }) => {
-  const [name, setName] = useLocalStorage('name', 'Gaston');
-  const [surname, setSurname] = useLocalStorage('surname', 'Zappulla');
+  const [userData, setUserData] = useLocalStorage('userData', {});
+
+  const updateUserData = (newData) => {
+    const updatedUserData = {
+      ...userData,
+      ...newData,
+    };
+    setUserData(updatedUserData);
+  };
+
+  const gloobcampData = {
+    userData,
+    updateUserData,
+  };
 
   return (
-    <GloobcampContext.Provider value={{ name, setName, surname, setSurname }}>
+    <GloobcampContext.Provider value={gloobcampData}>
       {children}
     </GloobcampContext.Provider>
   );

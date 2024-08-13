@@ -4,18 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
-import { useGloobcamp } from "@/context/GloobcampContext";
-import { useLocalStorage } from "@/hooks/useLocalStorage"
 
 const Navbar = () => {
-
-  /* Ejemplo de uso */
-  const { name, setName, surname, setSurname } = useGloobcamp();
-
-  useEffect(() => {
-    setName('Ligth')
-    setSurname('Weigth')
-  }, [])
 
   const [isOpen, setIsOpen] = useState(false);
 
