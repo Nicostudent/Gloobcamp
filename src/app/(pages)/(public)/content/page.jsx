@@ -1,7 +1,6 @@
 "use client";
-import Heading from "@/components/Writing/Heading";
+import { Heading, Paragraph } from "@/components/Writing";
 import { LinkButton } from "@/components/LinkButton";
-import Paragraph from "@/components/Writing/Paragraph";
 
 const page = () => {
   return (

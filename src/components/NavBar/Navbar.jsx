@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
+import NavigationLink from "@/components/NavigationLink";
+import NavIcon from "./NavIcon";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,32 +14,35 @@ const Navbar = () => {
 
   const pages = [
     { to: "/", label: "Home" },
-    { to: "/aboutus", label: "About" },
-    { to: "/contact-us", label: "Contact us" },
+    { to: "/aboutus", label: "About Us" },
+    { to: "/contact-us", label: "Contact Us" },
   ];
   const renderLinks = () => (
     <>
       {pages.map((page) => (
-        <Link
+        <NavigationLink
+          bgIsdark
           key={page.to}
           href={page.to}
           aria-label={page.label}
-          className="px-3 py-2 rounded-md font-medium text-sm text-white"
           onClick={toggleDropdown}
         >
           {page.label}
-        </Link>
+        </NavigationLink>
       ))}
     </>
   );
-  
+
   return (
-    <nav className="z-50 fixed bg-primary p-3 w-full">
-      <div className="flex justify-between items-center mx-auto container">
+    <nav className="z-50 fixed bg-primary py-4 w-full">
+      <div className="flex justify-between items-center mx-auto px-6 max-w-7xl">
         <Logo />
-        <div className="md:flex items-center hidden">{renderLinks()}</div>
+        <div className="md:flex items-center gap-8 hidden">{renderLinks()}</div>
         <div className="md:hidden">
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
+        </div>
+        <div className="flex items-center gap-6 align-middle">
+          <NavIcon pathname={"/"} image={"/user.svg"} />
         </div>
       </div>
       {isOpen && (
