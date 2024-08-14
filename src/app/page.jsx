@@ -17,12 +17,7 @@ const App = () => {
           JavaScript. Ready to begin?
         </Paragraph>
       </div>
-      <LinkButton
-        dark
-        href={"/content"}
-        label={"Start my learning journey!"}
-        arialLabelProp={"Click here and start you learning journey"}
-      />
+      <LinkButton dark href={"/content"} label={"Start my learning journey!"} />
     </main>
   );
 };

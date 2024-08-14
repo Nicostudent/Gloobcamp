@@ -1,11 +1,11 @@
 import Link from "next/link";
-export const LinkButton = ({ href, label, dark, arialLabelProp }) => {
+export const LinkButton = ({ href, label, dark }) => {
   const colored =
     "bg-primary hover:opacity-95 px-4 py-2 rounded font-bold text-white ease-in-out duration-300";
 
   return (
     <Link
-      aria-label={arialLabelProp || label}
+      aria-label={label}
       href={href}
       className={`${
         dark
