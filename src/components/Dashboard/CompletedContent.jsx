@@ -11,7 +11,7 @@ const CompletedContent = ({ title }) => {
     window.localStorage.removeItem("progress");
     window.localStorage.removeItem("storagedValue");
     jsConfetti.addConfetti();
-  }, []); // Ensure this runs only once
+  }, []);
 
   return (
     <section className="flex flex-col justify-center items-center space-y-4 py-24 h-[calc(100vh-256px)]">

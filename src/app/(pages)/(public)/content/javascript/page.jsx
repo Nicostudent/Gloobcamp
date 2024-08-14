@@ -21,7 +21,7 @@ const Subject = () => {
   );
 
   const PROGRESS_MAX_VALUE = 100;
-  const PROGRESS_VALUE = progress.toFixed();
+  const PROGRESS_VALUE = progress;
 
   if (PROGRESS_VALUE >= PROGRESS_MAX_VALUE) {
     return <CompletedContent title={"JavaScript"} />;
@@ -40,8 +40,7 @@ const Subject = () => {
       <Heading>JavaScript</Heading>
       <SubTitle>Content</SubTitle>
       <button
-        className="w-1/6 flex justify-start items-center border-2 gap-4 bg-primary text-white rounded-md p-2 font-bold"
-        arialLabelProp="Search JavaScript content"
+        className="flex justify-start items-center gap-4 border-2 bg-primary p-2 rounded-md w-1/6 font-bold text-white"
         onClick={handleInputClick}
       >
         <Image src="/search.svg" alt={"search box"} width={36} height={36} />{" "}

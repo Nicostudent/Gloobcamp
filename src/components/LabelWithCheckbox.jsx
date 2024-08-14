@@ -5,7 +5,7 @@ const LabelWithCheckbox = ({ children, inputId, handleChange, isChecked }) => {
         type="checkbox"
         id={inputId}
         className="m-4 accent-primary size-4"
-        onChange={handleChange} // Use onChange instead of onClick
+        onChange={handleChange}
         checked={isChecked}
       />
       {children}
