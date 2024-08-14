@@ -9,7 +9,7 @@ const Card = ({ handleCheckboxChange, topics, selectedTopics }) => {
         <LabelWithCheckbox
           key={topic.id}
           inputId={topic.id}
-          handleChange={handleCheckboxChange} // Pass as handleChange
+          handleChange={handleCheckboxChange}
           isChecked={!!selectedTopics[topic.id]}
         >
           <LinkButton
