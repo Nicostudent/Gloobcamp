@@ -14,16 +14,26 @@ import Image from "next/image";
 const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
-  const subjectLenght = subject === "react" ? reacTopic.length : jsTopics.length;
-  const { progress, selectedTopics, handleCheckboxChange } = useProgress(subjectLenght);
+  const topicsLength = {
+    react: reacTopic.length,
+    javascript: jsTopics.length,
+  };
+
+  const limitFilter = topicsLength[subject];
+  const { progress, selectedTopics, handleCheckboxChange } = useProgress(
+    limitFilter,
+    subject
+  );
   const PROGRESS_MAX_VALUE = 100;
-  const PROGRESS_VALUE = progress;
+  const PROGRESS_VALUE = progress.toFixed(2);
 
-  if (PROGRESS_VALUE >= PROGRESS_MAX_VALUE) {
-    return <CompletedContent title={"JavaScript"} />;
+
+  if (PROGRESS_VALUE >= PROGRESS_MAX_VALUE ) {
+    return <CompletedContent title={subject} /> 
   }
-
+ 
   const filteredTopics = jsTopics.filter((topic) =>
     topic.title.toLocaleLowerCase().includes(searchTopic.toLocaleLowerCase())
   );
