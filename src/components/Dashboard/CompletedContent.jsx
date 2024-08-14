@@ -9,7 +9,7 @@ const CompletedContent = ({ title }) => {
   useEffect(() => {
     const jsConfetti = new JSConfetti();
     window.localStorage.removeItem(title);
-    window.localStorage.removeItem("selectedTopics");
+    window.localStorage.removeItem("selectedTopics" + title);
     jsConfetti.addConfetti();
   }, []);
 

@@ -5,7 +5,7 @@ const useProgress = (limit, subject) => {
   const [progress, setProgress] = useLocalStorage(subject, 0);
 
   const [selectedTopics, setSelectedTopics] = useLocalStorage(
-    "selectedTopics",
+    "selectedTopics" + subject ,
     {}
   );
 
