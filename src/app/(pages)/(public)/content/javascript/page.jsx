@@ -10,7 +10,7 @@ import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import CustomButton from "@/components/CustomButton";
-import { FaSearch } from "react-icons/fa";
+import Image from "next/image";
 
 const Subject = () => {
   const [searchTopic, setSearchTopic] = useState("");
@@ -34,20 +34,19 @@ const Subject = () => {
   const handleInputClick = () => {
     setIsModalOpen(true);
   };
-  
 
   return (
     <section className="flex flex-col gap-4 py-10">
       <Heading>JavaScript</Heading>
       <SubTitle>Content</SubTitle>
-      <CustomButton
+      <button
+        className="w-1/6 flex justify-start items-center border-2 gap-4 bg-primary text-white rounded-md p-2 font-bold"
         arialLabelProp="Search JavaScript content"
-        purple
         onClick={handleInputClick}
-        className="gap-4 p-4 w-40 text-white"
-        text="Search..."
-        icon={<FaSearch />} 
-      />
+      >
+        <Image src="/search.svg" alt={"search box"} width={36} height={36} />{" "}
+        <p>Search...</p>
+      </button>
       <SearchBar
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
