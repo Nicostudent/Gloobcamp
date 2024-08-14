@@ -1,5 +1,4 @@
-import Heading from "@/components/Writing/Heading";
-import Paragraph from "@/components/Writing/Paragraph";
+import { Heading, Paragraph } from "@/components/Writing";
 import { LinkButton } from "@/components/LinkButton";
 
 const App = () => {
@@ -17,10 +16,7 @@ const App = () => {
           JavaScript. Ready to begin?
         </Paragraph>
       </div>
-      <div className="flex flex-col justify-center items-center px-4 max-w-lg text-center">
-        <Paragraph>Start your learning journey!</Paragraph>
-      </div>
-      <LinkButton dark href={"/content"} label={"Click here"} arialLabelProp={"Click here and start you learning journey"}/>
+      <LinkButton dark href={"/content"} label={"Start my learning journey!"} />
     </main>
   );
 };

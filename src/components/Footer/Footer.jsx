@@ -1,7 +1,7 @@
 import { LinkButton } from "@/components/LinkButton";
-import SocialMedia from "@/components/Footer/SocialMedia";
-import NavigationLink from "@/components/Footer/NavigationLink";
+import NavigationLink from "@/components/NavigationLink";
 import Container from "@/components/Footer/Container";
+import SocialMediaIconLink from "../SocialMediaIconLink";
 const Footer = () => {
   return (
     <footer className="gap-2 grid mx-auto my-12 px-6 max-w-7xl">
@@ -12,11 +12,11 @@ const Footer = () => {
           <NavigationLink href="/contact-us">Contact us</NavigationLink>
         </nav>
 
-        <SocialMedia
+        <SocialMediaIconLink
           href="https://github.com/Nicostudent/gloobcamp"
           src="/github-black.svg"
           alt="Github"
-          size={24}
+          styles={"hover:scale-110 transition-all duration-300 ease-in-out"}
         />
       </Container>
 

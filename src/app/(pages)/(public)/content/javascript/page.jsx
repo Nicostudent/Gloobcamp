@@ -1,7 +1,5 @@
 "use client";
-import Heading from "@/components/Writing/Heading";
-import SubTitle from "@/components/Writing/SubTitle";
-
+import { Heading, SubTitle } from "@/components/Writing";
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import Card from "@/components/Dashboard/Card";
 
@@ -9,17 +7,19 @@ import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
 import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
-import Input from "@/components/Input";
+import SearchBar from "@/components/SearchBar";
+import Image from "next/image";
 
 const Subject = () => {
   const [searchTopic, setSearchTopic] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { progress, selectedTopics, handleCheckboxChange } = useProgress(
     jsTopics.length
   );
 
   const PROGRESS_MAX_VALUE = 100;
-  const PROGRESS_VALUE = progress.toFixed();
+  const PROGRESS_VALUE = progress;
 
   if (PROGRESS_VALUE >= PROGRESS_MAX_VALUE) {
     return <CompletedContent title={"JavaScript"} />;
@@ -29,29 +29,35 @@ const Subject = () => {
     topic.title.toLocaleLowerCase().includes(searchTopic.toLocaleLowerCase())
   );
 
+  const handleInputClick = () => {
+    setIsModalOpen(true);
+  };
+
   return (
-    <section className="space-y-4 py-10">
+    <section className="flex flex-col gap-4 py-10">
       <Heading>JavaScript</Heading>
       <SubTitle>Content</SubTitle>
-      <Input
-        className="lg-w-1/3 md:w-1/4"
-        type="text"
-        value={searchTopic}
-        onChange={(e) => setSearchTopic(e.target.value)}
-        placeholder="Search..."
+      <button
+        className="flex justify-start items-center gap-4 border-2 bg-primary p-2 rounded-md w-1/6 font-bold text-white"
+        onClick={handleInputClick}
+      >
+        <Image src="/search.svg" alt={"search box"} width={36} height={36} />{" "}
+        <p>Search...</p>
+      </button>
+      <SearchBar
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        searchValue={searchTopic}
+        setSearchValue={setSearchTopic}
+        results={filteredTopics}
+        topicPath="/content/javascript"
       />
-      {filteredTopics.length === 0 ? (
-        <p className="text-center">Not page found</p>
-      ) : (
-        <>
-          <ProgressBar progress={progress} />
-          <Card
-            handleCheckboxChange={handleCheckboxChange}
-            topics={filteredTopics}
-            selectedTopics={selectedTopics}
-          />
-        </>
-      )}
+      <ProgressBar progress={progress} />
+      <Card
+        handleCheckboxChange={handleCheckboxChange}
+        topics={jsTopics}
+        selectedTopics={selectedTopics}
+      />
     </section>
   );
 };

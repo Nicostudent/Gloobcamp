@@ -1,7 +1,7 @@
 import LabelWithCheckbox from "@/components/LabelWithCheckbox";
-import jsTopics from "@/utils/js-topics-and-questions.json";
 import { LinkButton } from "../LinkButton";
 import Container from "@/components/Dashboard/Container";
+
 const Card = ({ handleCheckboxChange, topics, selectedTopics }) => {
   return (
     <Container>
@@ -9,7 +9,7 @@ const Card = ({ handleCheckboxChange, topics, selectedTopics }) => {
         <LabelWithCheckbox
           key={topic.id}
           inputId={topic.id}
-          inputOnClick={handleCheckboxChange}
+          handleChange={handleCheckboxChange}
           isChecked={!!selectedTopics[topic.id]}
         >
           <LinkButton

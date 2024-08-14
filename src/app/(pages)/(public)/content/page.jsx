@@ -1,7 +1,6 @@
 "use client";
-import Heading from "@/components/Writing/Heading";
+import { Heading, Paragraph } from "@/components/Writing";
 import { LinkButton } from "@/components/LinkButton";
-import Paragraph from "@/components/Writing/Paragraph";
 
 const page = () => {
   return (
@@ -10,12 +9,7 @@ const page = () => {
       <Paragraph>Choose your content</Paragraph>
 
       <div className="flex justify-between items-center gap-8">
-        <LinkButton
-          dark
-          href={"/content/javascript"}
-          label={"JavaScript"}
-          arialLabelProp={"JavaScript content"}
-        />
+        <LinkButton dark href={"/content/javascript"} label={"JavaScript"} />
       </div>
     </section>
   );
