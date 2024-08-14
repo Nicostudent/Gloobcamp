@@ -1,6 +1,5 @@
 "use client";
-import Heading from "@/components/Writing/Heading";
-import SubTitle from "@/components/Writing/SubTitle";
+import { Heading, SubTitle } from "@/components/Writing";
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import Card from "@/components/Dashboard/Card";
 
@@ -9,7 +8,6 @@ import useProgress from "@/hooks/useProgress";
 import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
-import CustomButton from "@/components/CustomButton";
 import Image from "next/image";
 
 const Subject = () => {
