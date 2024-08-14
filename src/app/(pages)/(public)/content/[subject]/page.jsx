@@ -2,24 +2,21 @@
 import Heading from "@/components/Writing/Heading";
 import SubTitle from "@/components/Writing/SubTitle";
 import jsTopics from "@/utils/js-topics-and-questions.json";
+import reacTopic from "@/utils/react-topics-and-questions.json";
 import Card from "@/components/Dashboard/Card";
-
 import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
 import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
-import CustomButton from "@/components/CustomButton";
 import Image from "next/image";
 
-const Subject = () => {
+const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { progress, selectedTopics, handleCheckboxChange } = useProgress(
-    jsTopics.length
-  );
-
+  const subjectLenght = subject === "react" ? reacTopic.length : jsTopics.length;
+  const { progress, selectedTopics, handleCheckboxChange } = useProgress(subjectLenght);
   const PROGRESS_MAX_VALUE = 100;
   const PROGRESS_VALUE = progress;
 
@@ -34,10 +31,10 @@ const Subject = () => {
   const handleInputClick = () => {
     setIsModalOpen(true);
   };
-
+  const title = subject.charAt(0).toUpperCase() + subject.slice(1);
   return (
     <section className="flex flex-col gap-4 py-10">
-      <Heading>JavaScript</Heading>
+      <Heading>{title}</Heading>
       <SubTitle>Content</SubTitle>
       <button
         className="flex justify-start items-center gap-4 border-2 bg-primary p-2 rounded-md w-1/6 font-bold text-white"
@@ -52,14 +49,26 @@ const Subject = () => {
         searchValue={searchTopic}
         setSearchValue={setSearchTopic}
         results={filteredTopics}
-        topicPath="/content/javascript"
+        topicPath={`/content/${subject}`}
       />
       <ProgressBar progress={progress} />
-      <Card
-        handleCheckboxChange={handleCheckboxChange}
-        topics={jsTopics}
-        selectedTopics={selectedTopics}
-      />
+      {subject === "javascript" ? (
+        <Card
+          handleCheckboxChange={handleCheckboxChange}
+          topics={jsTopics}
+          selectedTopics={selectedTopics}
+          subject={"javascript"}
+        />
+      ) : (
+        subject === "react" && (
+          <Card
+            handleCheckboxChange={handleCheckboxChange}
+            topics={reacTopic}
+            selectedTopics={selectedTopics}
+            subject={"react"}
+          />
+        )
+      )}
     </section>
   );
 };
