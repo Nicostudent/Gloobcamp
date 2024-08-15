@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
 import NavigationLink from "@/components/NavigationLink";
-import NavIcon from "./NavIcon";
+import DailyRewardsList from "./DailyRewardsList"; // Import the new component
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +17,7 @@ const Navbar = () => {
     { to: "/aboutus", label: "About Us" },
     { to: "/contact-us", label: "Contact Us" },
   ];
+
   const renderLinks = () => (
     <>
       {pages.map((page) => (
@@ -42,7 +43,8 @@ const Navbar = () => {
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
         </div>
         <div className="md:flex items-center gap-6 align-middle hidden">
-          <NavIcon pathname={"/"} image={"/user.svg"} />
+          <img src="/user.svg" alt="User Icon" className="cursor-pointer w-8 h-8" />
+          <DailyRewardsList /> {/* Add the DailyRewardsList component here */}
         </div>
       </div>
       {isOpen && (
