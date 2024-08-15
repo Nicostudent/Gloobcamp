@@ -1,6 +1,5 @@
 "use client";
-import Heading from "@/components/Writing/Heading";
-import SubTitle from "@/components/Writing/SubTitle";
+import { Heading, SubTitle } from "@/components/Writing";
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import reacTopic from "@/utils/react-topics-and-questions.json";
 import Card from "@/components/Dashboard/Card";

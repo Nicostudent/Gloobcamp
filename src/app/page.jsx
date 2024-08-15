@@ -1,5 +1,4 @@
-import Heading from "@/components/Writing/Heading";
-import Paragraph from "@/components/Writing/Paragraph";
+import { Heading, Paragraph } from "@/components/Writing";
 import { LinkButton } from "@/components/LinkButton";
 
 const App = () => {

@@ -1,4 +1,4 @@
-import Paragraph from "./Writing/Paragraph";
+import { Paragraph } from "@/components/Writing";
 import { LinkButton } from "./LinkButton";
 const EndTopic = () => {
   return (

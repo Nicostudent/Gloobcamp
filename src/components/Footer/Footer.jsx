@@ -1,5 +1,5 @@
 import { LinkButton } from "@/components/LinkButton";
-import NavigationLink from "@/components/Footer/NavigationLink";
+import NavigationLink from "@/components/NavigationLink";
 import Container from "@/components/Footer/Container";
 import SocialMediaIconLink from "../SocialMediaIconLink";
 const Footer = () => {
@@ -13,11 +13,11 @@ const Footer = () => {
         </nav>
 
         <SocialMediaIconLink
-         href="https://github.com/Nicostudent/gloobcamp"
-         src="/github-black.svg"
-         alt="Github"
-         styles={"hover:scale-110 transition-all duration-300 ease-in-out"}
-         />     
+          href="https://github.com/Nicostudent/gloobcamp"
+          src="/github-black.svg"
+          alt="Github"
+          styles={"hover:scale-110 transition-all duration-300 ease-in-out"}
+        />
       </Container>
 
       <Container>

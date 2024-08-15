@@ -1,5 +1,4 @@
-import SubTitle from "@/components/Writing/SubTitle.jsx";
-import Paragraph from "@/components/Writing/Paragraph.jsx";
+import { SubTitle, Paragraph } from "@/components/Writing";
 import MapUsers from "@/components/UserCard/MapUsers.jsx";
 
 const AboutUs = () => {
