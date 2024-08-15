@@ -16,7 +16,6 @@ const CompletedContent = ({ title }) => {
   return (
     <section className="flex flex-col justify-center   items-center space-y-4 py-24 h-[calc(100vh-256px)]">
       <Heading>{title}</Heading>
-
       <Paragraph addClass={"text-center flex flex-col max-w-xl   "}>
         <span>{` Congratulations, you have completed all the topics of ${title}!`}</span>
         <span>{`You get a new achievement.`}</span>
