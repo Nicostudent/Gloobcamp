@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import Heading from "@/components/Writing/Heading";
-import Paragraph from "@/components/Writing/Paragraph";
+
 import JSConfetti from "js-confetti";
 import { LinkButton } from "../LinkButton";
+import { Heading, Paragraph } from "../Writing";
 
 const CompletedContent = ({ title }) => {
   useEffect(() => {
