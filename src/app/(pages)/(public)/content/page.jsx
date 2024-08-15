@@ -10,6 +10,8 @@ const page = () => {
 
       <div className="flex justify-between items-center gap-8">
         <LinkButton dark href={"/content/javascript"} label={"JavaScript"} />
+        <LinkButton dark href={"/content/react"} label={"React"} />
+
       </div>
     </section>
   );
