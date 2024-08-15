@@ -1,6 +1,6 @@
 "use client";
 import { Heading, Paragraph } from "@/components/Writing";
-import { LinkButton } from "@/components/LinkButton";
+import ContentCard from "@/components/ContentCard";
 
 const page = () => {
   return (
@@ -9,9 +9,11 @@ const page = () => {
       <Paragraph>Choose your content</Paragraph>
 
       <div className="flex justify-between items-center gap-8">
-        <LinkButton dark href={"/content/javascript"} label={"JavaScript"} />
-        <LinkButton dark href={"/content/react"} label={"React"} />
-
+        <ContentCard image="/github-black.svg" subject="Github">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
+          quidem tempore esse dolore, obcaecati ducimus cum inventore optio
+          ratione quod!
+        </ContentCard>
       </div>
     </section>
   );
