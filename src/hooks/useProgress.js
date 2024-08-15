@@ -1,11 +1,11 @@
 "use client";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
-const useProgress = (limit) => {
-  const [progress, setProgress] = useLocalStorage("progress", 0);
+const useProgress = (limit, subject) => {
+  const [progress, setProgress] = useLocalStorage(subject, 0);
 
   const [selectedTopics, setSelectedTopics] = useLocalStorage(
-    "selectedTopics",
+    "selectedTopics" + subject ,
     {}
   );
 

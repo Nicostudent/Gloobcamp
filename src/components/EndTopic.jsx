@@ -2,8 +2,8 @@ import { Paragraph } from "@/components/Writing";
 import { LinkButton } from "./LinkButton";
 const EndTopic = () => {
   return (
-    <div className="top-0 right-0 bottom-10 left-0 absolute flex flex-col justify-center items-center gap-10 m-auto">
-      <Paragraph> Congratulations, you have completed this topic</Paragraph>
+    <div className="flex flex-col justify-center items-center gap-4">
+      <Paragraph> Congratulations, you have completed this topic! and get a new achievement</Paragraph>
       <LinkButton
         dark={true}
         href="/content"
