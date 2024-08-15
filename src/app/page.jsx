@@ -1,10 +1,9 @@
-import Heading from "@/components/Writing/Heading";
-import Paragraph from "@/components/Writing/Paragraph";
+import { Heading, Paragraph } from "@/components/Writing";
 import { LinkButton } from "@/components/LinkButton";
 
 const App = () => {
   return (
-    <main className="flex flex-col justify-center items-center space-y-16 py-24 min-h-screen align-middle">
+    <main className="flex flex-col justify-center items-center space-y-8 py-24 min-h-screen align-middle">
       <div className="text-center">
         <Heading>Welcome to GloobCamp</Heading>
       </div>
@@ -17,12 +16,7 @@ const App = () => {
           JavaScript. Ready to begin?
         </Paragraph>
       </div>
-      <div className="flex flex-col justify-center items-center px-4 max-w-lg text-center">
-        <Paragraph>Start your learning journey!</Paragraph>
-        <LinkButton dark href={"/content"}>
-          Click here
-        </LinkButton>
-      </div>
+      <LinkButton dark href={"/content"} label={"Start my learning journey!"} />
     </main>
   );
 };

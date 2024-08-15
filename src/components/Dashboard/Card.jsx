@@ -1,25 +1,24 @@
 import LabelWithCheckbox from "@/components/LabelWithCheckbox";
-import jsTopics from "@/utils/js-topics-and-questions.json";
 import { LinkButton } from "../LinkButton";
 import Container from "@/components/Dashboard/Container";
-const Card = ({ handleCheckboxChange }) => {
+
+const Card = ({ handleCheckboxChange, topics, selectedTopics ,subject }) => {
   return (
-    <>
-      <Container>
-        {jsTopics.map((topic) => (
-          <LabelWithCheckbox
-            key={topic.id}
-            inputId={topic.id}
-            inputOnClick={handleCheckboxChange}
-            childrenText={
-              <LinkButton href={`/content/javascript/${topic.path}`}>
-                {topic.id}. {topic.title}
-              </LinkButton>
-            }
+    <Container>
+      {topics.map((topic) => (
+        <LabelWithCheckbox
+          key={topic.title}
+          inputId={topic.id}
+          handleChange={handleCheckboxChange}
+          isChecked={!!selectedTopics[topic.id]}
+        >
+          <LinkButton
+            href={`/content/${subject}/${topic.path}`}
+            label={`${topic.id}. ${topic.title}`}
           />
-        ))}
-      </Container>
-    </>
+        </LabelWithCheckbox>
+      ))}
+    </Container>
   );
 };
 

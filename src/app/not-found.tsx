@@ -33,6 +33,7 @@ const NotFound = () => {
       <button
         onClick={handleGoHomeClick}
         className="bg-primary hover:bg-blue-700 mt-5 px-4 py-2 border border-blue-700 rounded font-bold text-white"
+        aria-label="go to home"
       >
         Go Home
       </button>

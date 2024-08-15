@@ -1,12 +1,15 @@
-import Link from "next/link";
-import Paragraph from "./Writing/Paragraph";
-const EndTopic = ({paragraph = null}) => {
+import { Paragraph } from "@/components/Writing";
+import { LinkButton } from "./LinkButton";
+const EndTopic = () => {
   return (
-    <div>
-      <div>
-        <Paragraph>{paragraph}</Paragraph>
-        <Link href="/">Volver</Link>
-      </div>
+    <div className="flex flex-col justify-center items-center gap-4">
+      <Paragraph> Congratulations, you have completed this topic! and get a new achievement</Paragraph>
+      <LinkButton
+        dark={true}
+        href="/content"
+        label={"Volver"}
+        aria-label="back to homepage"
+      />
     </div>
   );
 };
