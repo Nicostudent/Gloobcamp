@@ -46,11 +46,11 @@ const Subject = ({ params: { subject } }) => {
       <Heading>{title}</Heading>
       <SubTitle>Content</SubTitle>
       <button
-        className="flex justify-start items-center gap-4 border-2 bg-primary p-2 rounded-md w-1/6 font-bold text-white"
+        className="flex w-fit justify-start items-center border-2 bg-primary p-2 md:gap-4 rounded-md  font-bold text-white"
         onClick={handleInputClick}
       >
         <Image src="/search.svg" alt={"search box"} width={36} height={36} />{" "}
-        <p>Search...</p>
+        <p className="pr-2">Search...</p>
       </button>
       <SearchBar
         isOpen={isModalOpen}
