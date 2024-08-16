@@ -4,7 +4,7 @@ import { LinkButton } from "./LinkButton";
 const ContentCard = ({ children, image, subject }) => {
   const pathname = String(subject).toLowerCase();
   return (
-    <article className="flex flex-col flex-wrap border-gray-200 bg-white shadow p-8 border rounded-lg w-full max-w-xs">
+    <article className="flex flex-col flex-wrap shadow-xl p-8 rounded-lg w-full max-w-xs">
       <div className="flex flex-row gap-4 mb-5">
         <Image
           src={image}
@@ -15,15 +15,18 @@ const ContentCard = ({ children, image, subject }) => {
         />
         <div>
           <p className="text-tertiary">TUTORIAL</p>
-          <h3 className="font-bold text-2xl">{subject}</h3>
+          <h3 className="font-bold text-2xl">
+            {subject}
+            <span className="text-primary">.</span>
+          </h3>
         </div>
       </div>
       <div className="h-44 text-tertiary overflow-hidden">{children}</div>
       <div className="flex justify-end mt-8">
         <LinkButton
+          dark
           href={`/content/${pathname}`}
-          label="Read more"
-          aria-label="Read more"
+          label={`Learn ${subject}`}
         />
       </div>
     </article>
