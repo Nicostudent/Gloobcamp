@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import Navbar from "@/components/NavBar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import ClientLayout from "./ClientLayout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <Navbar />
         <ToastContainer />
+        <ClientLayout />
         <main className="mx-auto px-4 max-w-7xl">{children}</main>
         <Footer />
       </body>
