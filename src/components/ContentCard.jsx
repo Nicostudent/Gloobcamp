@@ -4,7 +4,7 @@ import { LinkButton } from "./LinkButton";
 const ContentCard = ({ children, image, subject }) => {
   const pathname = String(subject).toLowerCase();
   return (
-    <article className="flex flex-col flex-wrap shadow-xl p-8 rounded-lg w-full max-w-xs">
+    <article className="flex flex-col flex-wrap border-2 shadow-xl p-8 rounded-lg w-full max-w-xs">
       <div className="flex flex-row gap-4 mb-5">
         <Image
           src={image}
@@ -21,7 +21,7 @@ const ContentCard = ({ children, image, subject }) => {
           </h3>
         </div>
       </div>
-      <div className="h-44 text-tertiary overflow-hidden">{children}</div>
+      <div className="h-44 text-tertiary overflow-hidden text-sm">{children}</div>
       <div className="flex justify-end mt-8">
         <LinkButton
           dark

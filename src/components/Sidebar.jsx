@@ -1,5 +1,7 @@
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import reactTopics from "@/utils/react-topics-and-questions.json";
+import htmlTopic from "@/utils/html-topics-and-questions.json";
+import cssTopic from "@/utils/css-topics-and-questions.json";
 import { useState } from "react";
 import TopicList from "./TopicList";
 
@@ -11,6 +13,7 @@ const Sidebar = ({ pathname }) => {
 
   let topics = [];
   let title = "";
+  
 
   if (pathname.startsWith("/content/javascript")) {
     topics = jsTopics.map((topic) => ({
@@ -24,7 +27,21 @@ const Sidebar = ({ pathname }) => {
       basePath: "/content/react",
     }));
     title = "React";
+  } else if(pathname.startsWith("/content/html")) {
+    topics = htmlTopic.map((topic) => ({
+      ...topic,
+      basePath: "/content/html",
+    }));
+    title = "HTML";
+  } else if(pathname.startsWith("/content/css")) {
+    topics = cssTopic.map((topic) => ({
+      ...topic,
+      basePath: "/content/css",
+    }));
+    title = "CSS";
   }
+
+  
   return (
     <>
       <button
