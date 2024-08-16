@@ -11,34 +11,15 @@ const Sidebar = ({ pathname }) => {
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
 
-  let topics = [];
-  let title = "";
+  const topicMapping = {
+    "/content/javascript": { topics: jsTopics, title: "JavaScript" },
+    "/content/react": { topics: reactTopics, title: "React" },
+    "/content/css": { topics: cssTopics, title: "CSS" },
+    "/content/html": { topics: htmlTopics, title: "HTML" },
+  };
+  const basePath = Object.keys(topicMapping).find((path) => pathname.startsWith(path));
 
-  if (pathname.startsWith("/content/javascript")) {
-    topics = jsTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/javascript",
-    }));
-    title = "JavaScript";
-  } else if (pathname.startsWith("/content/react")) {
-    topics = reactTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/react",
-    }));
-    title = "React";
-  } else if (pathname.startsWith("/content/css")) {
-    topics = cssTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/css",
-    }));
-    title = "CSS";
-  } else if (pathname.startsWith("/content/html")) {
-    topics = htmlTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/html",
-    }));
-    title = "HTML";
-  }
+  const { topics, title } = topicMapping[basePath];
   return (
     <>
       <button
