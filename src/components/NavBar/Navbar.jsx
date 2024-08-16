@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
@@ -38,11 +38,15 @@ const Navbar = () => {
     <nav className="z-50 fixed bg-primary py-4 w-full">
       <div className="flex justify-between items-center mx-auto px-6 max-w-7xl">
         <Logo />
+        <div className="flex items-center gap-6 md:hidden align-middle">
+          <NavIcon pathname={"/"} image={"/user.svg"} />
+          <ThemeSwitcher />
+        </div>
         <div className="md:flex items-center gap-8 hidden">{renderLinks()}</div>
         <div className="md:hidden">
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
         </div>
-        <div className="lg:flex items-center gap-6 hidden align-middle">
+        <div className="md:flex items-center gap-6 hidden align-middle">
           <NavIcon pathname={"/"} image={"/user.svg"} />
           <ThemeSwitcher />
         </div>

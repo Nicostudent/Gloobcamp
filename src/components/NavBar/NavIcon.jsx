@@ -10,7 +10,7 @@ const NavIcon = ({ pathname, image }) => {
     .replace(".png", " ");
 
   return (
-    <Link href={`${pathname}`} className="lg:block hidden hover:scale-110 duration-300">
+    <Link href={`${pathname}`} className="lg:block hover:scale-110 duration-300">
       <Image
         src={`${image}`}
         alt={`${String(image).split("/")[0]} icon`}
