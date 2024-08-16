@@ -8,10 +8,10 @@ const page = () => {
       <Heading addClass={"text-center"}>What do you want to learn now?</Heading>
       <Paragraph>Choose your content</Paragraph>
 
-      <div className="flex md:flex-row flex-col flex-wrap justify-between items-center gap-8">
+      <div className="grid md:grid-cols-4  justify-between items-center gap-8 ">
         <ContentCard image="/html.svg" subject="html">
           El Lenguaje de Marcado de Hipertexto (HTML) es el código que se
-          utiliza para estructurar y desplegar una página web y sus contenidos
+          utiliza para estructurar y desplegar una página web y sus contenidos.
         </ContentCard>
         <ContentCard image="/css.svg" subject="css">
           CSS (Cascading Style Sheets) es un lenguaje de hojas de estilo

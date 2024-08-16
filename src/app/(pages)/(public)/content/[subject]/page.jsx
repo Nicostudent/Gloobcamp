@@ -21,16 +21,8 @@ const Subject = ({ params: { subject } }) => {
       javascript: jsTopics,
       html: htmlTopic,
       css: cssTopic,
-    };
-    
-    // const topicsLength = {
-    //   react: reacTopic.length,
-    //   javascript: jsTopics.length,
-    //   html: htmlTopic.length,
-    //   css: cssTopic.length,
-    // };
+    };    
 
-    
   const topicsData = topicsMapping[subject] || [];
   const limitFilter = topicsData.length;
   const { progress, selectedTopics, handleCheckboxChange } = useProgress(
