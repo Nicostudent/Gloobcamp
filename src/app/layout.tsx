@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/NavBar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import ClientLayout from "./ClientLayout";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,11 +38,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={ `${poppins.className} dark:bg-secondary`}
       >
-        <Navbar />
-        <ToastContainer />
-        <ClientLayout />
-        <main className="mx-auto px-4 max-w-7xl">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <ToastContainer />
+          <ClientLayout />
+          <main className="mx-auto px-4 max-w-7xl">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
