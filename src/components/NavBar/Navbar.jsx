@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
         </div>
-        <div className="md:flex items-center gap-6 align-middle hidden">
+        <div className="lg:flex items-center gap-6 hidden align-middle">
           <NavIcon pathname={"/"} image={"/user.svg"} />
         </div>
       </div>

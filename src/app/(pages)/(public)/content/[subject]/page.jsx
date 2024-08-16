@@ -2,6 +2,10 @@
 import { Heading, SubTitle } from "@/components/Writing";
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import reacTopic from "@/utils/react-topics-and-questions.json";
+import htmlTopic from "@/utils/html-topics-and-questions.json";
+import cssTopic from "@/utils/css-topics-and-questions.json";
+
+
 import Card from "@/components/Dashboard/Card";
 import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
@@ -18,6 +22,8 @@ const Subject = ({ params: { subject } }) => {
   const topicsLength = {
     react: reacTopic.length,
     javascript: jsTopics.length,
+    html: htmlTopic.length,
+    css: cssTopic.length,
   };
 
   const limitFilter = topicsLength[subject];
@@ -46,11 +52,11 @@ const Subject = ({ params: { subject } }) => {
       <Heading>{title}</Heading>
       <SubTitle>Content</SubTitle>
       <button
-        className="flex justify-start items-center gap-4 border-2 bg-primary p-2 rounded-md w-1/6 font-bold text-white"
+        className="flex w-fit justify-start items-center border-2 bg-primary p-2 md:gap-4 rounded-md  font-bold text-white"
         onClick={handleInputClick}
       >
         <Image src="/search.svg" alt={"search box"} width={36} height={36} />{" "}
-        <p>Search...</p>
+        <p className="pr-2">Search...</p>
       </button>
       <SearchBar
         isOpen={isModalOpen}
@@ -68,8 +74,8 @@ const Subject = ({ params: { subject } }) => {
           selectedTopics={selectedTopics}
           subject={"javascript"}
         />
-      ) : (
-        subject === "react" && (
+      ) : subject === "react" ? (
+          (
           <Card
             handleCheckboxChange={handleCheckboxChange}
             topics={reacTopic}
@@ -77,7 +83,25 @@ const Subject = ({ params: { subject } }) => {
             subject={"react"}
           />
         )
-      )}
+      ) : subject === "html" ? (
+       (
+          <Card
+            handleCheckboxChange={handleCheckboxChange}
+            topics={htmlTopic}
+            selectedTopics={selectedTopics}
+            subject={"html"}
+          />
+        )
+      ) : (
+        subject === "css" && (
+          <Card
+            handleCheckboxChange={handleCheckboxChange}
+            topics={cssTopic}
+            selectedTopics={selectedTopics}
+            subject={"css"}
+          />
+        ) 
+      ) }
     </section>
   );
 };
