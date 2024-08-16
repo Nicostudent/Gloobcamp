@@ -15,8 +15,7 @@ const TopicPage = ({ params: { topics, subject } }) => {
     html:htmlTopic,
     css: cssTopic,
   };
-  // const isReact = subject === "react";
-  // const topicsData = isReact ? reactTopics : jsTopics;
+
   const topicsData = allTopics[subject] || [];
 
 
