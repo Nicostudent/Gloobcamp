@@ -4,6 +4,7 @@ import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
 import NavigationLink from "@/components/NavigationLink";
 import NavIcon from "./NavIcon";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,8 @@ const Navbar = () => {
   const renderLinks = () => (
     <>
       {pages.map((page) => (
-        <NavigationLink
-          bgIsdark
+        <NavigationLink  
+          className="text-white"        
           key={page.to}
           href={page.to}
           aria-label={page.label}
@@ -43,6 +44,7 @@ const Navbar = () => {
         </div>
         <div className="lg:flex items-center gap-6 hidden align-middle">
           <NavIcon pathname={"/"} image={"/user.svg"} />
+          <ThemeSwitcher />
         </div>
       </div>
       {isOpen && (

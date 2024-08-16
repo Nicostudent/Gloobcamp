@@ -46,9 +46,9 @@ const ContactUs = () => {
   });
 
   return (
-    <section className="md:flex md:justify-center md:items-center space-y-4 py-24 h-screen text-center">
-      <div className="mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+    <section className="space-y-4 py-20">
+      <div className="w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 pt-10">
           <div className="flex flex-col justify-center items-center my-10 px-10">
             <div className="w-full">
               <h4 className="mb-4 font-medium text-base text-center text-primary lg:text-left leading-6">
@@ -57,7 +57,7 @@ const ContactUs = () => {
               <h2 className="mb-3 font-manrope font-semibold text-4xl text-center text-primary">
                 Send Us A Message
               </h2>
-              <p className="mb-6 font-normal text-center text-lg text-tertiary leading-7">
+              <p className="mb-6 font-normal text-center text-lg text-tertiary dark:text-white leading-7">
                 Want to connect? Send us a message!
               </p>
             </div>
@@ -68,7 +68,7 @@ const ContactUs = () => {
               </h2>
             </div>
           </div>
-          <div className="flex items-center mb-10 lg:mb-0 px-10">
+          <div className="flex items-center mb-10 lg:mb-0">
             <div className="w-full">
               <form onSubmit={formik.handleSubmit}>
                 <div>
@@ -81,7 +81,7 @@ const ContactUs = () => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.name && formik.errors.name && (
-                    <div className="text-red-600">{formik.errors.name}</div>
+                    <div className="text-red-600 dark:text-red-700">{formik.errors.name}</div>
                   )}
                 </div>
                 <div>
@@ -95,21 +95,21 @@ const ContactUs = () => {
                     onBlur={formik.handleBlur}
                   />
                   {formik.touched.email && formik.errors.email && (
-                    <div className="text-red-600">{formik.errors.email}</div>
+                    <div className="text-red-600 dark:text-red-700">{formik.errors.email}</div>
                   )}
                 </div>
                 <div>
                   <textarea
                     id="text"
                     name="message"
-                    className="border-gray-200 shadow-sm mt-8 px-4 py-4 border rounded-xl w-full h-48 font-normal placeholder-text-400 text-gray-600 text-lg leading-7 resize-none focus:outline-none"
+                    className="border-gray-200 dark:bg-tertiary shadow-sm mt-8 px-4 py-4 border rounded-xl w-full h-48 font-normal placeholder-text-400 text-gray-600 text-lg dark:text-white leading-7 resize-none focus:outline-none"
                     placeholder="Message"
                     value={formik.values.message}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   ></textarea>
                   {formik.touched.message && formik.errors.message && (
-                    <div className="text-red-600">{formik.errors.message}</div>
+                    <div className="text-red-600 dark:text-red-700">{formik.errors.message}</div>
                   )}
                 </div>
                 <CustomButton

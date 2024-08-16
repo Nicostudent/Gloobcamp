@@ -20,13 +20,13 @@ const Breadcrumb = ({homeElement, separator, capitalizeLinks}) => {
 
     return (
         <div>
-            <ul className="flex flex-wrap pt-24 bg-transparent">
-                <li className="hover:underline mx-2 font-bold"><Link href={'/'} aria-label='back to homepage'>{homeElement}</Link></li>
+            <ul className="flex flex-wrap bg-transparent pt-24">
+                <li className="mx-2 font-bold dark:text-white hover:underline"><Link href={'/'} aria-label='back to homepage'>{homeElement}</Link></li>
                 {pathNames.length > 0 && separator}
             {
                 pathNames.map( (link, index) => {
                     let href = `/${pathNames.slice(0, index + 1).join('/')}`
-                    let itemClasses = paths === href ? "hover:underline mx-2 font-bold text-primary" : "hover:underline mx-2 font-bold"
+                    let itemClasses = paths === href ? "hover:underline mx-2 font-bold text-primary" : "hover:underline mx-2 font-bold dark:text-white"
                     let itemLink = formatLink(link)
                                         
                     return (
