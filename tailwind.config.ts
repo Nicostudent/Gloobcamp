@@ -17,18 +17,22 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#644CE5", 
+        primary: "#644CE5",
         secondary: "#24262F",
         tertiary: "#4E525A",
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    plugin(function ({addVariant}) {
-      addVariant('progress-unfilled', ['&::-webkit-progress-bar', '&']);
-      addVariant('progress-filled', ['&::-webkit-progress-value', '&::-moz-progress-bar', '&']);
-  })
+    require("@tailwindcss/typography"),
+    plugin(function ({ addVariant }) {
+      addVariant("progress-unfilled", ["&::-webkit-progress-bar", "&"]);
+      addVariant("progress-filled", [
+        "&::-webkit-progress-value",
+        "&::-moz-progress-bar",
+        "&",
+      ]);
+    }),
   ],
 };
 export default config;

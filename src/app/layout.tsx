@@ -7,7 +7,6 @@ import Footer from "@/components/Footer/Footer";
 import ClientLayout from "./ClientLayout";
 import { ThemeProvider } from "@/context/ThemeContext";
 
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -37,13 +36,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ `${poppins.className} dark:bg-secondary`}
-      >
+      <body className={`${poppins.className} dark:bg-secondary`}>
         <ThemeProvider>
           <Navbar />
           <ToastContainer />
           <ClientLayout />
-          <main className="mx-auto px-4 max-w-7xl">{children}</main>
+          <main className="mx-auto max-w-7xl px-4">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

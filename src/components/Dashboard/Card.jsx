@@ -2,7 +2,7 @@ import LabelWithCheckbox from "@/components/LabelWithCheckbox";
 import { LinkButton } from "../LinkButton";
 import Container from "@/components/Dashboard/Container";
 
-const Card = ({ handleCheckboxChange, topics, selectedTopics ,subject }) => {
+const Card = ({ handleCheckboxChange, topics, selectedTopics, subject }) => {
   return (
     <Container>
       {topics.map((topic) => (

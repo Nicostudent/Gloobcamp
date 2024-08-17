@@ -16,18 +16,18 @@ const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const topicsMapping = {
-      react: reacTopic,
-      javascript: jsTopics,
-      html: htmlTopic,
-      css: cssTopic,
-    };    
+  const topicsMapping = {
+    react: reacTopic,
+    javascript: jsTopics,
+    html: htmlTopic,
+    css: cssTopic,
+  };
 
   const topicsData = topicsMapping[subject] || [];
   const limitFilter = topicsData.length;
   const { progress, selectedTopics, handleCheckboxChange } = useProgress(
     limitFilter,
-    subject
+    subject,
   );
 
   const PROGRESS_MAX_VALUE = 100;
@@ -38,7 +38,7 @@ const Subject = ({ params: { subject } }) => {
   }
 
   const filteredTopics = topicsData.filter((topic) =>
-    topic.title.toLowerCase().includes(searchTopic.toLowerCase())
+    topic.title.toLowerCase().includes(searchTopic.toLowerCase()),
   );
 
   const handleInputClick = () => {
@@ -52,10 +52,10 @@ const Subject = ({ params: { subject } }) => {
       <Heading addClass="dark:text-white">{title}</Heading>
       <SubTitle addClass="dark:text-white">Content</SubTitle>
       <button
-        className="flex justify-start items-center md:gap-4 bg-primary p-2 rounded-md w-fit font-bold text-white"
+        className="flex w-fit items-center justify-start rounded-md bg-primary p-2 font-bold text-white md:gap-4"
         onClick={handleInputClick}
       >
-        <FaSearch className="w-5 h-5" />
+        <FaSearch className="h-5 w-5" />
         <p className="pr-2">Search...</p>
       </button>
       <SearchBar

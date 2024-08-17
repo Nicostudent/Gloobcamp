@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
@@ -34,21 +34,21 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="z-50 fixed bg-primary py-4 w-full">
-      <div className="flex justify-between items-center mx-auto px-6 max-w-7xl">
+    <nav className="fixed z-50 w-full bg-primary py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         <Logo />
-        <div className="flex items-center gap-6 md:hidden align-middle"></div>
-        <div className="md:flex items-center gap-8 hidden">{renderLinks()}</div>
+        <div className="flex items-center gap-6 align-middle md:hidden"></div>
+        <div className="hidden items-center gap-8 md:flex">{renderLinks()}</div>
         <div className="flex md:hidden">
           <ThemeSwitcher />
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
         </div>
-        <div className="md:flex items-center gap-6 hidden align-middle">
+        <div className="hidden items-center gap-6 align-middle md:flex">
           <ThemeSwitcher />
         </div>
       </div>
       {isOpen && (
-        <div className="flex flex-col justify-center items-center md:hidden">
+        <div className="flex flex-col items-center justify-center md:hidden">
           {renderLinks()}
         </div>
       )}

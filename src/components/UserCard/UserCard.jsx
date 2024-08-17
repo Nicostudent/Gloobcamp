@@ -7,17 +7,17 @@ import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 const UserCard = ({ picture, lastname, name, position, github, linkedin }) => {
   return (
     <div className="relative max-w-fit overflow-hidden">
-      <div className="relative group">
+      <div className="group relative">
         <UserImage source={picture} />
-        <div className="absolute inset-0 flex flex-row justify-center items-center gap-4 bg-primary opacity-0 group-hover:opacity-100 p-8 transition-opacity duration-300 ease-in-out">
+        <div className="absolute inset-0 flex flex-row items-center justify-center gap-4 bg-primary p-8 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
           <SocialMediaIconLink
             href={github}
-            icon={<IoLogoGithub className="w-10 h-10 text-white" />}
+            icon={<IoLogoGithub className="h-10 w-10 text-white" />}
             alt={`Github link to ${name} ${lastname} profile`}
           />
           <SocialMediaIconLink
             href={linkedin}
-            icon={<IoLogoLinkedin className="w-10 h-10 text-white" />}
+            icon={<IoLogoLinkedin className="h-10 w-10 text-white" />}
             alt={`Linkedin link to ${name} ${lastname} profile`}
           />
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const ProgressBar = ({ progress, initialProgress }) => {
   const [currentProgress, setCurrentProgress] = useState(initialProgress || 0);
@@ -8,11 +8,12 @@ const ProgressBar = ({ progress, initialProgress }) => {
   }, [progress]);
 
   return (
-    <article className="flex relative justify-center items-center">
+    <article className="relative flex items-center justify-center">
       {currentProgress > 0 && (
         <p
           style={{ left: `${currentProgress}%` }}
-          className="translate-x-2 z-10 absolute text-black text-center text-md">
+          className="text-md absolute z-10 translate-x-2 text-center text-black"
+        >
           {currentProgress.toFixed(0)}%
         </p>
       )}
@@ -20,7 +21,7 @@ const ProgressBar = ({ progress, initialProgress }) => {
         id="progress-bar"
         value={currentProgress}
         max="100"
-        className="z-0 relative progress-filled:bg-primary progress-unfilled:bg-slate-300 progress-filled:rounded-full progress-unfilled:rounded-full w-full h-6"
+        className="relative z-0 h-6 w-full progress-unfilled:rounded-full progress-unfilled:bg-slate-300 progress-filled:rounded-full progress-filled:bg-primary"
       ></progress>
     </article>
   );

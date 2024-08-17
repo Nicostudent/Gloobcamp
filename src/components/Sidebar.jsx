@@ -13,7 +13,6 @@ const Sidebar = ({ pathname }) => {
 
   let topics = [];
   let title = "";
-  
 
   if (pathname.startsWith("/content/javascript")) {
     topics = jsTopics.map((topic) => ({
@@ -27,13 +26,13 @@ const Sidebar = ({ pathname }) => {
       basePath: "/content/react",
     }));
     title = "React";
-  } else if(pathname.startsWith("/content/html")) {
+  } else if (pathname.startsWith("/content/html")) {
     topics = htmlTopic.map((topic) => ({
       ...topic,
       basePath: "/content/html",
     }));
     title = "HTML";
-  } else if(pathname.startsWith("/content/css")) {
+  } else if (pathname.startsWith("/content/css")) {
     topics = cssTopic.map((topic) => ({
       ...topic,
       basePath: "/content/css",
@@ -41,16 +40,15 @@ const Sidebar = ({ pathname }) => {
     title = "CSS";
   }
 
-  
   return (
     <>
       <button
-        className="top-4 left-4 z-20 fixed md:hidden bg-gray-800 p-2 rounded-md text-white"
+        className="fixed left-4 top-4 z-20 rounded-md bg-gray-800 p-2 text-white md:hidden"
         onClick={toggleSidebar}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
+          className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -66,19 +64,21 @@ const Sidebar = ({ pathname }) => {
 
       {isOpen && (
         <div
-          className="z-10 fixed inset-0 bg-black opacity-50"
+          className="fixed inset-0 z-10 bg-black opacity-50"
           onClick={closeSidebar}
         ></div>
       )}
 
       <aside
-        className={`top-16 fixed bg-gray-200 dark:bg-stone-900 w-64 overflow-y-auto z-20 transform ${
+        className={`fixed top-16 z-20 w-64 transform overflow-y-auto bg-gray-200 dark:bg-stone-900 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out md:translate-x-0`}
         style={{ height: "93%" }}
       >
         <nav className="flex flex-col p-4">
-          <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">{title}</h2>
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+            {title}
+          </h2>
           <TopicList topics={topics} pathname={pathname} />
         </nav>
       </aside>

@@ -18,12 +18,12 @@ const NotFound = () => {
   };
 
   return (
-    <main className="flex flex-col justify-center items-center h-screen">
+    <main className="flex h-screen flex-col items-center justify-center">
       <div className="relative">
-        <h1 className="font-extrabold text-9xl text-black tracking-widest">
+        <h1 className="text-9xl font-extrabold tracking-widest text-black">
           404
         </h1>
-        <div className="top-10 absolute bg-primary px-2 rounded w-full font-bold text-center text-xl tracking-widest rotate-12">
+        <div className="absolute top-10 w-full rotate-12 rounded bg-primary px-2 text-center text-xl font-bold tracking-widest">
           <p>Page Not Found</p>
         </div>
       </div>
@@ -32,7 +32,7 @@ const NotFound = () => {
       </p>
       <button
         onClick={handleGoHomeClick}
-        className="bg-primary hover:bg-blue-700 mt-5 px-4 py-2 border border-blue-700 rounded font-bold text-white"
+        className="mt-5 rounded border border-blue-700 bg-primary px-4 py-2 font-bold text-white hover:bg-blue-700"
         aria-label="go to home"
       >
         Go Home

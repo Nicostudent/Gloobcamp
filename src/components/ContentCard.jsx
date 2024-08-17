@@ -3,23 +3,24 @@ import { LinkButton } from "./LinkButton";
 import { FaReact } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 
-
 const ContentCard = ({ children, icon, subject }) => {
   const pathname = String(subject).toLowerCase();
   return (
-    <article className="flex flex-col flex-wrap dark:bg-stone-900 shadow-xl p-8 rounded-lg w-full max-w-xs">
-      <div className="flex flex-row gap-4 mb-5">
+    <article className="flex w-full max-w-xs flex-col flex-wrap rounded-lg p-8 shadow-xl dark:bg-stone-900">
+      <div className="mb-5 flex flex-row gap-4">
         {icon}
         <div>
           <p className="text-tertiary dark:text-primary">TUTORIAL</p>
-          <h3 className="font-bold text-2xl dark:text-white">
+          <h3 className="text-2xl font-bold dark:text-white">
             {subject}
             <span className="text-primary">.</span>
           </h3>
         </div>
       </div>
-      <div className="h-40 text-tertiary dark:text-white  text-sm ">{children}</div>
-      <div className="flex justify-end mt-8">
+      <div className="h-40 text-sm text-tertiary dark:text-white">
+        {children}
+      </div>
+      <div className="mt-8 flex justify-end">
         <LinkButton
           dark
           href={`/content/${pathname}`}

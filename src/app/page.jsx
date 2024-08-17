@@ -3,11 +3,11 @@ import { Heading, Paragraph } from "@/components/Writing";
 
 const App = () => {
   return (
-    <main className="flex flex-col justify-center items-center space-y-8 py-24 min-h-screen align-middle">
+    <main className="flex min-h-screen flex-col items-center justify-center space-y-8 py-24 align-middle">
       <div className="text-center">
         <Heading addClass="dark:text-white">Welcome to GloobCamp</Heading>
       </div>
-      <div className="px-4 max-w-2xl text-center">
+      <div className="max-w-2xl px-4 text-center">
         <Paragraph addClass="dark:text-white">
           Discover the essential knowledge every JavaScript developer should
           know. Progress through our expertly crafted topics and challenge
