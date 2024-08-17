@@ -3,7 +3,7 @@
     "lastname": "Arriazu",
     "name": "Jonathan",
     "position": "Frontend Developer",
-    "image": "/jonathan.webp",
+    "image": "/images/jonathan.webp",
     "linkedin": "https://www.linkedin.com/in/jonathanarriazu/",
     "github": "https://github.com/JonathanArriazu"
   },
@@ -11,7 +11,7 @@
     "lastname": "Cabezón",
     "name": "Carmelo",
     "position": "Frontend Developer",
-    "image": "/carmelo.webp",
+    "image": "/images/carmelo.webp",
     "linkedin": "https://www.linkedin.com/in/carmelo-cabezon-662a4923a/",
     "github": "https://github.com/PinchiDev"
   },
@@ -19,7 +19,7 @@
     "lastname": "Herrera",
     "name": "Nicolás",
     "position": "Frontend Developer",
-    "image": "/nicoherrera.webp",
+    "image": "/images/nicoherrera.webp",
     "linkedin": "https://www.linkedin.com/in/nicolasherrera95/",
     "github": "https://github.com/herreranicolas"
   },
@@ -27,7 +27,7 @@
     "lastname": "Rojo",
     "name": "Nicolas",
     "position": "Frontend Developer",
-    "image": "/nicorojo.webp",
+    "image": "/images/nicorojo.webp",
     "linkedin": "https://www.linkedin.com/in/nicolasbrojo/",
     "github": "https://github.com/nicostudent"
   },
@@ -35,7 +35,7 @@
     "lastname": "Rojas Guindan",
     "name": "Emanuel",
     "position": "Frontend Developer",
-    "image": "/emanuel.webp",
+    "image": "/images/emanuel.webp",
     "linkedin": "https://www.linkedin.com/in/emanuel-rojas-guindan/",
     "github": "https://github.com/EmaRG1"
   },
@@ -43,7 +43,7 @@
     "lastname": "Ruiz",
     "name": "Silvio",
     "position": "Frontend Developer",
-    "image": "/silvio.webp",
+    "image": "/images/silvio.webp",
     "linkedin": "https://www.linkedin.com/in/silvioruiz/",
     "github": "https://github.com/silvioruiz"
   },
@@ -51,7 +51,7 @@
     "lastname": "Valdez",
     "name": "Leonardo",
     "position": "Frontend Developer",
-    "image": "/leonardo.webp",
+    "image": "/images/leonardo.webp",
     "linkedin": "https://www.linkedin.com/in/leonardo-valdez",
     "github": "https://github.com/orbitado"
   },
@@ -59,7 +59,7 @@
     "lastname": "Zappulla",
     "name": "Gaston",
     "position": "Frontend Developer",
-    "image": "/gaston.webp",
+    "image": "/images/gaston.webp",
     "linkedin": "https://www.linkedin.com/in/gastonzappulla/",
     "github": "https://github.com/GastonZ"
   }
