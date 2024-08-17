@@ -2,12 +2,22 @@
 import ContentPage from "@/components/ContentPage.jsx";
 import jsTopics from "@/utils/js-topics-and-questions.json";
 import reactTopics from "@/utils/react-topics-and-questions.json";
+import htmlTopic from "@/utils/html-topics-and-questions.json";
+import cssTopic from "@/utils/css-topics-and-questions.json";
 import Quiz from "@/components/Quiz";
 import EndTopic from "@/components/EndTopic";
 
 const TopicPage = ({ params: { topics, subject } }) => {
-  const isReact = subject === "react";
-  const topicsData = isReact ? reactTopics : jsTopics;
+
+  const allTopics = {
+    react: reactTopics,
+    javascript: jsTopics,
+    html:htmlTopic,
+    css: cssTopic,
+  };
+
+  const topicsData = allTopics[subject] || [];
+
 
   const topicData = topicsData.find((t) => t.path === `/${topics}`);
 

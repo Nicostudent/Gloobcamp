@@ -5,10 +5,9 @@ export default function Layout({ children }) {
     <>
       <Breadcrumb
           homeElement={'Home'}
-          separator={<span> | </span>}
+          separator={<span className="dark:text-white"> | </span>}
           capitalizeLinks
       />
-      
       <main>{children}</main>
     </>
   )

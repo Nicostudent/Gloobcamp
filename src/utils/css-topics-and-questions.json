@@ -1,0 +1,706 @@
+[
+    {
+        "id": "1",
+        "title": "Introduction to CSS",
+        "content": "# Introduction to CSS\n\nCSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. It enables you to control the layout, colors, fonts, and overall appearance of web pages.\n\n## What is CSS?\n\nCSS stands for Cascading Style Sheets and is used to style and layout web pages. It allows you to apply styles to HTML elements, such as changing colors, fonts, spacing, and positioning.\n\n## Basic Syntax\n\nCSS is written in rulesets, which consist of a selector and a declaration block:\n\n```css\nselector {\n  property: value;\n}\n```\n\n- **Selector**: Targets the HTML element to be styled (e.g., `p`, `.class`, `#id`).\n- **Declaration Block**: Contains one or more declarations enclosed in curly braces `{}`.\n- **Declaration**: Consists of a property and a value separated by a colon `:`.\n\n### Example\n\n```css\nbody {\n  background-color: #f0f0f0;\n  color: #333;\n}\n\nh1 {\n  font-size: 2em;\n  text-align: center;\n}\n```\n\n## Applying CSS\n\nCSS can be applied to HTML documents in three ways:\n\n1. **Inline Styles**: Applied directly within an HTML element using the `style` attribute:\n\n   ```html\n   <p style=\"color: blue;\">This is a blue paragraph.</p>\n   ```\n\n2. **Internal Styles**: Defined within a `<style>` tag in the `<head>` section of the HTML document:\n\n   ```html\n   <head>\n     <style>\n       p {\n         color: green;\n       }\n     </style>\n   </head>\n   ```\n\n3. **External Styles**: Linked to an HTML document through an external CSS file using the `<link>` tag:\n\n   ```html\n   <head>\n     <link rel=\"stylesheet\" href=\"styles.css\">\n   </head>\n   ```\n\n   The `styles.css` file contains:\n\n   ```css\n   p {\n     color: red;\n   }\n   ```\n\n## Conclusion\n\nCSS is an essential tool for web development that enables you to create visually appealing and well-structured web pages. Understanding the basic syntax and methods of applying CSS is the first step in mastering web design and development.",
+        "questions": [
+          {
+            "question": "What does CSS stand for?",
+            "choices": [
+              "Cascading Style Sheets",
+              "Computer Style Sheets",
+              "Creative Style Sheets",
+              "Colorful Style Sheets"
+            ],
+            "correctAnswer": "Cascading Style Sheets"
+          },
+          {
+            "question": "What is the correct syntax for a CSS rule?",
+            "choices": [
+              "selector { property: value; }",
+              "selector { value: property; }",
+              "property: selector; value;",
+              "value: property { selector; }"
+            ],
+            "correctAnswer": "selector { property: value; }"
+          },
+          {
+            "question": "How can CSS be applied to an HTML document?",
+            "choices": [
+              "Inline styles, internal styles, external styles",
+              "JavaScript, HTML, external styles",
+              "Inline styles, external scripts, internal styles",
+              "Internal styles, JavaScript, HTML"
+            ],
+            "correctAnswer": "Inline styles, internal styles, external styles"
+          }
+        ],
+        "image": "/path/to/image1.jpg",
+        "path": "/introduction-to-css",
+        "next": "/css-selectors"
+      },
+      
+      {
+        "id": "2",
+        "title": "CSS Selectors",
+        "content": "# CSS Selectors\n\nCSS selectors are patterns used to select the elements you want to style. Understanding different types of selectors is essential for applying styles effectively and efficiently to HTML elements.\n\n## Basic Selectors\n\n### 1. Type Selector\n\nSelects all elements of a specified type (e.g., all `<p>` elements):\n\n```css\np {\n  color: blue;\n}\n```\n\n### 2. Class Selector\n\nSelects elements with a specific class attribute (e.g., all elements with `class=\"highlight\"`):\n\n```css\n.highlight {\n  background-color: yellow;\n}\n```\n\n### 3. ID Selector\n\nSelects an element with a specific `id` attribute (e.g., the element with `id=\"header\"`):\n\n```css\n#header {\n  font-size: 24px;\n}\n```\n\n## Attribute Selectors\n\n### 1. Basic Attribute Selector\n\nSelects elements with a specific attribute:\n\n```css\na[href] {\n  color: red;\n}\n```\n\n### 2. Attribute Value Selector\n\nSelects elements with a specific attribute value:\n\n```css\na[href=\"https://example.com\"] {\n  color: green;\n}\n```\n\n### 3. Attribute Contains Selector\n\nSelects elements with an attribute that contains a specific value:\n\n```css\na[href*=\"example\"] {\n  color: blue;\n}\n```\n\n## Combinators\n\n### 1. Descendant Selector\n\nSelects elements that are descendants of a specified element:\n\n```css\ndiv p {\n  color: gray;\n}\n```\n\n### 2. Child Selector\n\nSelects elements that are direct children of a specified element:\n\n```css\nul > li {\n  list-style-type: none;\n}\n```\n\n### 3. Adjacent Sibling Selector\n\nSelects an element that is immediately preceded by a specified element:\n\n```css\nh2 + p {\n  margin-top: 0;\n}\n```\n\n### 4. General Sibling Selector\n\nSelects all elements that are siblings of a specified element:\n\n```css\nh2 ~ p {\n  color: darkgray;\n}\n```\n\n## Pseudo-classes and Pseudo-elements\n\n### 1. Pseudo-class Selector\n\nSelects elements in a specific state (e.g., `:hover` for elements being hovered over):\n\n```css\na:hover {\n  color: orange;\n}\n```\n\n### 2. Pseudo-element Selector\n\nSelects specific parts of elements (e.g., `::before` and `::after`):\n\n```css\np::before {\n  content: \"Note: \";\n  font-weight: bold;\n}\n```\n\n## Conclusion\n\nCSS selectors are powerful tools for targeting specific elements and applying styles. Mastering different types of selectors allows for precise control over the appearance of web pages.",
+        "questions": [
+          {
+            "question": "Which selector targets all `<p>` elements?",
+            "choices": [
+              "`p`",
+              "`#p`",
+              "`p.highlight`",
+              "`p:hover`"
+            ],
+            "correctAnswer": "`p`"
+          },
+          {
+            "question": "How do you select an element with a specific class?",
+            "choices": [
+              "`class`",
+              "`#class`",
+              "`highlight`",
+              "` .highlight`"
+            ],
+            "correctAnswer": "` .highlight`"
+          },
+          {
+            "question": "Which selector targets an element with the `id` attribute `header`?",
+            "choices": [
+              "`#header`",
+              "`header`",
+              "`header.highlight`",
+              "`header:hover`"
+            ],
+            "correctAnswer": "`#header`"
+          },
+          {
+            "question": "How do you select all `<a>` elements with an `href` attribute containing the text `example`?",
+            "choices": [
+              "`a[href*=\"example\"]`",
+              "`a[href=\"example\"]`",
+              "`a[href^=\"example\"]`",
+              "`a[href$=\"example\"]`"
+            ],
+            "correctAnswer": "`a[href*=\"example\"]`"
+          }
+        ],
+        "image": "/path/to/image2.jpg",
+        "path": "/css-selectors",
+        "next": "/css-properties-and-values"
+      },
+      {
+        "id": "3",
+        "title": "CSS Properties and Values",
+        "content": "# CSS Properties and Values\n\nCSS properties define the style of elements, and values specify how those styles are applied. Understanding how to use various CSS properties and values is essential for effective web design.\n\n## Common CSS Properties\n\n### 1. Color\n\nSets the color of text or elements:\n\n```css\np {\n  color: blue;\n}\n```\n\n### 2. Background\n\nSets the background color or image of an element:\n\n```css\nbody {\n  background-color: #f0f0f0;\n}\n\ndiv {\n  background-image: url('background.jpg');\n  background-size: cover;\n}\n```\n\n### 3. Font\n\nDefines the font style, size, and weight:\n\n```css\nh1 {\n  font-family: 'Arial', sans-serif;\n  font-size: 2em;\n  font-weight: bold;\n}\n```\n\n### 4. Margin and Padding\n\nControls the space around and inside elements:\n\n```css\n.container {\n  margin: 20px;\n  padding: 10px;\n}\n```\n\n### 5. Border\n\nSets the border style, width, and color:\n\n```css\n.box {\n  border: 2px solid black;\n  border-radius: 5px;\n}\n```\n\n### 6. Width and Height\n\nDefines the size of elements:\n\n```css\nimg {\n  width: 100%;\n  height: auto;\n}\n```\n\n### 7. Display\n\nControls how elements are displayed:\n\n```css\n.inline {\n  display: inline;\n}\n\n.block {\n  display: block;\n}\n```\n\n### 8. Position\n\nSets the positioning of elements:\n\n```css\n.absolute {\n  position: absolute;\n  top: 10px;\n  left: 20px;\n}\n```\n\n## Values\n\n### 1. Keywords\n\nCommon keywords include `auto`, `inherit`, `initial`, `unset`:\n\n```css\np {\n  margin: auto;\n}\n```\n\n### 2. Length Units\n\nAbsolute units like `px`, `cm`, and relative units like `%`, `em`:\n\n```css\ndiv {\n  width: 50%;\n  height: 200px;\n}\n```\n\n### 3. Color Values\n\nHexadecimal, RGB, RGBA, HSL, HSLA:\n\n```css\nh1 {\n  color: #ff5733;\n}\n\np {\n  color: rgba(0, 0, 0, 0.5);\n}\n```\n\n### 4. Time Units\n\nUsed for animations and transitions:\n\n```css\n.transition {\n  transition: all 0.3s ease-in-out;\n}\n```\n\n## Conclusion\n\nCSS properties and values provide a wide range of options for styling web pages. Mastery of these properties allows for precise control over the appearance and layout of elements.",
+        "questions": [
+          {
+            "question": "Which property sets the color of text?",
+            "choices": [
+              "`background-color`",
+              "`font-size`",
+              "`color`",
+              "`border`"
+            ],
+            "correctAnswer": "`color`"
+          },
+          {
+            "question": "How do you set a background image in CSS?",
+            "choices": [
+              "`background-image: url('image.jpg');`",
+              "`background: url('image.jpg');`",
+              "`background-color: url('image.jpg');`",
+              "`background: image('image.jpg');`"
+            ],
+            "correctAnswer": "`background-image: url('image.jpg');`"
+          },
+          {
+            "question": "Which property controls the space inside an element?",
+            "choices": [
+              "`margin`",
+              "`border`",
+              "`padding`",
+              "`width`"
+            ],
+            "correctAnswer": "`padding`"
+          },
+          {
+            "question": "What value is used to specify the width of an element as a percentage of its parent container?",
+            "choices": [
+              "`em`",
+              "`px`",
+              "`%`",
+              "`pt`"
+            ],
+            "correctAnswer": "`%`"
+          }
+        ],
+        "image": "/path/to/image3.jpg",
+        "path": "/css-properties-and-values",
+        "next": "/css-box-model"
+      },
+      {
+        "id": "4",
+        "title": "CSS Box Model",
+        "content": "# CSS Box Model\n\nThe CSS Box Model is a fundamental concept in web design that describes how the size and spacing of elements are calculated. Understanding the box model is crucial for controlling the layout and design of web pages.\n\n## Components of the Box Model\n\n### 1. Content\n\nThe innermost part of the box, where the text and images appear:\n\n```css\n.box {\n  width: 200px;\n  height: 100px;\n}\n```\n\n### 2. Padding\n\nSpace between the content and the border. Padding is inside the element:\n\n```css\n.box {\n  padding: 10px;\n}\n```\n\n### 3. Border\n\nA border surrounding the padding (if any) and content:\n\n```css\n.box {\n  border: 2px solid black;\n}\n```\n\n### 4. Margin\n\nSpace outside the border, between the element and its surrounding elements:\n\n```css\n.box {\n  margin: 20px;\n}\n```\n\n## Box Sizing\n\n### 1. Content-Box\n\nThe default box-sizing model. Width and height apply only to the content area:\n\n```css\n.box {\n  box-sizing: content-box;\n}\n```\n\n### 2. Border-Box\n\nThe width and height include content, padding, and border:\n\n```css\n.box {\n  box-sizing: border-box;\n}\n```\n\n## Example\n\nHere's an example combining all parts of the box model:\n\n```css\n.box {\n  width: 300px;\n  padding: 20px;\n  border: 5px solid #333;\n  margin: 15px;\n}\n```\n\nIn this example, the total width of the element is calculated as:\n\n```\nTotal Width = Width + Left Padding + Right Padding + Left Border + Right Border + Left Margin + Right Margin\nTotal Width = 300px + 20px + 20px + 5px + 5px + 15px + 15px = 380px\n```\n\n## Conclusion\n\nThe CSS Box Model provides a way to visualize and control the layout and spacing of elements on a web page. Mastering it is essential for creating well-designed, responsive web layouts.",
+        "questions": [
+          {
+            "question": "What does the padding property affect in the box model?",
+            "choices": [
+              "`Space outside the border`",
+              "`Space between the border and content`",
+              "`Space inside the content`",
+              "`Space between the element and its surrounding elements`"
+            ],
+            "correctAnswer": "`Space between the border and content`"
+          },
+          {
+            "question": "Which box-sizing value includes padding and border in the width and height of an element?",
+            "choices": [
+              "`content-box`",
+              "`border-box`",
+              "`padding-box`",
+              "`margin-box`"
+            ],
+            "correctAnswer": "`border-box`"
+          },
+          {
+            "question": "How is the total width of an element calculated using the content-box model?",
+            "choices": [
+              "`Width + Padding + Border + Margin`",
+              "`Width + Padding`",
+              "`Width + Border`",
+              "`Width + Margin`"
+            ],
+            "correctAnswer": "`Width + Padding + Border + Margin`"
+          },
+          {
+            "question": "In the example `.box { width: 300px; padding: 20px; border: 5px solid #333; margin: 15px; }`, what is the total width of the element?",
+            "choices": [
+              "`300px`",
+              "`340px`",
+              "`380px`",
+              "`400px`"
+            ],
+            "correctAnswer": "`380px`"
+          }
+        ],
+        "image": "/path/to/image4.jpg",
+        "path": "/css-box-model",
+        "next": "/css-layout"
+      },
+      {
+        "id": "5",
+        "title": "CSS Layout",
+        "content": "# CSS Layout\n\nCSS Layout techniques are essential for creating structured and responsive web pages. Various layout models and properties allow you to control the arrangement and positioning of elements on a page.\n\n## Layout Techniques\n\n### 1. Normal Flow\n\nThe default layout where elements are positioned one after another:\n\n```css\np {\n  margin-bottom: 10px;\n}\n```\n\n### 2. Float\n\nFloats allow elements to be pushed to the left or right, enabling text to wrap around them:\n\n```css\nimg {\n  float: left;\n  margin-right: 10px;\n}\n```\n\n### 3. Flexbox\n\nA layout model that provides a more efficient way to distribute space and align items in a container:\n\n```css\n.container {\n  display: flex;\n  justify-content: space-between;\n}\n\n.item {\n  flex: 1;\n}\n```\n\n### 4. Grid\n\nA powerful layout system for creating complex, two-dimensional layouts:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 10px;\n}\n\n.item {\n  background-color: lightblue;\n}\n```\n\n### 5. Positioning\n\nControls the placement of elements using `position`, `top`, `right`, `bottom`, and `left`:\n\n```css\n.absolute {\n  position: absolute;\n  top: 10px;\n  left: 20px;\n}\n\n.relative {\n  position: relative;\n  top: 10px;\n  left: 20px;\n}\n```\n\n### 6. Z-Index\n\nManages the stacking order of positioned elements:\n\n```css\n.layer1 {\n  position: absolute;\n  z-index: 1;\n}\n\n.layer2 {\n  position: absolute;\n  z-index: 2;\n}\n```\n\n## Example\n\nHere’s an example of a layout using Flexbox and Grid:\n\n```css\n/* Flexbox Layout */\n.flex-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n\n.flex-item {\n  margin: 10px;\n}\n\n/* Grid Layout */\n.grid-container {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 20px;\n}\n\n.grid-item {\n  background-color: lightcoral;\n}\n```\n\n## Conclusion\n\nCSS layout techniques are vital for creating modern, responsive designs. Mastery of these methods allows for flexible and efficient control over the positioning and alignment of elements on a web page.",
+        "questions": [
+          {
+            "question": "Which layout technique allows for items to be aligned horizontally and vertically in a container?",
+            "choices": [
+              "`Float`",
+              "`Flexbox`",
+              "`Grid`",
+              "`Positioning`"
+            ],
+            "correctAnswer": "`Flexbox`"
+          },
+          {
+            "question": "What does the `display: grid;` property do?",
+            "choices": [
+              "`Enables the Grid layout model`",
+              "`Enables the Flexbox layout model`",
+              "`Sets an element to float`",
+              "`Positions an element absolutely`"
+            ],
+            "correctAnswer": "`Enables the Grid layout model`"
+          },
+          {
+            "question": "How can you control the stacking order of positioned elements?",
+            "choices": [
+              "`z-index`",
+              "`float`",
+              "`position`",
+              "`margin`"
+            ],
+            "correctAnswer": "`z-index`"
+          },
+          {
+            "question": "Which property would you use to center items horizontally within a Flexbox container?",
+            "choices": [
+              "`align-items`",
+              "`justify-content`",
+              "`flex-direction`",
+              "`flex-wrap`"
+            ],
+            "correctAnswer": "`justify-content`"
+          }
+        ],
+        "image": "/path/to/image5.jpg",
+        "path": "/css-layout",
+        "next": "/css-responsive-design"
+      },
+      {
+        "id": "6",
+        "title": "CSS Responsive Design",
+        "content": "# CSS Responsive Design\n\nResponsive design ensures that web pages look good on all devices, from desktops to mobile phones. CSS provides various techniques to create flexible and adaptive layouts that adjust to different screen sizes and orientations.\n\n## Media Queries\n\nMedia queries allow you to apply different styles based on the device’s characteristics, such as screen width, height, and orientation:\n\n```css\n@media (max-width: 768px) {\n  .container {\n    flex-direction: column;\n  }\n}\n```\n\n### 1. Breakpoints\n\nCommon breakpoints are used to define when styles should change based on screen size:\n\n```css\n@media (min-width: 576px) {\n  .container {\n    padding: 15px;\n  }\n}\n\n@media (min-width: 768px) {\n  .container {\n    padding: 30px;\n  }\n}\n```\n\n## Flexible Layouts\n\n### 1. Fluid Grid Layouts\n\nUse percentages instead of fixed units for widths to create fluid layouts:\n\n```css\n.container {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n```\n\n### 2. Responsive Units\n\nResponsive units like `vw`, `vh`, `em`, and `%` adjust element sizes relative to the viewport or parent element:\n\n```css\nh1 {\n  font-size: 5vw;\n}\n```\n\n## Responsive Images\n\nEnsure images scale properly on different devices by using responsive image techniques:\n\n### 1. Max Width\n\nSet the maximum width of images to 100% to ensure they fit within their containers:\n\n```css\nimg {\n  max-width: 100%;\n  height: auto;\n}\n```\n\n### 2. Picture Element\n\nUse the `<picture>` element to serve different images based on screen size or resolution:\n\n```html\n<picture>\n  <source srcset=\"small.jpg\" media=\"(max-width: 600px)\">\n  <source srcset=\"large.jpg\" media=\"(min-width: 601px)\">\n  <img src=\"default.jpg\" alt=\"Responsive image\">\n</picture>\n```\n\n## Mobile First Design\n\nDesign for smaller screens first and use media queries to adjust for larger screens:\n\n```css\nbody {\n  font-size: 14px;\n}\n\n@media (min-width: 768px) {\n  body {\n    font-size: 16px;\n  }\n}\n```\n\n## Conclusion\n\nCSS responsive design techniques are essential for creating web pages that adapt to various devices and screen sizes. Implementing these techniques ensures a consistent and user-friendly experience across all devices.",
+        "questions": [
+          {
+            "question": "What is the purpose of media queries in responsive design?",
+            "choices": [
+              "`To apply styles based on device characteristics`",
+              "`To set the background color of elements`",
+              "`To define font sizes in pixels`",
+              "`To align text within containers`"
+            ],
+            "correctAnswer": "`To apply styles based on device characteristics`"
+          },
+          {
+            "question": "How do you make images responsive in CSS?",
+            "choices": [
+              "`Set max-width to 100% and height to auto`",
+              "`Set width to 100px and height to 100px`",
+              "`Use fixed dimensions for all images`",
+              "`Apply a background image using CSS`"
+            ],
+            "correctAnswer": "`Set max-width to 100% and height to auto`"
+          },
+          {
+            "question": "What is the benefit of using mobile-first design?",
+            "choices": [
+              "`Designing for smaller screens first ensures better performance and adaptability`",
+              "`Designing for larger screens first saves time`",
+              "`It allows for more complex layouts on small screens`",
+              "`It limits the use of media queries`"
+            ],
+            "correctAnswer": "`Designing for smaller screens first ensures better performance and adaptability`"
+          },
+          {
+            "question": "What is a common breakpoint for tablets in responsive design?",
+            "choices": [
+              "`768px`",
+              "`1024px`",
+              "`480px`",
+              "`1200px`"
+            ],
+            "correctAnswer": "`768px`"
+          }
+        ],
+        "image": "/path/to/image6.jpg",
+        "path": "/css-responsive-design",
+        "next": "/css-transitions-and-animations"
+      },
+      {
+        "id": "7",
+        "title": "CSS Transitions and Animations",
+        "content": "# CSS Transitions and Animations\n\nCSS Transitions and Animations are used to create dynamic effects and improve user interaction on web pages. They allow you to animate changes in CSS properties over time, providing a more engaging user experience.\n\n## CSS Transitions\n\nTransitions allow you to change property values smoothly over a given duration:\n\n### 1. Basic Transition\n\nApply a transition to an element when its state changes:\n\n```css\n.box {\n  width: 100px;\n  height: 100px;\n  background-color: blue;\n  transition: background-color 0.5s ease;\n}\n\n.box:hover {\n  background-color: red;\n}\n```\n\n### 2. Transition Properties\n\nDefine which properties to animate, the duration, and the timing function:\n\n```css\n.box {\n  transition: all 0.3s ease-in-out;\n}\n```\n\n## CSS Animations\n\nAnimations allow you to create more complex sequences of changes using keyframes:\n\n### 1. Keyframes\n\nDefine the stages of the animation using `@keyframes`:\n\n```css\n@keyframes example {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n\n.box {\n  animation: example 2s ease-in-out;\n}\n```\n\n### 2. Animation Properties\n\nControl the duration, timing function, and iteration of animations:\n\n```css\n.box {\n  animation: example 2s infinite;\n}\n```\n\n### 3. Animation Shorthand\n\nUse shorthand properties to set multiple animation properties at once:\n\n```css\n.box {\n  animation: example 2s ease-in-out 1s infinite;\n}\n```\n\n## Example\n\nHere's an example combining both transitions and animations:\n\n```css\n/* Transition Example */\n.box {\n  width: 100px;\n  height: 100px;\n  background-color: blue;\n  transition: background-color 0.5s ease;\n}\n\n.box:hover {\n  background-color: red;\n}\n\n/* Animation Example */\n@keyframes slide {\n  from {\n    transform: translateX(-100%);\n  }\n  to {\n    transform: translateX(0);\n  }\n}\n\n.box {\n  animation: slide 1s ease-out;\n}\n```\n\n## Conclusion\n\nCSS Transitions and Animations enhance the user experience by adding smooth, visually appealing effects. Mastering these techniques allows you to create engaging and interactive web designs.",
+        "questions": [
+          {
+            "question": "What property is used to specify the duration of a CSS transition?",
+            "choices": [
+              "`transition-duration`",
+              "`animation-duration`",
+              "`transition-time`",
+              "`animation-time`"
+            ],
+            "correctAnswer": "`transition-duration`"
+          },
+          {
+            "question": "How do you define the stages of a CSS animation?",
+            "choices": [
+              "`Using @keyframes`",
+              "`Using @transitions`",
+              "`Using @animations`",
+              "`Using @frames`"
+            ],
+            "correctAnswer": "`Using @keyframes`"
+          },
+          {
+            "question": "Which property controls the speed curve of a CSS transition or animation?",
+            "choices": [
+              "`transition-timing-function`",
+              "`animation-speed`",
+              "`transition-speed`",
+              "`animation-timing`"
+            ],
+            "correctAnswer": "`transition-timing-function`"
+          },
+          {
+            "question": "What does the `animation: example 2s ease-in-out 1s infinite;` shorthand property specify?",
+            "choices": [
+              "`Animation name, duration, timing function, delay, and iteration count`",
+              "`Animation duration, delay, and iteration count`",
+              "`Animation name, duration, and timing function`",
+              "`Animation name and iteration count`"
+            ],
+            "correctAnswer": "`Animation name, duration, timing function, delay, and iteration count`"
+          }
+        ],
+        "image": "/path/to/image7.jpg",
+        "path": "/css-transitions-and-animations",
+        "next": "/css-flexbox"
+      },
+      {
+        "id": "8",
+        "title": "CSS Flexbox",
+        "content": "# CSS Flexbox\n\nFlexbox, or the Flexible Box Layout, is a CSS layout module designed to lay out, align, and distribute space among items in a container. It provides a more efficient way to handle complex layouts compared to traditional models.\n\n## Flex Container\n\nA flex container is an element with `display: flex;` or `display: inline-flex;`:\n\n```css\n.container {\n  display: flex;\n}\n```\n\n### 1. Flex Direction\n\nDefines the direction flex items are placed in the flex container:\n\n```css\n.container {\n  flex-direction: row; /* or column */\n}\n```\n\n### 2. Flex Wrap\n\nSpecifies whether flex items should wrap onto multiple lines:\n\n```css\n.container {\n  flex-wrap: nowrap; /* or wrap, wrap-reverse */\n}\n```\n\n### 3. Flex Flow\n\nA shorthand for `flex-direction` and `flex-wrap`:\n\n```css\n.container {\n  flex-flow: row wrap;\n}\n```\n\n### 4. Justify Content\n\nAligns flex items along the main axis:\n\n```css\n.container {\n  justify-content: center; /* or flex-start, flex-end, space-between, space-around */\n}\n```\n\n### 5. Align Items\n\nAligns flex items along the cross axis:\n\n```css\n.container {\n  align-items: stretch; /* or flex-start, flex-end, center, baseline */\n}\n```\n\n### 6. Align Content\n\nAligns flex lines within the flex container:\n\n```css\n.container {\n  align-content: center; /* or flex-start, flex-end, space-between, space-around */\n}\n```\n\n### 7. Align Self\n\nAllows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items:\n\n```css\n.item {\n  align-self: center; /* or auto, flex-start, flex-end, baseline, stretch */\n}\n```\n\n## Example\n\nHere’s an example of a basic flexbox layout:\n\n```css\n.container {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.item {\n  flex: 1;\n}\n```\n\n## Conclusion\n\nCSS Flexbox simplifies the process of creating flexible and responsive layouts. Understanding how to use flex properties will allow you to build complex layouts more efficiently and effectively.",
+        "questions": [
+          {
+            "question": "Which property defines the direction in which flex items are placed in a flex container?",
+            "choices": [
+              "`flex-direction`",
+              "`flex-wrap`",
+              "`justify-content`",
+              "`align-items`"
+            ],
+            "correctAnswer": "`flex-direction`"
+          },
+          {
+            "question": "What is the purpose of the `justify-content` property in Flexbox?",
+            "choices": [
+              "`Aligns items along the main axis`",
+              "`Aligns items along the cross axis`",
+              "`Defines the wrapping behavior of flex items`",
+              "`Specifies the direction of the flex container`"
+            ],
+            "correctAnswer": "`Aligns items along the main axis`"
+          },
+          {
+            "question": "Which property allows individual flex items to override the default alignment set by `align-items`?",
+            "choices": [
+              "`align-self`",
+              "`align-items`",
+              "`justify-content`",
+              "`flex-wrap`"
+            ],
+            "correctAnswer": "`align-self`"
+          },
+          {
+            "question": "What is the default value of the `flex-wrap` property?",
+            "choices": [
+              "`nowrap`",
+              "`wrap`",
+              "`wrap-reverse`",
+              "`auto`"
+            ],
+            "correctAnswer": "`nowrap`"
+          }
+        ],
+        "image": "/path/to/image8.jpg",
+        "path": "/css-flexbox",
+        "next": "/css-grid"
+      },
+      {
+        "id": "9",
+        "title": "CSS Grid",
+        "content": "# CSS Grid\n\nCSS Grid Layout is a powerful layout system for creating complex grid-based designs. It allows you to create two-dimensional layouts with rows and columns, giving you more control over positioning and alignment compared to other layout methods.\n\n## Basic Grid Setup\n\nDefine a grid container and specify the number of rows and columns:\n\n### 1. Grid Container\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(2, auto);\n}\n```\n\n### 2. Grid Items\n\nPlace items in the grid by specifying their position in the grid:\n\n```css\n.item {\n  grid-column: span 2;\n  grid-row: 1 / 3;\n}\n```\n\n## Grid Template Areas\n\nDefine named grid areas for easier layout management:\n\n```css\n.container {\n  display: grid;\n  grid-template-areas:\n    \"header header header\"\n    \"main main sidebar\"\n    \"footer footer footer\";\n}\n\n.header { grid-area: header; }\n.main { grid-area: main; }\n.sidebar { grid-area: sidebar; }\n.footer { grid-area: footer; }\n```\n\n## Grid Gap\n\nSpecify gaps between rows and columns:\n\n```css\n.container {\n  display: grid;\n  grid-gap: 20px;\n}\n```\n\n## Auto Placement\n\nUse auto-placement for dynamically placing items in the grid:\n\n### 1. Auto Flow\n\n```css\n.container {\n  display: grid;\n  grid-auto-flow: row; /* or column, dense */\n}\n```\n\n## Example\n\nHere’s a simple example of a grid layout:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: 1fr 2fr 1fr;\n  grid-template-rows: auto;\n  grid-gap: 10px;\n}\n\n.header {\n  grid-column: 1 / 4;\n}\n\n.main {\n  grid-column: 1 / 3;\n}\n\n.sidebar {\n  grid-column: 3 / 4;\n}\n\n.footer {\n  grid-column: 1 / 4;\n}\n```\n\n## Conclusion\n\nCSS Grid Layout provides a robust framework for creating complex layouts with precise control over placement and alignment. Understanding how to use grid properties effectively can enhance your ability to design responsive and visually appealing web pages.",
+        "questions": [
+          {
+            "question": "Which property defines the number of rows and columns in a CSS Grid?",
+            "choices": [
+              "`grid-template-columns` and `grid-template-rows`",
+              "`grid-rows` and `grid-columns`",
+              "`grid-template`",
+              "`grid-areas`"
+            ],
+            "correctAnswer": "`grid-template-columns` and `grid-template-rows`"
+          },
+          {
+            "question": "How do you create named grid areas for layout management?",
+            "choices": [
+              "`Using grid-template-areas`",
+              "`Using grid-template-columns`",
+              "`Using grid-template-rows`",
+              "`Using grid-area`"
+            ],
+            "correctAnswer": "`Using grid-template-areas`"
+          },
+          {
+            "question": "What does the `grid-auto-flow` property control?",
+            "choices": [
+              "`How items are placed in the grid when there are no explicit positions`",
+              "`The alignment of items within the grid`",
+              "`The number of columns and rows in the grid`",
+              "`The gaps between grid items`"
+            ],
+            "correctAnswer": "`How items are placed in the grid when there are no explicit positions`"
+          },
+          {
+            "question": "Which property would you use to specify the gap between grid items?",
+            "choices": [
+              "`grid-gap`",
+              "`gap`",
+              "`grid-spacing`",
+              "`column-gap` and `row-gap`"
+            ],
+            "correctAnswer": "`grid-gap`"
+          }
+        ],
+        "image": "/path/to/image9.jpg",
+        "path": "/css-grid",
+        "next": "/responsive-design"
+      },
+      {
+        "id": "10",
+        "title": "Responsive Design",
+        "content": "# Responsive Design\n\nResponsive Design is an approach to web design that ensures web pages look well on a variety of devices and screen sizes. The goal is to create flexible and adaptive layouts that enhance the user experience across different devices, from desktops to smartphones.\n\n## Media Queries\n\nMedia queries allow you to apply different styles based on the device’s characteristics, such as screen width or resolution:\n\n### 1. Basic Media Query\n\n```css\n@media (min-width: 768px) {\n  .container {\n    width: 750px;\n  }\n}\n```\n\n### 2. Multiple Conditions\n\nCombine multiple conditions to target specific devices:\n\n```css\n@media (min-width: 768px) and (orientation: landscape) {\n  .container {\n    width: 1000px;\n  }\n}\n```\n\n## Fluid Layouts\n\nFluid layouts use relative units like percentages instead of fixed units like pixels to create adaptable designs:\n\n### 1. Fluid Grid\n\n```css\n.container {\n  width: 100%;\n  padding: 10%;\n}\n```\n\n### 2. Flexible Images\n\nEnsure images scale with the container:\n\n```css\nimg {\n  max-width: 100%;\n  height: auto;\n}\n```\n\n## Mobile-First Design\n\nDesign for the smallest screen size first and then use media queries to adapt to larger screens:\n\n### 1. Mobile-First Styles\n\n```css\n.container {\n  font-size: 14px;\n}\n\n@media (min-width: 768px) {\n  .container {\n    font-size: 16px;\n  }\n}\n```\n\n## Example\n\nHere’s a basic example of a responsive layout:\n\n```css\n.container {\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n}\n\n@media (min-width: 768px) {\n  .container {\n    flex-direction: row;\n  }\n}\n```\n\n## Conclusion\n\nResponsive Design ensures that web pages are usable and visually appealing across a wide range of devices. By using media queries, fluid layouts, and mobile-first design principles, you can create adaptable and flexible web experiences.",
+        "questions": [
+          {
+            "question": "What is the purpose of media queries in responsive design?",
+            "choices": [
+              "To apply different styles based on device characteristics",
+              "To make images responsive",
+              "To define a fixed layout for all devices",
+              "To adjust font sizes only"
+            ],
+            "correctAnswer": "To apply different styles based on device characteristics"
+          },
+          {
+            "question": "How can you ensure images scale with their container?",
+            "choices": [
+              "Using `max-width: 100%;` and `height: auto;`",
+              "Setting a fixed width for all images",
+              "Using `width: 100%;` and `height: 100%;`",
+              "Applying a fixed height to images"
+            ],
+            "correctAnswer": "Using `max-width: 100%;` and `height: auto;`"
+          },
+          {
+            "question": "What is mobile-first design?",
+            "choices": [
+              "Designing for the smallest screen size first and then adapting for larger screens",
+              "Designing for the largest screen size first and then adapting for smaller screens",
+              "Using mobile-specific styles only",
+              "Designing separate layouts for mobile and desktop"
+            ],
+            "correctAnswer": "Designing for the smallest screen size first and then adapting for larger screens"
+          },
+          {
+            "question": "What is a fluid layout?",
+            "choices": [
+              "A layout that uses relative units like percentages",
+              "A layout with fixed dimensions",
+              "A layout that only adapts for mobile screens",
+              "A layout with static positioning"
+            ],
+            "correctAnswer": "A layout that uses relative units like percentages"
+          }
+        ],
+        "image": "/path/to/image11.jpg",
+        "path": "/responsive-design",
+        "next": "/css-transitions"
+      },
+      {
+        "id": "11",
+        "title": "CSS Transitions",
+        "content": "# CSS Transitions\n\nCSS Transitions provide a way to make changes in CSS property values occur gradually, creating a smooth animation effect. Transitions enable you to enhance user interactions by adding visual effects to state changes such as hover or focus.\n\n## Basic Transition Syntax\n\nDefine the transition properties on an element to specify which properties will animate and how they will transition:\n\n### 1. Transition Property\n\nSpecify which CSS properties should be animated:\n\n```css\n.element {\n  transition: background-color 0.3s ease;\n}\n```\n\n### 2. Transition Duration\n\nControl how long the transition takes:\n\n```css\n.element {\n  transition-duration: 0.3s;\n}\n```\n\n### 3. Transition Timing Function\n\nSet the speed curve of the transition:\n\n```css\n.element {\n  transition-timing-function: ease-in-out;\n}\n```\n\n### 4. Transition Delay\n\nAdd a delay before the transition starts:\n\n```css\n.element {\n  transition-delay: 0.2s;\n}\n```\n\n## Example\n\nHere’s an example of a transition effect applied to a button on hover:\n\n```css\n.button {\n  background-color: #3498db;\n  color: white;\n  padding: 10px 20px;\n  border: none;\n  cursor: pointer;\n  transition: background-color 0.3s ease, transform 0.3s ease;\n}\n\n.button:hover {\n  background-color: #2980b9;\n  transform: scale(1.1);\n}\n```\n\n## Multiple Transitions\n\nYou can specify multiple properties to transition:\n\n```css\n.element {\n  transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;\n}\n```\n\n## Conclusion\n\nCSS Transitions are a powerful tool for enhancing user interfaces with smooth animations. By defining which properties to animate, how long the transitions should take, and the timing functions, you can create engaging and interactive web designs.",
+        "questions": [
+          {
+            "question": "What does the `transition` property in CSS do?",
+            "choices": [
+              "Specifies the properties to animate and their timing",
+              "Sets the animation duration",
+              "Defines the animation delay",
+              "Sets the animation direction"
+            ],
+            "correctAnswer": "Specifies the properties to animate and their timing"
+          },
+          {
+            "question": "How can you control the duration of a CSS transition?",
+            "choices": [
+              "`transition-duration` property",
+              "`transition-delay` property",
+              "`transition-timing-function` property",
+              "`animation-duration` property"
+            ],
+            "correctAnswer": "`transition-duration` property"
+          },
+          {
+            "question": "What property defines the speed curve of the transition?",
+            "choices": [
+              "`transition-timing-function`",
+              "`transition-duration`",
+              "`transition-delay`",
+              "`transition-property`"
+            ],
+            "correctAnswer": "`transition-timing-function`"
+          },
+          {
+            "question": "How do you apply a delay before a transition starts?",
+            "choices": [
+              "`transition-delay`",
+              "`transition-duration`",
+              "`transition-timing-function`",
+              "`animation-delay`"
+            ],
+            "correctAnswer": "`transition-delay`"
+          }
+        ],
+        "image": "/path/to/image12.jpg",
+        "path": "/css-transitions",
+        "next": "/css-animation"
+      },
+      {
+        "id": "12",
+        "title": "CSS Animations",
+        "content": "# CSS Animations\n\nCSS Animations allow you to create keyframe-based animations that make elements change their style over time. Animations provide a more complex and versatile way to animate elements compared to transitions, enabling the creation of intricate visual effects.\n\n## Keyframe Animation\n\nDefine animations using `@keyframes` to specify the intermediate steps of the animation:\n\n### 1. Defining Keyframes\n\nCreate keyframes to describe the animation's progress:\n\n```css\n@keyframes slideIn {\n  from {\n    transform: translateX(-100%);\n    opacity: 0;\n  }\n  to {\n    transform: translateX(0);\n    opacity: 1;\n  }\n}\n```\n\n### 2. Applying the Animation\n\nUse the `animation` property to apply the keyframes to an element:\n\n```css\n.element {\n  animation: slideIn 1s ease-out;\n}\n```\n\n## Animation Properties\n\nControl various aspects of the animation with the following properties:\n\n### 1. `animation-name`\n\nSpecifies the name of the keyframes animation:\n\n```css\n.element {\n  animation-name: slideIn;\n}\n```\n\n### 2. `animation-duration`\n\nDefines how long the animation should last:\n\n```css\n.element {\n  animation-duration: 1s;\n}\n```\n\n### 3. `animation-timing-function`\n\nSets the speed curve of the animation:\n\n```css\n.element {\n  animation-timing-function: ease-in;\n}\n```\n\n### 4. `animation-delay`\n\nAdds a delay before the animation starts:\n\n```css\n.element {\n  animation-delay: 0.5s;\n}\n```\n\n### 5. `animation-iteration-count`\n\nDetermines how many times the animation should repeat:\n\n```css\n.element {\n  animation-iteration-count: infinite;\n}\n```\n\n### 6. `animation-direction`\n\nSpecifies the direction of the animation:\n\n```css\n.element {\n  animation-direction: alternate;\n}\n```\n\n## Example\n\nHere’s an example of an animation applied to a box:\n\n```css\n@keyframes bounce {\n  0% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-30px);\n  }\n  100% {\n    transform: translateY(0);\n  }\n}\n\n.box {\n  width: 100px;\n  height: 100px;\n  background-color: #3498db;\n  animation: bounce 2s infinite;\n}\n```\n\n## Conclusion\n\nCSS Animations offer a powerful way to create complex visual effects and dynamic user experiences. By defining keyframes and using animation properties, you can add sophisticated animations to your web elements.",
+        "questions": [
+          {
+            "question": "What is the purpose of the `@keyframes` rule in CSS animations?",
+            "choices": [
+              "To define the intermediate steps of an animation",
+              "To apply animations to elements",
+              "To control the duration of an animation",
+              "To set the timing function of an animation"
+            ],
+            "correctAnswer": "To define the intermediate steps of an animation"
+          },
+          {
+            "question": "Which property specifies the name of the keyframes animation?",
+            "choices": [
+              "`animation-name`",
+              "`animation-duration`",
+              "`animation-delay`",
+              "`animation-direction`"
+            ],
+            "correctAnswer": "`animation-name`"
+          },
+          {
+            "question": "How do you control the duration of a CSS animation?",
+            "choices": [
+              "`animation-duration` property",
+              "`animation-delay` property",
+              "`animation-name` property",
+              "`animation-timing-function` property"
+            ],
+            "correctAnswer": "`animation-duration` property"
+          },
+          {
+            "question": "What does the `animation-iteration-count` property do?",
+            "choices": [
+              "Defines how many times the animation should repeat",
+              "Sets the duration of the animation",
+              "Specifies the direction of the animation",
+              "Adds a delay before the animation starts"
+            ],
+            "correctAnswer": "Defines how many times the animation should repeat"
+          }
+        ],
+        "image": "/path/to/image13.jpg",
+        "path": "/css-animations",
+        "next": "/css-pseudo-classes"
+      },
+      {
+        "id": "13",
+        "title": "CSS Pseudo-classes",
+        "content": "# CSS Pseudo-classes\n\nCSS Pseudo-classes are used to define the special states of an element. They allow you to apply styles to elements based on their state, position, or other factors that cannot be targeted with simple selectors.\n\n## Common Pseudo-classes\n\n### 1. `:hover`\n\nApplies styles when the user hovers over an element:\n\n```css\nbutton:hover {\n  background-color: #2980b9;\n}\n```\n\n### 2. `:focus`\n\nApplies styles when an element gains focus (e.g., an input field):\n\n```css\ninput:focus {\n  border-color: #3498db;\n}\n```\n\n### 3. `:active`\n\nApplies styles while an element is being activated (e.g., a button being pressed):\n\n```css\nbutton:active {\n  background-color: #1d6f9b;\n}\n```\n\n### 4. `:visited`\n\nApplies styles to links that have been visited:\n\n```css\na:visited {\n  color: purple;\n}\n```\n\n### 5. `:nth-child(n)`\n\nApplies styles to elements based on their position in a parent:\n\n```css\nli:nth-child(odd) {\n  background-color: #f2f2f2;\n}\n```\n\n### 6. `:first-child`\n\nApplies styles to the first child of a parent:\n\n```css\nul li:first-child {\n  font-weight: bold;\n}\n```\n\n### 7. `:last-child`\n\nApplies styles to the last child of a parent:\n\n```css\nul li:last-child {\n  font-style: italic;\n}\n```\n\n### 8. `:not(selector)`\n\nApplies styles to elements that do not match the specified selector:\n\n```css\np:not(.special) {\n  color: gray;\n}\n```\n\n## Example\n\nHere’s an example of a navigation menu with pseudo-classes:\n\n```css\nnav a {\n  text-decoration: none;\n  color: #3498db;\n}\n\nnav a:hover {\n  color: #2980b9;\n}\n\nnav a:active {\n  color: #1d6f9b;\n}\n```\n\n## Conclusion\n\nCSS Pseudo-classes offer a powerful way to target elements based on their state or position, enabling you to create dynamic and interactive styles without needing JavaScript.",
+        "questions": [
+          {
+            "question": "What does the `:hover` pseudo-class do?",
+            "choices": [
+              "Applies styles when the user hovers over an element",
+              "Styles an element when it is focused",
+              "Applies styles to visited links",
+              "Targets elements based on their position in a parent"
+            ],
+            "correctAnswer": "Applies styles when the user hovers over an element"
+          },
+          {
+            "question": "How can you apply styles to an element when it gains focus?",
+            "choices": [
+              "Using the `:focus` pseudo-class",
+              "Using the `:hover` pseudo-class",
+              "Using the `:active` pseudo-class",
+              "Using the `:nth-child(n)` pseudo-class"
+            ],
+            "correctAnswer": "Using the `:focus` pseudo-class"
+          },
+          {
+            "question": "What does the `:nth-child(n)` pseudo-class do?",
+            "choices": [
+              "Applies styles to elements based on their position in a parent",
+              "Targets the first child of a parent",
+              "Styles links that have been visited",
+              "Applies styles when an element is being activated"
+            ],
+            "correctAnswer": "Applies styles to elements based on their position in a parent"
+          },
+          {
+            "question": "Which pseudo-class applies styles to elements that do not match a specific selector?",
+            "choices": [
+              "`:not(selector)`",
+              "` :first-child`",
+              "`:last-child`",
+              "` :visited`"
+            ],
+            "correctAnswer": "`:not(selector)`"
+          }
+        ],
+        "image": "/path/to/image14.jpg",
+        "path": "/css-pseudo-classes",
+        "next": "/css-variables"
+      },
+      {
+        "id": "14",
+        "title": "CSS Variables",
+        "content": "# CSS Variables\n\nCSS Variables, also known as Custom Properties, allow you to store values in a variable that can be reused throughout your CSS. They enable you to manage and maintain styles more efficiently by defining reusable values in one place.\n\n## Defining CSS Variables\n\nCSS Variables are defined using the `--` prefix and can be set within a selector:\n\n### 1. Global Variables\n\nDefine variables at the `:root` level to make them accessible throughout the entire document:\n\n```css\n:root {\n  --main-bg-color: #3498db;\n  --main-text-color: #ffffff;\n  --font-size: 16px;\n}\n```\n\n### 2. Local Variables\n\nDefine variables within a specific selector to limit their scope:\n\n```css\n.header {\n  --header-bg-color: #2980b9;\n}\n\n.header {\n  background-color: var(--header-bg-color);\n}\n```\n\n## Using CSS Variables\n\nUse the `var()` function to retrieve the value of a variable:\n\n### 1. Applying Variables to Properties\n\nApply the variable to CSS properties using `var()`:\n\n```css\nbody {\n  background-color: var(--main-bg-color);\n  color: var(--main-text-color);\n  font-size: var(--font-size);\n}\n```\n\n### 2. Fallback Values\n\nProvide fallback values in case the variable is not defined:\n\n```css\nbutton {\n  background-color: var(--button-bg-color, #e74c3c);\n}\n```\n\n## Example\n\nHere’s an example of a theme switcher using CSS Variables:\n\n```css\n:root {\n  --bg-color: #ffffff;\n  --text-color: #333333;\n}\n\n.dark-theme {\n  --bg-color: #333333;\n  --text-color: #ffffff;\n}\n\nbody {\n  background-color: var(--bg-color);\n  color: var(--text-color);\n}\n```\n\n## Conclusion\n\nCSS Variables simplify the process of managing and updating styles across a web project. By defining reusable variables, you can ensure consistency and make future changes more efficiently.",
+        "questions": [
+          {
+            "question": "How do you define a CSS variable?",
+            "choices": [
+              "Using the `--` prefix",
+              "Using the `@variable` rule",
+              "Using the `var()` function",
+              "Using the `custom-property` declaration"
+            ],
+            "correctAnswer": "Using the `--` prefix"
+          },
+          {
+            "question": "Which function is used to retrieve the value of a CSS variable?",
+            "choices": [
+              "`var()`",
+              "`get()`",
+              "`calc()`",
+              "`custom()`"
+            ],
+            "correctAnswer": "`var()`"
+          },
+          {
+            "question": "How can you provide a fallback value for a CSS variable?",
+            "choices": [
+              "Using the `var()` function with a second argument",
+              "Defining a default value in the variable declaration",
+              "Using the `fallback` property",
+              "Providing a default value in the `:root` selector"
+            ],
+            "correctAnswer": "Using the `var()` function with a second argument"
+          },
+          {
+            "question": "Where should global CSS variables be defined to ensure they are accessible throughout the document?",
+            "choices": [
+              "In the `:root` selector",
+              "In the `body` selector",
+              "In the `header` selector",
+              "In individual component selectors"
+            ],
+            "correctAnswer": "In the `:root` selector"
+          }
+        ],
+        "image": "/path/to/image15.jpg",
+        "path": "/css-variables",
+        "next": "/end"
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+]
