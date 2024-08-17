@@ -8,11 +8,11 @@ const TopicList = ({ topics, pathname }) => {
         const isActive = pathname === topicPath;
 
         return (
-          <li key={topic.id} className={`rounded-md ${isActive ? 'bg-primary' : 'hover:bg-gray-300'}`}>
+          <li key={topic.id} className={`rounded-md ${isActive ? 'bg-primary' : 'hover:bg-gray-300 dark:hover:bg-stone-600'}`}>
             <Link
               aria-label={`go to ${topic.path}`}
               href={topicPath}
-              className={`block p-2 text-sm ${isActive ? 'text-white' : 'text-gray-800'}`}
+              className={`block p-2 text-sm ${isActive ? 'text-white' : 'text-gray-800 dark:text-white'}`}
             >
               {topic.title}
             </Link>

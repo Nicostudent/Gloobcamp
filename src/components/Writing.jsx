@@ -17,7 +17,7 @@ export const SubTitle = ({ children, addClass }) => {
 
 export const Paragraph = ({ children, addClass }) => {
   return (
-    <p className={`text-sm md:text-lg text-tertiary ${addClass}}`}>
+    <p className={`text-sm md:text-lg text-tertiary ${addClass}`}>
       {children}
     </p>
   );

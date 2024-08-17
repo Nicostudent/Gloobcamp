@@ -42,8 +42,8 @@ const Quiz = ({ questions, nextTopicPath }) => {
 
   if (isFinished) {
     return (
-      <div className="flex flex-col h-full max-w-7xl p-6 rounded-xl justify-center items-center border-2 text-center bg-primary text-gray-100">
-        <h2 className="text-2xl md:text-4xl font-black text-center mb-6">
+      <div className="flex flex-col justify-center items-center border-2 bg-primary dark:bg-stone-900 p-6 rounded-xl max-w-7xl h-full text-center text-gray-100">
+        <h2 className="mb-6 font-black text-2xl text-center md:text-4xl">
           Quiz Result!
         </h2>
         <div className="mb-6">
@@ -52,16 +52,16 @@ const Quiz = ({ questions, nextTopicPath }) => {
         <div className="mb-6">
           <p className="text-xl">Incorrect Answers: {incorrectChoices}</p>
         </div>
-        <div className="flex justify-center flex-col items-center md:flex-row">
+        <div className="flex md:flex-row flex-col justify-center items-center">
           <button
-            className="w-fit p-3  text-center font-semibold rounded-md bg-gray-100 hover:opacity-90 text-primary md:mx-3 mb-3 md:mb-0"
+            className="bg-gray-100 dark:bg-primary hover:opacity-90 md:mx-3 mb-3 md:mb-0 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
             onClick={handleRestartQuiz}
           >
             Try again
           </button>
           <Link
             href={nextTopicPath}
-            className="w-fit p-3  text-center font-semibold rounded-md hover:opacity-90  bg-gray-100 text-primary"
+            className="bg-gray-100 dark:bg-primary hover:opacity-90 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
           >
             Next Topic
           </Link>
@@ -71,21 +71,21 @@ const Quiz = ({ questions, nextTopicPath }) => {
   }
 
   return (
-    <div className="max-w-7xl border-x-2 border-b-2 border-t border-primary drop-shadow-xl rounded-xl">
-      <div className="flex flex-col h-full w-full p-6 rounded-xl text-black text-start">
-        <p className="text-center md:text-start mb-3">
+    <div className="border-primary border-x-2 dark:bg-stone-900 drop-shadow-xl border-t border-b-2 rounded-xl max-w-7xl">
+      <div className="flex flex-col p-6 rounded-xl w-full h-full text-black text-start dark:text-white">
+        <p className="mb-3 text-center md:text-start">
           QUESTION {questionIndex + 1}/{totalQuestions}
         </p>
         <hr className="border-primary mb-6" />
-        <h2 className="text-xl md:text-2xl text-pretty text-center md:text-start">
+        <h2 className="text-center text-pretty text-xl md:text-2xl md:text-start">
           {currentQuestion.question}
         </h2>
-        <section className="text-center h-auto flex flex-col justify-center items-center">
-          <ul className="w-full md:text-xl text-pretty">
+        <section className="flex flex-col justify-center items-center h-auto text-center">
+          <ul className="w-full text-pretty md:text-xl">
             {currentQuestion.choices.map((choices, index) => (
-              <li className="w-full my-6 rounded-xl border-2" key={index}>
+              <li className="border-2 my-6 rounded-xl w-full" key={index}>
                 <button
-                  className="p-4 rounded-xl w-full text-center md:text-start text-black hover:bg-primary hover:text-white duration-200 ease-in-out"
+                  className="hover:bg-primary p-4 rounded-xl w-full text-black text-center md:text-start hover:text-white dark:text-white duration-200 ease-in-out"
                   onClick={handleIsCorrectChoice}
                 >
                   {choices}

@@ -7,10 +7,10 @@ import cssTopic from "@/utils/css-topics-and-questions.json";
 import Card from "@/components/Dashboard/Card";
 import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
-import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
-import Image from "next/image";
+import CompletedContent from "@/components/Dashboard/CompletedContent";
+import { FaSearch } from "react-icons/fa";
 
 const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
@@ -49,13 +49,13 @@ const Subject = ({ params: { subject } }) => {
 
   return (
     <section className="flex flex-col gap-4 py-10">
-      <Heading>{title}</Heading>
-      <SubTitle>Content</SubTitle>
+      <Heading addClass="dark:text-white">{title}</Heading>
+      <SubTitle addClass="dark:text-white">Content</SubTitle>
       <button
-        className="flex w-fit justify-start items-center border-2 bg-primary p-2 md:gap-4 rounded-md font-bold text-white"
+        className="flex justify-start items-center md:gap-4 bg-primary p-2 rounded-md w-fit font-bold text-white"
         onClick={handleInputClick}
       >
-        <Image src="/search.svg" alt="search box" width={36} height={36} />
+        <FaSearch className="w-5 h-5" />
         <p className="pr-2">Search...</p>
       </button>
       <SearchBar

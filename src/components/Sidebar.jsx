@@ -72,13 +72,13 @@ const Sidebar = ({ pathname }) => {
       )}
 
       <aside
-        className={`top-16 fixed bg-gray-200 w-64 overflow-y-auto z-20 transform ${
+        className={`top-16 fixed bg-gray-200 dark:bg-stone-900 w-64 overflow-y-auto z-20 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out md:translate-x-0`}
         style={{ height: "93%" }}
       >
         <nav className="flex flex-col p-4">
-          <h2 className="mb-4 font-bold text-2xl text-gray-900">{title}</h2>
+          <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">{title}</h2>
           <TopicList topics={topics} pathname={pathname} />
         </nav>
       </aside>
