@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
   return (
     <div className="flex justify-center items-center">
       <CustomButton
-        arialLabelProp="Theme button switcher"
+        ariallabelprop="Theme button switcher"
         purple
         onClick={toggleTheme}
         className="flex justify-center hover:scale-110 p-2 rounded-lg w-10 h-10 duration-300"

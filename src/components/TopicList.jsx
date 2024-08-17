@@ -6,7 +6,6 @@ const TopicList = ({ topics, pathname }) => {
       {topics.map((topic) => {
         const topicPath = `${topic.basePath}${topic.path}`;
         const isActive = pathname === topicPath;
-        console.log('topicPath',topicPath)
 
         return (
           <li key={topic.id} className={`rounded-md ${isActive ? 'bg-primary' : 'hover:bg-gray-300 dark:hover:bg-stone-600'}`}>
