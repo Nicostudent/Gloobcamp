@@ -1,0 +1,377 @@
+[
+  {
+    "id": "1",
+    "title": "Introduction to HTML",
+    "content": "# Introduction to HTML\n\nHTML (HyperText Markup Language) is the standard language used to create web pages. It forms the **backbone of the web**, providing structure to content and allowing it to be displayed in a browser. \n\nHTML consists of a series of elements, represented by tags like `<h1>`, `<p>`, and `<a>`, which denote headings, paragraphs, and links, respectively. Each element plays a unique role in structuring and presenting content on a webpage. \n\nHere’s a simple example:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n<title>My First HTML Page</title>\n</head>\n<body>\n<h1>Welcome to HTML</h1>\n<p>This is a paragraph.</p>\n<a href='https://www.example.com'>This is a link</a>\n</body>\n</html>\n```\nThis code creates a basic HTML page with a heading, a paragraph, and a link. Understanding these elements and how they work together is the first step to mastering HTML.",
+    "questions": [
+      {
+        "question": "What does HTML stand for?",
+        "choices": [
+          "HyperText Markup Language",
+          "HyperTool Markup Language",
+          "HyperText Management Language",
+          "None of the above"
+        ],
+        "correctAnswer": "HyperText Markup Language"
+      },
+      {
+        "question": "Which tag is used to create a hyperlink in HTML?",
+        "choices": ["<a>", "<link>", "<href>", "<url>"],
+        "correctAnswer": "<a>"
+      }
+    ],
+    "image": "/images/html-intro.png",
+    "path": "/introduction-to-html",
+    "next": "/html-elements"
+  },
+  {
+    "id": "2",
+    "title": "HTML Elements",
+    "content": "HTML elements are the building blocks of web pages. They consist of a start tag, content, and an end tag. The combination of these tags and content creates an HTML element that can define different parts of a webpage, such as headings, paragraphs, links, images, and more.\n\nAn HTML element typically looks like this:\n\n```html\n<p>This is a paragraph.</p>\n```\n\nIn the example above:\n\n- `<p>` is the start tag.\n- `This is a paragraph.` is the content.\n- `</p>` is the end tag.\n\n### Common HTML Elements\n\n1. **Headings**: Used to define headings on a webpage, ranging from `<h1>` (most important) to `<h6>` (least important).\n   ```html\n   <h1>This is a Heading</h1>\n   ```\n\n2. **Paragraphs**: Used to define a block of text.\n   ```html\n   <p>This is a paragraph of text.</p>\n   ```\n\n3. **Links**: Used to create hyperlinks, allowing users to navigate to other pages or websites.\n   ```html\n   <a href=\"https://www.example.com\">Visit Example</a>\n   ```\n\n4. **Images**: Used to embed images in a webpage.\n   ```html\n   <img src=\"image.jpg\" alt=\"Description of the image\">\n   ```\n\n5. **Lists**: Used to create ordered (`<ol>`) or unordered (`<ul>`) lists.\n   ```html\n   <ul>\n     <li>First item</li>\n     <li>Second item</li>\n   </ul>\n   ```\n\nHTML elements are essential to structuring and styling content on the web. By understanding and using these elements, you can create rich, well-organized web pages.",
+    "questions": [
+      {
+        "question": "What does the combination of a start tag, content, and an end tag create?",
+        "choices": [
+          "A link",
+          "An HTML element",
+          "A CSS rule",
+          "A JavaScript function"
+        ],
+        "correctAnswer": "An HTML element"
+      },
+      {
+        "question": "Which HTML element is used to create a hyperlink?",
+        "choices": ["<p>", "<h1>", "<a>", "<img>"],
+        "correctAnswer": "<a>"
+      },
+      {
+        "question": "Which tag is used to define a paragraph in HTML?",
+        "choices": ["<div>", "<p>", "<span>", "<header>"],
+        "correctAnswer": "<p>"
+      }
+    ],
+    "image": "/path/to/image3.jpg",
+    "path": "/html-elements",
+    "next": "/html-attributes"
+  },
+  {
+    "id": "3",
+    "title": "HTML Attributes",
+    "content": "HTML attributes provide additional information about HTML elements. They are always included in the opening tag of an element and typically consist of a name and a value, separated by an equals sign (`=`). Attributes are used to define properties such as an element's ID, class, style, or even the source of an image.\n\n### Common HTML Attributes\n\n1. **`id` Attribute**: Provides a unique identifier for an HTML element. This can be useful for targeting the element with CSS or JavaScript.\n   ```html\n   <p id=\"intro\">This is an introductory paragraph.</p>\n   ```\n\n2. **`class` Attribute**: Allows you to assign one or more class names to an element, which can be targeted by CSS for styling or JavaScript for manipulation.\n   ```html\n   <p class=\"highlight\">This paragraph is highlighted.</p>\n   ```\n\n3. **`src` Attribute**: Specifies the source of an embedded image or other media. It's commonly used with the `<img>` and `<iframe>` tags.\n   ```html\n   <img src=\"image.jpg\" alt=\"A beautiful scenery\">\n   ```\n\n4. **`href` Attribute**: Defines the URL for a hyperlink, used in the `<a>` (anchor) tag.\n   ```html\n   <a href=\"https://www.example.com\">Visit Example</a>\n   ```\n\n5. **`alt` Attribute**: Provides alternative text for an image, which is displayed if the image cannot be loaded. It's also used by screen readers for accessibility.\n   ```html\n   <img src=\"image.jpg\" alt=\"A description of the image\">\n   ```\n\n### How to Use Attributes\n\nAttributes are added inside the opening tag of an element and are written as name-value pairs. Multiple attributes can be included in a single tag, separated by spaces.\n\n```html\n<a href=\"https://www.example.com\" target=\"_blank\" rel=\"noopener\">Open Example in a new tab</a>\n```\n\nIn this example, the `<a>` tag has three attributes:\n\n- `href`: Specifies the URL.\n- `target`: Determines where to open the linked document.\n- `rel`: Provides additional relationship information, like ensuring security when opening links in a new tab.\n\nUnderstanding and using HTML attributes allows you to control the behavior and appearance of elements, enhancing your web pages' functionality and accessibility.",
+    "questions": [
+      {
+        "question": "Where are HTML attributes placed?",
+        "choices": [
+          "Inside the closing tag",
+          "Inside the opening tag",
+          "Between the tags",
+          "After the content"
+        ],
+        "correctAnswer": "Inside the opening tag"
+      },
+      {
+        "question": "Which attribute is used to specify the source of an image?",
+        "choices": ["href", "src", "alt", "class"],
+        "correctAnswer": "src"
+      },
+      {
+        "question": "What is the purpose of the `alt` attribute in an `<img>` tag?",
+        "choices": [
+          "To style the image",
+          "To provide alternative text for accessibility",
+          "To link the image to another page",
+          "To set the image's dimensions"
+        ],
+        "correctAnswer": "To provide alternative text for accessibility"
+      }
+    ],
+    "image": "/path/to/image4.jpg",
+    "path": "/html-attributes",
+    "next": "/html-headings"
+  },
+  {
+    "id": "4",
+    "title": "HTML Headings",
+    "content": "HTML headings are used to define the titles and subtitles of your content, helping to structure your web pages in a meaningful way. Headings are important not only for visual presentation but also for accessibility and search engine optimization (SEO). The six levels of headings, `<h1>` through `<h6>`, represent different levels of importance, with `<h1>` being the most significant.\n\n### The Six Levels of Headings\n\n1. **`<h1>`**: This is the highest-level heading and is typically used for the main title of a page. It's best to use only one `<h1>` per page.\n   ```html\n   <h1>Welcome to My Website</h1>\n   ```\n\n2. **`<h2>`**: Used for major section titles that are one level below `<h1>`. These help to organize the content under the main title.\n   ```html\n   <h2>About Us</h2>\n   ```\n\n3. **`<h3>`**: Typically used for subheadings under `<h2>` sections, providing further breakdown of content.\n   ```html\n   <h3>Our Mission</h3>\n   ```\n\n4. **`<h4>`**: This heading level is often used for sub-sections under `<h3>`. It can help to detail more specific content.\n   ```html\n   <h4>Core Values</h4>\n   ```\n\n5. **`<h5>`**: This level is used less frequently, but it can be useful for deep subdivisions within your content.\n   ```html\n   <h5>Community Engagement</h5>\n   ```\n\n6. **`<h6>`**: The lowest-level heading, `<h6>` is rarely used, but it can be useful for very detailed breakdowns.\n   ```html\n   <h6>Volunteer Opportunities</h6>\n   ```\n\n### Best Practices for Using Headings\n\n- **Use Headings to Create a Clear Structure**: Proper use of headings helps users navigate your content and understand its hierarchy. Screen readers also rely on headings to interpret the structure of your page.\n- **Limit the Use of `<h1>`**: Stick to one `<h1>` per page for the main title, and use subsequent headings (`<h2>`, `<h3>`, etc.) for sub-sections.\n- **Ensure Headings are Descriptive**: Make sure your headings clearly describe the content that follows. This improves readability and helps with SEO.\n- **Avoid Skipping Heading Levels**: For better organization, don't jump from an `<h2>` directly to an `<h4>` without an intervening `<h3>`.\n\nUsing HTML headings correctly not only enhances the visual presentation of your content but also improves accessibility and SEO, making your web pages more effective and user-friendly.",
+    "questions": [
+      {
+        "question": "What is the purpose of an `<h1>` tag?",
+        "choices": [
+          "To style text in bold",
+          "To define the main title of a page",
+          "To create a paragraph",
+          "To link to another page"
+        ],
+        "correctAnswer": "To define the main title of a page"
+      },
+      {
+        "question": "Which heading level should be used for major section titles under the main title?",
+        "choices": ["`<h3>`", "`<h2>`", "`<h4>`", "`<h5>`"],
+        "correctAnswer": "`<h2>`"
+      },
+      {
+        "question": "How many `<h1>` tags should be used on a single page?",
+        "choices": ["One", "As many as needed", "Two", "None"],
+        "correctAnswer": "One"
+      }
+    ],
+    "image": "/path/to/image5.jpg",
+    "path": "/html-headings",
+    "next": "/html-paragraphs"
+  },
+  {
+    "id": "5",
+    "title": "HTML Paragraphs",
+    "content": "HTML paragraphs are used to group blocks of text together, making your content more readable and organized. Paragraphs are defined using the `<p>` tag and are a fundamental building block of HTML documents.\n\n### Creating a Paragraph\n\nTo create a paragraph in HTML, simply enclose your text within `<p>` tags. This automatically adds some space before and after the paragraph to separate it from other elements.\n\n```html\n<p>This is a paragraph of text in HTML.</p>\n```\n\n### Line Breaks and Paragraphs\n\nIf you want to break lines within a paragraph without starting a new paragraph, you can use the `<br>` tag. However, use this sparingly as paragraphs should generally be cohesive blocks of text.\n\n```html\n<p>This is the first line.<br>This is the second line in the same paragraph.</p>\n```\n\n### Styling Paragraphs\n\nParagraphs can be styled using CSS to control their appearance, such as text alignment, font size, color, and more. For example, you can center-align a paragraph or change its font size:\n\n```html\n<p style=\"text-align: center; font-size: 18px;\">This is a centered paragraph with larger text.</p>\n```\n\n### Best Practices for Writing Paragraphs\n\n- **Keep Paragraphs Concise**: Break up large blocks of text into shorter paragraphs to improve readability.\n- **Use Proper Line Breaks**: Instead of adding multiple `<br>` tags, consider rephrasing or using additional paragraphs.\n- **Use CSS for Styling**: Avoid using inline styles directly in your HTML. Instead, use CSS classes to keep your code clean and maintainable.\n\nUsing paragraphs effectively in HTML helps organize your content, making it easier for users to read and understand. Remember to use paragraphs to group related sentences together and maintain a clear structure in your web pages.",
+    "questions": [
+      {
+        "question": "Which HTML tag is used to create a paragraph?",
+        "choices": ["`<div>`", "`<p>`", "`<span>`", "`<h1>`"],
+        "correctAnswer": "`<p>`"
+      },
+      {
+        "question": "How can you create a line break within a paragraph?",
+        "choices": [
+          "Using the `<p>` tag",
+          "Using the `<br>` tag",
+          "Using the `<hr>` tag",
+          "Using the `<div>` tag"
+        ],
+        "correctAnswer": "Using the `<br>` tag"
+      },
+      {
+        "question": "What is the best way to style paragraphs in HTML?",
+        "choices": [
+          "Using inline styles directly within the `<p>` tag",
+          "Using the `<style>` attribute within the paragraph tag",
+          "Using CSS classes and external stylesheets",
+          "Using the `<font>` tag"
+        ],
+        "correctAnswer": "Using CSS classes and external stylesheets"
+      }
+    ],
+    "image": "/path/to/image6.jpg",
+    "path": "/html-paragraphs",
+    "next": "/html-links"
+  },
+  {
+    "id": "6",
+    "title": "HTML Links",
+    "content": "# HTML Links\n\nIn HTML, links are created using the `<a>` (anchor) element. Links can be used to navigate to another web page, a different section of the same page, or even to download files.\n\n## Basic Syntax\n\nThe basic syntax for creating a link is as follows:\n\n```html\n<a href=\"URL\">Link Text</a>\n```\n\n- `href` attribute: Specifies the URL of the page the link goes to.\n- `Link Text`: The text that will be clickable.\n\n## Example\n\n```html\n<a href=\"https://www.example.com\">Visit Example.com</a>\n```\n\nThis will create a clickable link that directs users to https://www.example.com.\n\n## Linking to Sections Within the Same Page\n\nYou can also create links that navigate to a specific section of the same page using the `id` attribute:\n\n```html\n<a href=\"#section-id\">Go to Section</a>\n```\n\n```html\n<h2 id=\"section-id\">Section Title</h2>\n```\n\n## Opening Links in a New Tab\n\nTo open a link in a new tab, use the `target` attribute with the value `_blank`:\n\n```html\n<a href=\"https://www.example.com\" target=\"_blank\">Visit Example.com</a>\n```\n\n## Adding a Title Attribute\n\nYou can add a `title` attribute to provide additional information that appears as a tooltip when the user hovers over the link:\n\n```html\n<a href=\"https://www.example.com\" title=\"Go to Example.com\">Visit Example.com</a>\n```\n\n## Download Links\n\nTo create a link that prompts the user to download a file, use the `download` attribute:\n\n```html\n<a href=\"path/to/file.pdf\" download=\"filename.pdf\">Download File</a>\n```\n\n## Conclusion\n\nLinks are a fundamental part of web navigation. Understanding how to use them effectively will enhance the usability and accessibility of your web pages.",
+    "questions": [
+      {
+        "question": "Which HTML tag is used to create a hyperlink?",
+        "choices": ["`<link>`", "`<a>`", "`<href>`", "`<hyperlink>`"],
+        "correctAnswer": "`<a>`"
+      },
+      {
+        "question": "What attribute is used to specify the URL in a link?",
+        "choices": ["`src`", "`url`", "`href`", "`link`"],
+        "correctAnswer": "`href`"
+      },
+      {
+        "question": "How can you make a link open in a new tab?",
+        "choices": [
+          "Use the `target=\"_blank\"` attribute",
+          "Use the `newtab=\"true\"` attribute",
+          "Use JavaScript `window.open()`",
+          "Use the `rel=\"new\"` attribute"
+        ],
+        "correctAnswer": "Use the `target=\"_blank\"` attribute"
+      }
+    ],
+    "image": "/path/to/image6.jpg",
+    "path": "/html-links",
+    "next": "/html-lists"
+  },
+  {
+    "id": "7",
+    "title": "HTML Lists",
+    "content": "# HTML Lists\n\nIn HTML, lists are used to group and organize content. There are two main types of lists: ordered lists and unordered lists.\n\n## Unordered Lists\n\nUnordered lists are used when the order of the list items is not important. They are created using the `<ul>` element, with each item inside the list represented by an `<li>` element.\n\n### Basic Syntax\n\n```html\n<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n  <li>Item 3</li>\n</ul>\n```\n\n### Example\n\n```html\n<ul>\n  <li>Apples</li>\n  <li>Oranges</li>\n  <li>Bananas</li>\n</ul>\n```\n\nThis will create a bulleted list with three items.\n\n## Ordered Lists\n\nOrdered lists are used when the order of the list items is important. They are created using the `<ol>` element, with each item inside the list represented by an `<li>` element.\n\n### Basic Syntax\n\n```html\n<ol>\n  <li>First item</li>\n  <li>Second item</li>\n  <li>Third item</li>\n</ol>\n```\n\n### Example\n\n```html\n<ol>\n  <li>First step</li>\n  <li>Second step</li>\n  <li>Third step</li>\n</ol>\n```\n\nThis will create a numbered list with three items.\n\n## Nested Lists\n\nYou can also nest lists inside one another to create sub-lists:\n\n### Example\n\n```html\n<ul>\n  <li>Fruits\n    <ul>\n      <li>Apples</li>\n      <li>Oranges</li>\n    </ul>\n  </li>\n  <li>Vegetables\n    <ul>\n      <li>Carrots</li>\n      <li>Spinach</li>\n    </ul>\n  </li>\n</ul>\n```\n\n## Styling Lists\n\nYou can style lists using CSS to change the appearance of bullets or numbers:\n\n### Example\n\n```css\nul {\n  list-style-type: square;\n}\n\nol {\n  list-style-type: upper-roman;\n}\n```\n\n### Conclusion\n\nLists are a fundamental part of HTML and are essential for organizing content on web pages. Understanding how to use and style them effectively will enhance the readability and structure of your content.",
+    "questions": [
+      {
+        "question": "Which HTML tag is used to create an unordered list?",
+        "choices": ["`<ul>`", "`<ol>`", "`<li>`", "`<list>`"],
+        "correctAnswer": "`<ul>`"
+      },
+      {
+        "question": "What tag is used to define an item in a list?",
+        "choices": ["`<item>`", "`<li>`", "`<list-item>`", "`<element>`"],
+        "correctAnswer": "`<li>`"
+      },
+      {
+        "question": "How can you create a nested list in HTML?",
+        "choices": [
+          "Place an `<ul>` or `<ol>` inside another `<ul>` or `<ol>`",
+          "Use the `<nested>` tag",
+          "Use multiple `<li>` tags with the `nested` attribute",
+          "Create a separate list for each nested level"
+        ],
+        "correctAnswer": "Place an `<ul>` or `<ol>` inside another `<ul>` or `<ol>`"
+      }
+    ],
+    "image": "/path/to/image8.jpg",
+    "path": "/html-lists",
+    "next": "/html-images"
+  },
+  {
+    "id": "8",
+    "title": "HTML Images",
+    "content": "# HTML Images\n\nImages are an essential part of web content. In HTML, images are embedded using the `<img>` tag. This tag does not have a closing tag and includes several important attributes to define the source and appearance of the image.\n\n## Basic Syntax\n\nThe basic syntax for embedding an image is:\n\n```html\n<img src=\"image-url\" alt=\"Description of image\">\n```\n\n- `src` attribute: Specifies the path to the image file.\n- `alt` attribute: Provides alternative text for the image if it cannot be displayed.\n\n## Example\n\n```html\n<img src=\"https://www.example.com/image.jpg\" alt=\"A beautiful scenery\">\n```\n\nThis will display an image from the provided URL with a description for accessibility.\n\n## Image Attributes\n\n### `width` and `height`\n\nYou can specify the dimensions of an image using the `width` and `height` attributes:\n\n```html\n<img src=\"image-url\" alt=\"Description\" width=\"300\" height=\"200\">\n```\n\n### `title`\n\nThe `title` attribute provides additional information that appears as a tooltip when the user hovers over the image:\n\n```html\n<img src=\"image-url\" alt=\"Description\" title=\"Tooltip text\">\n```\n\n## Responsive Images\n\nTo make images responsive, you can use CSS to adjust their size based on the screen width. A common approach is to set the image’s width to 100%:\n\n### Example\n\n```html\n<style>\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n</style>\n<img src=\"image-url\" alt=\"Responsive image\">\n```\n\n## Image Formats\n\nHTML supports various image formats including JPEG, PNG, GIF, and SVG. Each format has its own use cases and benefits:\n\n- **JPEG**: Ideal for photographs and images with gradients.\n- **PNG**: Best for images with transparency and sharp edges.\n- **GIF**: Suitable for simple animations.\n- **SVG**: Perfect for vector graphics that can scale without losing quality.\n\n## Conclusion\n\nImages enhance the visual appeal and effectiveness of web pages. Proper use of the `<img>` tag and its attributes ensures that images are displayed correctly and are accessible to all users.",
+    "questions": [
+      {
+        "question": "Which HTML tag is used to embed an image?",
+        "choices": ["`<img>`", "`<picture>`", "`<photo>`", "`<image>`"],
+        "correctAnswer": "`<img>`"
+      },
+      {
+        "question": "What attribute is required for every image in HTML?",
+        "choices": ["`src`", "`width`", "`height`", "`title`"],
+        "correctAnswer": "`src`"
+      },
+      {
+        "question": "How can you make an image responsive?",
+        "choices": [
+          "Set `width` to 100% and `height` to auto using CSS",
+          "Use the `responsive` attribute in the `<img>` tag",
+          "Specify both `width` and `height` in percentage values",
+          "Use the `max-width` property in the `<img>` tag"
+        ],
+        "correctAnswer": "Set `width` to 100% and `height` to auto using CSS"
+      }
+    ],
+    "image": "/path/to/image9.jpg",
+    "path": "/html-images",
+    "next": "/html-tables"
+  },
+  {
+    "id": "9",
+    "title": "HTML Tables",
+    "content": "# HTML Tables\n\nTables are used to display data in a structured format. In HTML, tables are created using a combination of `<table>`, `<tr>`, `<td>`, and `<th>` elements.\n\n## Basic Syntax\n\n### Table Structure\n\n- `<table>`: Defines the table.\n- `<tr>`: Defines a table row.\n- `<td>`: Defines a table cell (data).\n- `<th>`: Defines a table header cell.\n\n### Example\n\n```html\n<table>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n    <th>Header 3</th>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n    <td>Data 3</td>\n  </tr>\n  <tr>\n    <td>Data 4</td>\n    <td>Data 5</td>\n    <td>Data 6</td>\n  </tr>\n</table>\n```\n\nThis will create a table with headers and rows of data.\n\n## Adding Captions and Summaries\n\nYou can add a caption to describe the table and a summary for accessibility:\n\n### Example\n\n```html\n<table>\n  <caption>Table Caption</caption>\n  <thead>\n    <tr>\n      <th>Header 1</th>\n      <th>Header 2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Data 1</td>\n      <td>Data 2</td>\n    </tr>\n  </tbody>\n  <tfoot>\n    <tr>\n      <td>Footer 1</td>\n      <td>Footer 2</td>\n    </tr>\n  </tfoot>\n</table>\n```\n\n- `<caption>`: Provides a title or explanation for the table.\n- `<thead>`: Groups header content.\n- `<tbody>`: Groups body content.\n- `<tfoot>`: Groups footer content.\n\n## Table Styling\n\nTables can be styled using CSS to enhance their appearance:\n\n### Example\n\n```css\ntable {\n  width: 100%;\n  border-collapse: collapse;\n}\n\nth, td {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\nth {\n  background-color: #f4f4f4;\n}\n```\n\nThis CSS will ensure that the table takes full width, cells have borders, and headers have a background color.\n\n## Conclusion\n\nHTML tables are useful for displaying tabular data. Proper use of table elements and styling can make your data clear and accessible.",
+    "questions": [
+      {
+        "question": "Which HTML tag defines a table?",
+        "choices": ["`<table>`", "`<tab>`", "`<tr>`", "`<td>`"],
+        "correctAnswer": "`<table>`"
+      },
+      {
+        "question": "What is the purpose of the `<th>` tag in a table?",
+        "choices": [
+          "Defines a header cell",
+          "Defines a data cell",
+          "Defines a row",
+          "Defines a table caption"
+        ],
+        "correctAnswer": "Defines a header cell"
+      },
+      {
+        "question": "How can you group the header content in a table?",
+        "choices": [
+          "Using `<thead>`",
+          "Using `<tfoot>`",
+          "Using `<tbody>`",
+          "Using `<caption>`"
+        ],
+        "correctAnswer": "Using `<thead>`"
+      }
+    ],
+    "image": "/path/to/image10.jpg",
+    "path": "/html-tables",
+    "next": "/html-forms"
+  },
+  {
+    "id": "10",
+    "title": "HTML Forms",
+    "content": "# HTML Forms\n\nForms are used to collect user input on web pages. In HTML, forms are created using the `<form>` tag and include various input elements to gather data from users.\n\n## Basic Syntax\n\nThe basic structure of a form is:\n\n```html\n<form action=\"/submit-form\" method=\"post\">\n  <!-- Form elements go here -->\n</form>\n```\n\n- `action` attribute: Specifies the URL where the form data will be sent when submitted.\n- `method` attribute: Defines the HTTP method used to send form data. Common methods are `get` and `post`.\n\n## Form Elements\n\n### Text Input\n\nTo create a single-line text input field, use the `<input>` tag with the `type` attribute set to `text`:\n\n```html\n<form>\n  <label for=\"name\">Name:</label>\n  <input type=\"text\" id=\"name\" name=\"name\">\n</form>\n```\n\n### Password Input\n\nFor password fields, use the `type` attribute set to `password`:\n\n```html\n<form>\n  <label for=\"password\">Password:</label>\n  <input type=\"password\" id=\"password\" name=\"password\">\n</form>\n```\n\n### Radio Buttons\n\nTo create a group of radio buttons, use the `type` attribute set to `radio`:\n\n```html\n<form>\n  <label><input type=\"radio\" name=\"gender\" value=\"male\"> Male</label>\n  <label><input type=\"radio\" name=\"gender\" value=\"female\"> Female</label>\n</form>\n```\n\n### Checkboxes\n\nFor checkboxes, use the `type` attribute set to `checkbox`:\n\n```html\n<form>\n  <label><input type=\"checkbox\" name=\"subscribe\"> Subscribe to newsletter</label>\n</form>\n```\n\n### Dropdown Menu\n\nTo create a dropdown menu, use the `<select>` element with `<option>` elements:\n\n```html\n<form>\n  <label for=\"color\">Choose a color:</label>\n  <select id=\"color\" name=\"color\">\n    <option value=\"red\">Red</option>\n    <option value=\"green\">Green</option>\n    <option value=\"blue\">Blue</option>\n  </select>\n</form>\n```\n\n### Submit Button\n\nTo submit the form, use the `<button>` or `<input>` tag with `type` set to `submit`:\n\n```html\n<form>\n  <input type=\"submit\" value=\"Submit\">\n</form>\n```\n\n## Form Validation\n\nHTML5 provides built-in form validation features. For example, using the `required` attribute ensures that a field must be filled out before submission:\n\n```html\n<form>\n  <label for=\"email\">Email:</label>\n  <input type=\"email\" id=\"email\" name=\"email\" required>\n  <input type=\"submit\" value=\"Submit\">\n</form>\n```\n\n## Conclusion\n\nForms are a vital part of web applications, allowing users to interact and provide information. Understanding the different types of input elements and validation techniques helps in creating effective forms.",
+    "questions": [
+      {
+        "question": "Which HTML tag is used to define a form?",
+        "choices": ["`<form>`", "`<input>`", "`<label>`", "`<submit>`"],
+        "correctAnswer": "`<form>`"
+      },
+      {
+        "question": "What is the purpose of the `action` attribute in a form?",
+        "choices": [
+          "Specifies the URL where the form data will be sent",
+          "Defines the method to be used for sending form data",
+          "Sets the type of the form input elements",
+          "Determines the style of the form"
+        ],
+        "correctAnswer": "Specifies the URL where the form data will be sent"
+      },
+      {
+        "question": "How can you make a form field mandatory to fill out before submission?",
+        "choices": [
+          "Add the `required` attribute to the input field",
+          "Use the `mandatory` attribute",
+          "Include a `*` symbol next to the field",
+          "Set the `disabled` attribute to false"
+        ],
+        "correctAnswer": "Add the `required` attribute to the input field"
+      }
+    ],
+    "image": "/path/to/image11.jpg",
+    "path": "/html-forms",
+    "next": "/html-media"
+  },
+  {
+    "id": "11",
+    "title": "HTML Media",
+    "content": "# HTML Media\n\nHTML provides various elements for embedding media content, including audio and video. These elements allow you to include multimedia in your web pages.\n\n## Audio\n\nThe `<audio>` element is used to embed sound files. It supports multiple formats including MP3, WAV, and Ogg.\n\n### Basic Syntax\n\n```html\n<audio controls>\n  <source src=\"audio-file.mp3\" type=\"audio/mpeg\">\n  Your browser does not support the audio element.\n</audio>\n```\n\n- `controls` attribute: Adds playback controls such as play, pause, and volume.\n- `<source>` element: Specifies the audio file and its format.\n\n### Example\n\n```html\n<audio controls>\n  <source src=\"https://www.example.com/audio.mp3\" type=\"audio/mpeg\">\n  Your browser does not support the audio element.\n</audio>\n```\n\n## Video\n\nThe `<video>` element is used to embed video files. It supports formats like MP4, WebM, and Ogg.\n\n### Basic Syntax\n\n```html\n<video width=\"640\" height=\"360\" controls>\n  <source src=\"video-file.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>\n```\n\n- `width` and `height` attributes: Define the dimensions of the video player.\n- `controls` attribute: Adds playback controls such as play, pause, and volume.\n- `<source>` element: Specifies the video file and its format.\n\n### Example\n\n```html\n<video width=\"640\" height=\"360\" controls>\n  <source src=\"https://www.example.com/video.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>\n```\n\n## Media Attributes\n\n### `autoplay`\n\nAutomatically starts playing the media when it is loaded:\n\n```html\n<audio autoplay>\n  <source src=\"audio-file.mp3\" type=\"audio/mpeg\">\n</audio>\n```\n\n### `loop`\n\nLoops the media continuously:\n\n```html\n<video loop>\n  <source src=\"video-file.mp4\" type=\"video/mp4\">\n</video>\n```\n\n### `muted`\n\nMutes the media by default:\n\n```html\n<video muted>\n  <source src=\"video-file.mp4\" type=\"video/mp4\">\n</video>\n```\n\n## Conclusion\n\nEmbedding media in your web pages enriches the user experience by providing interactive and engaging content. Proper use of the `<audio>` and `<video>` elements allows you to incorporate various types of multimedia seamlessly.",
+    "questions": [
+      {
+        "question": "Which HTML tag is used to embed an audio file?",
+        "choices": ["`<audio>`", "`<sound>`", "`<media>`", "`<music>`"],
+        "correctAnswer": "`<audio>`"
+      },
+      {
+        "question": "How can you add playback controls to an audio element?",
+        "choices": [
+          "Use the `controls` attribute",
+          "Include a `<controls>` tag inside `<audio>`",
+          "Add the `play` attribute",
+          "Set the `show-controls` attribute to true"
+        ],
+        "correctAnswer": "Use the `controls` attribute"
+      },
+      {
+        "question": "What attribute makes a video start playing as soon as it is loaded?",
+        "choices": ["`autoplay`", "`loop`", "`controls`", "`muted`"],
+        "correctAnswer": "`autoplay`"
+      }
+    ],
+    "image": "/path/to/image12.jpg",
+    "path": "/html-media",
+    "next": "/html-semantics"
+  },
+  {
+    "id": "12",
+    "title": "HTML Semantics",
+    "content": "# HTML Semantics\n\nSemantic HTML refers to using HTML elements that convey meaning about the content they enclose. These elements help improve the accessibility and SEO of web pages by providing meaningful structure to the content.\n\n## What is Semantic HTML?\n\nSemantic HTML elements clearly describe their meaning in a human- and machine-readable way. They make it easier for search engines and other user agents to understand the structure and importance of the content.\n\n## Common Semantic Elements\n\n### `<header>`\n\nDefines a header for a document or section. Typically contains introductory content or navigational links:\n\n```html\n<header>\n  <h1>Website Title</h1>\n  <nav>\n    <ul>\n      <li><a href=\"#home\">Home</a></li>\n      <li><a href=\"#about\">About</a></li>\n    </ul>\n  </nav>\n</header>\n```\n\n### `<footer>`\n\nDefines a footer for a document or section. Often contains information about the author, copyright, or contact details:\n\n```html\n<footer>\n  <p>&copy; 2024 Your Website</p>\n  <p><a href=\"mailto:contact@example.com\">Contact Us</a></p>\n</footer>\n```\n\n### `<article>`\n\nDefines independent, self-contained content. Suitable for blog posts, news articles, or user comments:\n\n```html\n<article>\n  <h2>Article Title</h2>\n  <p>Article content goes here...</p>\n</article>\n```\n\n### `<section>`\n\nDefines a section in a document. Used to group related content within an article or a page:\n\n```html\n<section>\n  <h2>Section Title</h2>\n  <p>Section content goes here...</p>\n</section>\n```\n\n### `<aside>`\n\nDefines content that is tangentially related to the content around it. Often used for sidebars or additional information:\n\n```html\n<aside>\n  <h2>Related Information</h2>\n  <p>Additional content or links related to the main content.</p>\n</aside>\n```\n\n### `<nav>`\n\nDefines navigation links. Typically used for menus and site navigation:\n\n```html\n<nav>\n  <ul>\n    <li><a href=\"#home\">Home</a></li>\n    <li><a href=\"#services\">Services</a></li>\n    <li><a href=\"#contact\">Contact</a></li>\n  </ul>\n</nav>\n```\n\n## Benefits of Semantic HTML\n\n1. **Improved Accessibility**: Screen readers and other assistive technologies can better interpret the content structure.\n2. **Better SEO**: Search engines can more accurately index and rank content based on its meaning and structure.\n3. **Cleaner Code**: Semantic elements make the HTML more readable and maintainable.\n4. **Enhanced User Experience**: Provides a clearer structure that benefits both users and developers.\n\n## Conclusion\n\nUsing semantic HTML elements enhances the clarity and accessibility of web content, leading to a better user experience and improved search engine performance.",
+    "questions": [
+      {
+        "question": "Which HTML element defines the header of a document or section?",
+        "choices": ["`<header>`", "`<footer>`", "`<nav>`", "`<article>`"],
+        "correctAnswer": "`<header>`"
+      },
+      {
+        "question": "What is the purpose of the `<article>` element?",
+        "choices": [
+          "Defines self-contained content",
+          "Defines a section of content",
+          "Defines navigation links",
+          "Defines additional content related to the main content"
+        ],
+        "correctAnswer": "Defines self-contained content"
+      },
+      {
+        "question": "Which element is typically used for site navigation links?",
+        "choices": ["`<nav>`", "`<section>`", "`<aside>`", "`<footer>`"],
+        "correctAnswer": "`<nav>`"
+      }
+    ],
+    "image": "/path/to/image13.jpg",
+    "path": "/html-semantics",
+    "next": "/end"
+  }
+]

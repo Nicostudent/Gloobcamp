@@ -1,14 +1,14 @@
-import { Heading, Paragraph } from "@/components/Writing";
 import { LinkButton } from "@/components/LinkButton";
+import { Heading, Paragraph } from "@/components/Writing";
 
 const App = () => {
   return (
     <main className="flex flex-col justify-center items-center space-y-8 py-24 min-h-screen align-middle">
       <div className="text-center">
-        <Heading>Welcome to GloobCamp</Heading>
+        <Heading addClass="dark:text-white">Welcome to GloobCamp</Heading>
       </div>
       <div className="px-4 max-w-2xl text-center">
-        <Paragraph>
+        <Paragraph addClass="dark:text-white">
           Discover the essential knowledge every JavaScript developer should
           know. Progress through our expertly crafted topics and challenge
           yourself with quizzes at the end of each lesson. Earn knowledge points

@@ -56,23 +56,25 @@ const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topi
             </button>
           </div>
           {searchValue ? 
-            <div className="left-0 absolute bg-white shadow-lg mt-2 rounded w-full max-h-64 text-primary overflow-y-auto">
-              {results.length > 0 ? (
-                results.map((result, index) => (
-                  <Link
-                    key={index}
-                    href={`${topicPath}/${result.path}`}
-                    className="flex items-center hover:bg-indigo-100 p-2 text-black cursor-pointer"
-                  >
-                    <HighlightText text={result.title} searchValue={searchValue} />
-                  </Link>
-                ))
-              ) : (
-                <p className="p-2 text-center">{`No results found for "${searchValue}"`}</p>
-              )}
-            </div>
-            :
-            <div className="left-0 absolute bg-white shadow-lg mt-2 rounded w-full max-h-64 text-primary overflow-y-auto">
+            (results.length > 0 ? 
+              <div className="left-0 absolute bg-white dark:bg-stone-900 shadow-lg mt-2 rounded w-full max-h-64 text-primary overflow-y-auto">
+                {
+                  results.map((result, index) => (
+                    <Link
+                      key={index}
+                      href={`${topicPath}/${result.path}`}
+                      className="flex items-center hover:bg-indigo-100 dark:hover:bg-stone-400 p-2 text-black dark:text-white cursor-pointer"
+                    >
+                      <HighlightText text={result.title} searchValue={searchValue} />
+                    </Link>
+                  ))
+                }              
+              </div> :
+              <div className="left-0 absolute bg-primary shadow-lg mt-2 rounded w-full max-h-64 text-white overflow-y-auto">
+                <p className="p-2 text-center">{`No results found for "${searchValue}"`}</p>              
+              </div>
+            ) :
+            <div className="left-0 absolute bg-primary shadow-lg mt-2 rounded w-full max-h-64 text-white overflow-y-auto">
               <p className="p-2 text-center">Search something</p>
             </div>
           }

@@ -26,7 +26,7 @@ const CustomButton = ({
       disabled={disabled}
       {...props}
     >
-      {icon && <span className="mr-2">{icon}</span>}
+      {icon && <span>{icon}</span>}
       {text}
     </button>
   );
