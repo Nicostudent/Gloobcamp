@@ -1,7 +1,7 @@
 import Link from "next/link";
 export const LinkButton = ({ href, label, dark, className }) => {
   const colored =
-    `bg-primary hover:opacity-95 px-4 py-2 rounded font-bold text-white ease-in-out duration-300 ${className}`;
+    `bg-primary hover:opacity-85 px-4 py-2 rounded font-bold text-white ease-in-out duration-300 ${className}`;
 
   return (
     <Link

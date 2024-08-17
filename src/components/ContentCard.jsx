@@ -18,7 +18,7 @@ const ContentCard = ({ children, icon, subject }) => {
           </h3>
         </div>
       </div>
-      <div className="h-44 text-tertiary dark:text-white overflow-hidden">{children}</div>
+      <div className="h-40 text-tertiary dark:text-white  text-sm ">{children}</div>
       <div className="flex justify-end mt-8">
         <LinkButton
           dark

@@ -6,11 +6,11 @@ import { FaCss3Alt, FaReact } from "react-icons/fa";
 
 const page = () => {
   return (
-    <section className="flex flex-col justify-center items-center space-y-8 my-12">
+    <section className="flex flex-col justify-center items-center space-y-8 my-12 ">
       <Heading addClass={"text-center dark:text-white"}>What do you want to learn now?</Heading>
       <Paragraph addClass="dark:text-white">Choose your content</Paragraph>
 
-      <div className="justify-between items-center gap-8 grid md:grid-cols-4">
+      <div className="justify-between items-center gap-8 grid md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 ">
         <ContentCard
           icon={<IoLogoHtml5 className="w-14 h-14 dark:text-white"/>}
           subject="html"
