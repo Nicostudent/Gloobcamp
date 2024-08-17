@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
@@ -22,8 +22,8 @@ const Navbar = () => {
   const renderLinks = () => (
     <>
       {pages.map((page) => (
-        <NavigationLink  
-          className="text-white"        
+        <NavigationLink
+          className="text-white"
           key={page.to}
           href={page.to}
           aria-label={page.label}
@@ -40,11 +40,6 @@ const Navbar = () => {
       <div className="flex justify-between items-center mx-auto px-6 max-w-7xl">
         <Logo />
         <div className="flex items-center gap-6 md:hidden align-middle">
-          <NavIcon
-            pathname={"/"}
-            icon={<FaUser className="w-4 h-4 text-white"/>}            
-            ariallabelprop="User profile button"
-            />
           <ThemeSwitcher />
         </div>
         <div className="md:flex items-center gap-8 hidden">{renderLinks()}</div>
@@ -52,11 +47,6 @@ const Navbar = () => {
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
         </div>
         <div className="md:flex items-center gap-6 hidden align-middle">
-          <NavIcon 
-            pathname={"/"}
-            icon={<FaUser className="w-4 h-4 text-white"/>}
-            ariallabelprop="User profile button"
-            />
           <ThemeSwitcher />
         </div>
       </div>
