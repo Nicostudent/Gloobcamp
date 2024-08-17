@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
