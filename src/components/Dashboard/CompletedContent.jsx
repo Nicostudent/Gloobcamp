@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Heading, Paragraph } from "@/components/Writing";
 import JSConfetti from "js-confetti";
 import { LinkButton } from "../LinkButton";
+import { Heading, Paragraph } from "../Writing";
 
 const CompletedContent = ({ title }) => {
   useEffect(() => {

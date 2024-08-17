@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import { Heading, Paragraph } from "@/components/Writing";
+>>>>>>> main
 import { LinkButton } from "@/components/LinkButton";
 import { Heading, Paragraph } from "@/components/Writing";
 
