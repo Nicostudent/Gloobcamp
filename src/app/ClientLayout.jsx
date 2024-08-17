@@ -6,7 +6,7 @@ const contentPatterns = [
   /^\/content\/javascript\/.+/,
   /^\/content\/react\/.+/,
   /^\/content\/html\/.+/,
-  /^\/content\/css\/.+/
+  /^\/content\/css\/.+/,
 ];
 
 const ClientLayout = () => {
@@ -14,7 +14,7 @@ const ClientLayout = () => {
   const showSidebar = contentPatterns.some((pattern) => pattern.test(pathname));
 
   return (
-    <div className="flex  absolute items-center ">
+    <div className="absolute flex items-center">
       {showSidebar && (
         <div className="relative left-0">
           <Sidebar pathname={pathname} />

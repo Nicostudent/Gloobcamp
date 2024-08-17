@@ -16,8 +16,8 @@ const CustomButton = ({
   const buttonStyles = disabled
     ? disabledStyles
     : purple
-    ? purpleStyles
-    : defaultStyles;
+      ? purpleStyles
+      : defaultStyles;
 
   return (
     <button

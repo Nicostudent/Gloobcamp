@@ -3,10 +3,10 @@ const BurgerButton = ({ isOpen, toggleDropdown }) => (
     onClick={toggleDropdown}
     type="button"
     aria-label="toggle Dropdown"
-    className="p-2 text-white hover:text-gray-400 focus:outline-none focus:text-gray-400"
+    className="p-2 text-white hover:text-gray-400 focus:text-gray-400 focus:outline-none"
   >
     <svg
-      className="w-8 h-8"
+      className="h-8 w-8"
       stroke="currentColor"
       fill="none"
       viewBox="0 0 24 24"

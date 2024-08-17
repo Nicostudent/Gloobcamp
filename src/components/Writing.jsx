@@ -1,6 +1,6 @@
 export const Heading = ({ children, addClass }) => {
   return (
-    <h1 className={`text-5xl md:text-8xl font-bold text-secondary ${addClass}`}>
+    <h1 className={`text-5xl font-bold text-secondary md:text-8xl ${addClass}`}>
       {children}
       <span className="text-primary">.</span>
     </h1>
@@ -9,7 +9,7 @@ export const Heading = ({ children, addClass }) => {
 
 export const SubTitle = ({ children, addClass }) => {
   return (
-    <h2 className={`text-3xl md:text-5xl font-bold text-secondary ${addClass}`}>
+    <h2 className={`text-3xl font-bold text-secondary md:text-5xl ${addClass}`}>
       {children}
     </h2>
   );
@@ -17,8 +17,6 @@ export const SubTitle = ({ children, addClass }) => {
 
 export const Paragraph = ({ children, addClass }) => {
   return (
-    <p className={`text-sm md:text-lg text-tertiary ${addClass}`}>
-      {children}
-    </p>
+    <p className={`text-sm text-tertiary md:text-lg ${addClass}`}>{children}</p>
   );
 };

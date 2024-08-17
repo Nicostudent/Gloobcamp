@@ -8,22 +8,20 @@ import Quiz from "@/components/Quiz";
 import EndTopic from "@/components/EndTopic";
 
 const TopicPage = ({ params: { topics, subject } }) => {
-
   const allTopics = {
     react: reactTopics,
     javascript: jsTopics,
-    html:htmlTopic,
+    html: htmlTopic,
     css: cssTopic,
   };
 
   const topicsData = allTopics[subject] || [];
 
-
   const topicData = topicsData.find((t) => t.path === `/${topics}`);
 
   if (`/${topics}` === "/end") {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex h-screen items-center justify-center">
         <EndTopic />
       </div>
     );
@@ -31,7 +29,7 @@ const TopicPage = ({ params: { topics, subject } }) => {
 
   if (!topicData) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex h-screen items-center justify-center">
         Topic not found
       </div>
     );

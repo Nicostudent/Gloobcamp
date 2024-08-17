@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from "react";
 
 const ThemeContext = createContext();
 
@@ -23,7 +23,7 @@ export const ThemeProvider = ({ children }) => {
     }
   }, [darkMode]);
 
-  const toggleTheme = () => setDarkMode(prevMode => !prevMode);
+  const toggleTheme = () => setDarkMode((prevMode) => !prevMode);
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>

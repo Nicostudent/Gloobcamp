@@ -7,7 +7,7 @@ export const Logo = () => {
     <div>
       <Link
         href="/"
-        className="items-center font-bold text-lg text-white"
+        className="items-center text-lg font-bold text-white"
         aria-label="back to homepage"
       >
         Gloobcamp {`</>`}
