@@ -1,9 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-const NavIcon = ({ pathname, image }) => {
+const NavIcon = ({ pathname, icon, ariallabelprop }) => {
   return (
-    <Link href={`${pathname}`} className="lg:block hidden">
-      <Image src={`${image}`} alt={`${image} icon`} width={24} height={24} />
+    <Link 
+      href={`${pathname}`} 
+      className="lg:block hover:scale-110 duration-300"
+      aria-label={ariallabelprop}  
+    >
+      {icon}
     </Link>
   );
 };

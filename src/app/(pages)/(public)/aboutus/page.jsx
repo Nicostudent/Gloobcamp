@@ -4,11 +4,11 @@ import MapUsers from "@/components/UserCard/MapUsers.jsx";
 const AboutUs = () => {
   return (
     <section className="space-y-4 py-24">
-      <SubTitle>
+      <SubTitle addClass="dark:text-white">
         A little introduction of Our Project
         <span className="text-primary">.</span>
       </SubTitle>
-      <Paragraph>
+      <Paragraph addClass="dark:text-white">
         In the project we are developing as part of the bootcamp at Globant, we
         are building a learning platform focused on ReactJS and JavaScript. The
         main goal of this platform is to provide users with an interactive
@@ -27,10 +27,10 @@ const AboutUs = () => {
         are committed to creating a tool that truly benefits students on their
         journey to mastering JavaScript
       </Paragraph>
-      <SubTitle>
+      <SubTitle addClass="dark:text-white">
         Our Team<span className="text-primary">.</span>
       </SubTitle>
-      <Paragraph>
+      <Paragraph addClass="dark:text-white">
         Our team consists of a talented and passionate group of frontend
         developers, each with great dedication and experience in creating modern
         and efficient web applications. Here we are:

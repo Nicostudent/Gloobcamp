@@ -5,6 +5,11 @@ import "./globals.css";
 import Navbar from "@/components/NavBar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import ClientLayout from "./ClientLayout";
+<<<<<<< HEAD
+=======
+import { ThemeProvider } from "@/context/ThemeContext";
+
+>>>>>>> 3b58ed6bb5dce6886572368028dd9d5da51bb9cc
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -35,12 +40,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+<<<<<<< HEAD
       <body className={poppins.className}>
         <Navbar />
         <ToastContainer />
         <ClientLayout />
         <main className="mx-auto px-4 max-w-7xl">{children}</main>
         <Footer />
+=======
+      <body className={ `${poppins.className} dark:bg-secondary`}
+      >
+        <ThemeProvider>
+          <Navbar />
+          <ToastContainer />
+          <ClientLayout />
+          <main className="mx-auto px-4 max-w-7xl">{children}</main>
+          <Footer />
+        </ThemeProvider>
+>>>>>>> 3b58ed6bb5dce6886572368028dd9d5da51bb9cc
       </body>
     </html>
   );
