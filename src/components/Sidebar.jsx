@@ -20,16 +20,8 @@ const Sidebar = ({ pathname }) => {
       ...topic,
       basePath: "/content/javascript",
     }));
-    topics = jsTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/javascript",
-    }));
     title = "JavaScript";
   } else if (pathname.startsWith("/content/react")) {
-    topics = reactTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/react",
-    }));
     topics = reactTopics.map((topic) => ({
       ...topic,
       basePath: "/content/react",
@@ -72,12 +64,6 @@ const Sidebar = ({ pathname }) => {
         </svg>
       </button>
 
-      {isOpen && (
-        <div
-          className="z-10 fixed inset-0 bg-black opacity-50"
-          onClick={closeSidebar}
-        ></div>
-      )}
       {isOpen && (
         <div
           className="z-10 fixed inset-0 bg-black opacity-50"
