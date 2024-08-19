@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 const DailyRewardsList = () => {
   const [isListOpen, setIsListOpen] = useState(false);
-  const listRef = useRef(null); // Create a ref for the dropdown
+  const listRef = useRef(null);
 
   const toggleList = () => {
     setIsListOpen(!isListOpen);
@@ -11,7 +11,7 @@ const DailyRewardsList = () => {
 
   const handleClickOutside = (event) => {
     if (listRef.current && !listRef.current.contains(event.target)) {
-      setIsListOpen(false); // Close the list if clicked outside
+      setIsListOpen(false); 
     }
   };
 
@@ -22,7 +22,7 @@ const DailyRewardsList = () => {
       document.removeEventListener("click", handleClickOutside);
     }
 
-    // Clean up event listener on component unmount
+
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
@@ -37,7 +37,7 @@ const DailyRewardsList = () => {
 
   return (
     <div className="relative" ref={listRef}>
-      {/* Icon that toggles the list */}
+      
       <img
         src="/questIcon.png"
         alt="Daily Rewards"
@@ -45,9 +45,9 @@ const DailyRewardsList = () => {
         className="cursor-pointer w-8 h-8"
       />
       {isListOpen && (
-        <ul className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg">
+        <ul className="absolute left-0 mt-6 w-80">
           {rewards.map((reward, index) => (
-            <li key={index} className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            <li key={index} className="cursor-pointer border rounded-lg border-primary mb-2 px-4 py-2 text-sm text-pretty text-gray-700 hover:bg-primary hover:text-white duration-200 ease-in-out">
               {reward}
             </li>
           ))}

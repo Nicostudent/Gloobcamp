@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
 import NavigationLink from "@/components/NavigationLink";
-import DailyRewardsList from "./DailyRewardsList"; // Import the new component
+import DailyRewardsList from "./DailyRewardsList"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
         <div className="md:flex items-center gap-6 align-middle hidden">
           <img src="/user.svg" alt="User Icon" className="cursor-pointer w-8 h-8" />
-          <DailyRewardsList /> {/* Add the DailyRewardsList component here */}
+          <DailyRewardsList /> 
         </div>
       </div>
       {isOpen && (
