@@ -22,22 +22,38 @@ const DailyRewardsList = () => {
       document.removeEventListener("click", handleClickOutside);
     }
 
-
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [isListOpen]);
 
-  const rewards = [
-    "Complete 1 subtopic - 10 gloobpoints",
-    "Complete 3 subtopics - 30 gloobpoints",
-    "Complete 10 subtopics - 60 gloobpoints",
-    "Complete a full topic - 100 gloobpoints",
-  ];
+  const [rewards, setRewards] = useState([
+    { label: "Complete 1 subtopic", points: 10, claimed: false },
+    { label: "Complete 3 subtopics", points: 30, claimed: false },
+    { label: "Complete 10 subtopics", points: 60, claimed: false },
+    { label: "Complete a full topic", points: 100, claimed: false },
+  ]);
+
+  const redeemPoints = (index) => {
+    if (rewards[index].claimed || rewards[index].points === 0) return;
+
+    const interval = setInterval(() => {
+      setRewards((prevRewards) => {
+        const newRewards = [...prevRewards];
+        if (newRewards[index].points > 0) {
+          newRewards[index].points -= 1;
+        }
+        if (newRewards[index].points === 0) {
+          newRewards[index].claimed = true;
+          clearInterval(interval);
+        }
+        return newRewards;
+      });
+    }, 100); // Time interval
+  };
 
   return (
     <div className="relative" ref={listRef}>
-      
       <img
         src="/questIcon.png"
         alt="Daily Rewards"
@@ -47,8 +63,14 @@ const DailyRewardsList = () => {
       {isListOpen && (
         <ul className="absolute left-0 mt-6 w-80">
           {rewards.map((reward, index) => (
-            <li key={index} className="cursor-pointer border rounded-lg border-primary mb-2 px-4 py-2 text-sm text-pretty text-gray-700 hover:bg-primary hover:text-white duration-200 ease-in-out">
-              {reward}
+            <li
+              key={index}
+              onClick={() => redeemPoints(index)}
+              className={`cursor-pointer border rounded-lg border-primary mb-2 px-4 py-2 text-sm ${
+                reward.claimed ? "line-through text-gray-400" : "text-gray-700"
+              } hover:bg-primary hover:text-white duration-200 ease-in-out`}
+            >
+              {reward.label} - {reward.points} gloobpoints
             </li>
           ))}
         </ul>
