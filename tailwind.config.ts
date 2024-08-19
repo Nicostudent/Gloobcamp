@@ -1,3 +1,4 @@
+import PreviousMap from "postcss/lib/previous-map";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
@@ -7,6 +8,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -15,7 +17,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#644CE5",
+        primary: "#644CE5", 
         secondary: "#24262F",
         tertiary: "#4E525A",
       },

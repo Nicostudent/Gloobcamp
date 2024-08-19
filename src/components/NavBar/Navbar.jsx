@@ -1,9 +1,9 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import { Logo } from "./Logo";
 import BurgerButton from "./BurgerButton";
 import NavigationLink from "@/components/NavigationLink";
-import NavIcon from "./NavIcon";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
     <>
       {pages.map((page) => (
         <NavigationLink
-          bgIsdark
+          className="text-white"
           key={page.to}
           href={page.to}
           aria-label={page.label}
@@ -37,12 +37,14 @@ const Navbar = () => {
     <nav className="z-50 fixed bg-primary py-4 w-full">
       <div className="flex justify-between items-center mx-auto px-6 max-w-7xl">
         <Logo />
+        <div className="flex items-center gap-6 md:hidden align-middle"></div>
         <div className="md:flex items-center gap-8 hidden">{renderLinks()}</div>
-        <div className="md:hidden">
+        <div className="flex md:hidden">
+          <ThemeSwitcher />
           <BurgerButton isOpen={isOpen} toggleDropdown={toggleDropdown} />
         </div>
-        <div className="lg:flex items-center gap-6 hidden align-middle">
-          <NavIcon pathname={"/"} image={"/user.svg"} />
+        <div className="md:flex items-center gap-6 hidden align-middle">
+          <ThemeSwitcher />
         </div>
       </div>
       {isOpen && (

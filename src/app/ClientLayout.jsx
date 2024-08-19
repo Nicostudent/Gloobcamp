@@ -4,7 +4,9 @@ import Sidebar from "@/components/Sidebar";
 
 const contentPatterns = [
   /^\/content\/javascript\/.+/,
-  /^\/content\/react\/.+/
+  /^\/content\/react\/.+/,
+  /^\/content\/html\/.+/,
+  /^\/content\/css\/.+/
 ];
 
 const ClientLayout = () => {
