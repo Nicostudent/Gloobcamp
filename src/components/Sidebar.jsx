@@ -45,7 +45,7 @@ const Sidebar = ({ pathname }) => {
   return (
     <>
       <button
-        className="block top-24 left-4 z-20 fixed md:hidden bg-fff p-2 rounded-md hover:text-gray-400 focus:text-gray-400 dark:text-white focus:outline-none"
+        className="block top-28 left-4 z-20 fixed md:hidden bg-fff p-2 rounded-md hover:text-gray-400 focus:text-gray-400 dark:text-white focus:outline-none"
         onClick={toggleSidebar}
       >
         <svg
