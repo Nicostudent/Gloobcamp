@@ -5,11 +5,12 @@ const CustomButton = ({
   text,
   disabled,
   icon,
+  forInput,
   ...props
 }) => {
   const baseStyles =
-    "h-12 text-center text-base font-semibold leading-6 rounded-md flex items-center";
-  const purpleStyles = "text-white hover:opacity-90 bg-primary duration-300";
+    `h-12 text-center h-full border border-primary ${forInput ? "rounded-r-md" : "rounded-md"} flex items-center hover:opacity-90 px-1 py-2 transition duration-300`;
+  const purpleStyles = "text-white bg-primary";
   const defaultStyles = "text-black bg-white hover:bg-gray-50";
   const disabledStyles = "text-white bg-gray-500 cursor-not-allowed";
 
@@ -22,12 +23,12 @@ const CustomButton = ({
   return (
     <button
       aria-label={text}
-      className={`${baseStyles} ${buttonStyles} ${className}`}
+      className={`${baseStyles} gap-2 ${buttonStyles} ${className}`}
       disabled={disabled}
       {...props}
     >
-      {icon && <span>{icon}</span>}
       {text}
+      {icon}
     </button>
   );
 };
