@@ -17,10 +17,10 @@ export default function ChatComponent() {
   const [botTyping, setBotTyping] = useState(false);
   const chatBoxRef = useRef(null);
 
-  const saveMessagesToLocalStorage = (messages) => {
+  const saveMessagesToLocalStorage = useCallback((messages) => {
     const expiresAt = Date.now() + 86400000; // Remove after 24 hours
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ value: messages, expiresAt }));
-  };
+  }, []);
   
   const addMessage = useCallback(
     (type, text) => {
