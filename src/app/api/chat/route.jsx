@@ -30,14 +30,12 @@ export async function POST(request) {
     const data = await response.json();
 
     if (!data || !data.text) {
-      console.error('Respuesta inválida de Cohere');
-      return NextResponse.json({ error: 'Respuesta inválida de Cohere' }, { status: 500 });
+      return NextResponse.json({ error: 'Invalid response from Cohere' }, { status: 500 });
     }
 
     const aiResponse = data.text.trim();
     return NextResponse.json({ response: aiResponse });
   } catch (error) {
-    console.error('Error al conectar con Cohere:', error);
-    return NextResponse.json({ error: 'Error al conectar con Cohere' }, { status: 500 });
+    return NextResponse.json({ error: 'Error when connecting to Cohere' }, { status: 500 });
   }
 }
