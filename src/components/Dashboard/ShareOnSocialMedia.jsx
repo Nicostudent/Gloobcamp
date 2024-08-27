@@ -7,21 +7,25 @@ import {
   WhatsappIcon,
   LinkedinShareButton,
 } from "react-share";
+import { SubTitle } from "@/components/Writing";
 
 const ShareOnSocialMedia = ({ title, size }) => {
   return (
-    <article>
-      <TwitterShareButton url="https://gloobcamp.vercel.app/" title={title}>
-        <XIcon size={size} round />
-      </TwitterShareButton>
+    <article className="space-y-6">
+      <SubTitle addClass="dark:text-white">Share on Social Media</SubTitle>
+      <div className="flex justify-center gap-6">
+        <TwitterShareButton url="https://gloobcamp.vercel.app/" title={title}>
+          <XIcon size={size} round />
+        </TwitterShareButton>
 
-      <WhatsappShareButton url="https://gloobcamp.vercel.app/" title={title}>
-        <WhatsappIcon size={size} round />
-      </WhatsappShareButton>
+        <WhatsappShareButton url="https://gloobcamp.vercel.app/" title={title}>
+          <WhatsappIcon size={size} round />
+        </WhatsappShareButton>
 
-      <LinkedinShareButton url="https://gloobcamp.vercel.app/" title={title}>
-        <LinkedinIcon size={size} round />
-      </LinkedinShareButton>
+        <LinkedinShareButton url="https://gloobcamp.vercel.app/" title={title}>
+          <LinkedinIcon size={size} round />
+        </LinkedinShareButton>
+      </div>
     </article>
   );
 };
