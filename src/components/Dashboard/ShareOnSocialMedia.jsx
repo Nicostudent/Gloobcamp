@@ -8,15 +8,16 @@ import {
 
 const ShareOnSocialMedia = ({ title }) => {
   return (
-    <>
+    <article>
       <TwitterShareButton
         url="https://gloobcamp.vercel.app/"
-        title={`He completado todos los temas de ${title} de GloobCamp`}
+        title={`I have just completed ${title} in Gloobcamp. Check it out!`}
         className="Demo__some-network__share-button"
       >
         <XIcon size={32} round />
       </TwitterShareButton>
-    </>
+      <WhatsappShareButton></WhatsappShareButton>
+    </article>
   );
 };
 
