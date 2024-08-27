@@ -26,7 +26,10 @@ const CompletedContent = ({ title }) => {
         <span className="mt-4 font-light text-center text-xs">{`(you will not get an achievement next time.)`}</span>
       </Paragraph>
       <LinkButton dark href="/content" label={"View other contents"} />
-      <ShareOnSocialMedia title={title} />
+      <ShareOnSocialMedia
+        title={`I have just completed ${title} in Gloobcamp. Check it out!`}
+        size={32}
+      />
     </section>
   );
 };
