@@ -6,7 +6,6 @@ import Link from "next/link";
 const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-
   const formatLink = (link) => {
     let formattedLink = link.replace(/-/g, " ");
 
@@ -20,7 +19,11 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
 
   return (
     <div>
-      <ul className="flex flex-wrap bg-transparent pt-24">
+      <ul
+        className={`flex flex-wrap bg-transparent ${
+          pathNames.includes("content") && "md:mx-32"
+        } pt-24`}
+      >
         <li className="mx-2 font-bold dark:text-white hover:underline">
           <Link href={"/"} aria-label="back to homepage">
             {homeElement}
