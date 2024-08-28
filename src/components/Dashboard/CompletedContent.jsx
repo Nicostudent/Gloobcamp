@@ -3,10 +3,7 @@ import React, { useEffect } from "react";
 import { Heading, Paragraph } from "@/components/Writing";
 import JSConfetti from "js-confetti";
 import { LinkButton } from "../LinkButton";
-<<<<<<< HEAD
-=======
 import ShareOnSocialMedia from "@/components/Dashboard/ShareOnSocialMedia";
->>>>>>> origin/develop
 
 const CompletedContent = ({ title }) => {
   useEffect(() => {
@@ -17,19 +14,12 @@ const CompletedContent = ({ title }) => {
   });
 
   return (
-<<<<<<< HEAD
-    <section className="flex flex-col justify-center items-center space-y-4 py-24 h-[calc(100vh-256px)]">
-      <Heading addClass={"dark:text-white"}>{title}</Heading>
-
-      <Paragraph addClass={"text-center flex flex-col max-w-xl dark:text-white"}>
-=======
     <section className="flex flex-col justify-center items-center space-y-6 py-24 h-[calc(100vh-256px)]">
       <Heading addClass={"dark:text-white"}>{title}</Heading>
 
       <Paragraph
         addClass={"text-center flex flex-col max-w-xl dark:text-white"}
       >
->>>>>>> origin/develop
         <span>{` Congratulations, you have completed all the topics of ${title}!`}</span>
         <span>{`You get a new achievement.`}</span>
         <span>{`we earese all your progress so you can start again`}</span>

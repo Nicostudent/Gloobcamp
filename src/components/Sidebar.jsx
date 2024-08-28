@@ -4,46 +4,6 @@ import htmlTopic from "@/utils/html-topics-and-questions.json";
 import cssTopic from "@/utils/css-topics-and-questions.json";
 import { useState } from "react";
 import TopicList from "./TopicList";
-<<<<<<< HEAD
-
-const Sidebar = ({ pathname }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => setIsOpen(!isOpen);
-  const closeSidebar = () => setIsOpen(false);
-
-  let topics = [];
-  let title = "";
-  
-
-  if (pathname.startsWith("/content/javascript")) {
-    topics = jsTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/javascript",
-    }));
-    title = "JavaScript";
-  } else if (pathname.startsWith("/content/react")) {
-    topics = reactTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/react",
-    }));
-    title = "React";
-  } else if(pathname.startsWith("/content/html")) {
-    topics = htmlTopic.map((topic) => ({
-      ...topic,
-      basePath: "/content/html",
-    }));
-    title = "HTML";
-  } else if(pathname.startsWith("/content/css")) {
-    topics = cssTopic.map((topic) => ({
-      ...topic,
-      basePath: "/content/css",
-    }));
-    title = "CSS";
-  }
-
-  
-=======
 
 const Sidebar = ({ pathname }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +40,6 @@ const Sidebar = ({ pathname }) => {
     title = "CSS";
   }
 
->>>>>>> origin/develop
   return (
     <>
       <button
@@ -113,13 +72,6 @@ const Sidebar = ({ pathname }) => {
       <aside
         className={`top-16 fixed bg-gray-200 dark:bg-stone-900 w-64 overflow-y-auto z-20 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-<<<<<<< HEAD
-        } transition-transform duration-300 ease-in-out md:translate-x-0`}
-        style={{ height: "93%" }}
-      >
-        <nav className="flex flex-col p-4">
-          <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">{title}</h2>
-=======
         } transition-transform duration-300 ease-in-out 2xl:translate-x-0`}
         style={{ height: "93%" }}
       >
@@ -127,7 +79,6 @@ const Sidebar = ({ pathname }) => {
           <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">
             {title}
           </h2>
->>>>>>> origin/develop
           <TopicList topics={topics} pathname={pathname} />
         </nav>
       </aside>
