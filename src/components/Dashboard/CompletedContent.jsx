@@ -14,7 +14,7 @@ const CompletedContent = ({ title }) => {
   });
 
   return (
-    <section className="flex flex-col justify-center items-center space-y-4 py-24 h-[calc(100vh-256px)]">
+    <section className="flex flex-col justify-center items-center space-y-6 py-24 h-[calc(100vh-256px)]">
       <Heading addClass={"dark:text-white"}>{title}</Heading>
 
       <Paragraph
@@ -26,7 +26,10 @@ const CompletedContent = ({ title }) => {
         <span className="mt-4 font-light text-center text-xs">{`(you will not get an achievement next time.)`}</span>
       </Paragraph>
       <LinkButton dark href="/content" label={"View other contents"} />
-      <ShareOnSocialMedia title={title} />
+      <ShareOnSocialMedia
+        title={`I have just completed ${title} in Gloobcamp. Check it out!`}
+        size={36}
+      />
     </section>
   );
 };

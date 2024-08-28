@@ -13,7 +13,6 @@ const Sidebar = ({ pathname }) => {
 
   let topics = [];
   let title = "";
-  
 
   if (pathname.startsWith("/content/javascript")) {
     topics = jsTopics.map((topic) => ({
@@ -27,13 +26,13 @@ const Sidebar = ({ pathname }) => {
       basePath: "/content/react",
     }));
     title = "React";
-  } else if(pathname.startsWith("/content/html")) {
+  } else if (pathname.startsWith("/content/html")) {
     topics = htmlTopic.map((topic) => ({
       ...topic,
       basePath: "/content/html",
     }));
     title = "HTML";
-  } else if(pathname.startsWith("/content/css")) {
+  } else if (pathname.startsWith("/content/css")) {
     topics = cssTopic.map((topic) => ({
       ...topic,
       basePath: "/content/css",
@@ -41,7 +40,6 @@ const Sidebar = ({ pathname }) => {
     title = "CSS";
   }
 
-  
   return (
     <>
       <button
@@ -74,11 +72,13 @@ const Sidebar = ({ pathname }) => {
       <aside
         className={`top-16 fixed bg-gray-200 dark:bg-stone-900 w-64 overflow-y-auto z-20 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out md:translate-x-0`}
+        } transition-transform duration-300 ease-in-out 2xl:translate-x-0`}
         style={{ height: "93%" }}
       >
-        <nav className="flex flex-col p-4">
-          <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">{title}</h2>
+        <nav className="flex flex-col py-9 p-4">
+          <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">
+            {title}
+          </h2>
           <TopicList topics={topics} pathname={pathname} />
         </nav>
       </aside>
