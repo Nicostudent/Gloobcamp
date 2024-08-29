@@ -7,7 +7,18 @@ import { FaCss3Alt, FaReact } from "react-icons/fa";
 const page = () => {
   return (
     <section className="flex flex-col justify-center items-center space-y-8 my-12 ">
-      <Heading addClass={"text-center dark:text-white"}>What do you want to learn now?</Heading>
+        <Heading addClass="dark:text-white">Welcome to GloobCamp</Heading>
+        {/* <div className="px-4 max-w-2xl text-center"> */}
+        <Paragraph addClass="dark:text-white px-4 max-w-3xl text-center">
+          Discover the essential knowledge every JavaScript developer should
+          know. Progress through our expertly crafted topics and challenge
+          yourself with quizzes at the end of each lesson. Earn knowledge points
+          for every correct answer and track your progress as you master
+          JavaScript. Ready to begin?
+        </Paragraph>
+      {/* </div> */}
+
+      {/* <Heading addClass={"text-center dark:text-white"}>What do you want to learn now?</Heading> */}
       <Paragraph addClass="dark:text-white">Choose your content</Paragraph>
 
       <div className="justify-between items-center gap-8 grid md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 ">

@@ -3,8 +3,17 @@ import { Heading, Paragraph } from "@/components/Writing";
 
 const App = () => {
   return (
-    <main className="flex flex-col justify-center items-center space-y-8 py-24 min-h-screen align-middle">
-      <div className="text-center">
+    <p>
+      this page no longer is needed. didnt delete this just incase we need it
+      later. or just delete it{" "}
+    </p>
+  );
+};
+export default App;
+// <main className="flex flex-col justify-center items-center space-y-8 py-24 min-h-screen align-middle">
+
+{
+  /* <div className="text-center">
         <Heading addClass="dark:text-white">Welcome to GloobCamp</Heading>
       </div>
       <div className="px-4 max-w-2xl text-center">
@@ -16,9 +25,6 @@ const App = () => {
           JavaScript. Ready to begin?
         </Paragraph>
       </div>
-      <LinkButton dark href={"/content"} label={"Start my learning journey!"} />
-    </main>
-  );
-};
-
-export default App;
+      <LinkButton dark href={"/content"} label={"Start my learning journey!"} /> */
+}
+// </main>
