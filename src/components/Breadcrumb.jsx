@@ -29,9 +29,9 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
             {homeElement}
           </Link>
         </li>
-        {pathNames.length > 0 && separator}
-        {pathNames.map((link, index) => {
-          let href = `/${pathNames.slice(0, index + 1).join("/")}`;
+        {pathNames.length > 1 && separator}
+        {pathNames.slice(1).map((link, index) => {
+          let href = `/${pathNames.slice(0, index + 2).join("/")}`;
           let itemClasses =
             paths === href
               ? "hover:underline mx-2 font-bold text-primary"
