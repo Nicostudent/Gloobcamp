@@ -1,9 +1,6 @@
 "use client";
 import { Heading, SubTitle } from "@/components/Writing";
-import jsTopics from "@/utils/js-topics-and-questions.json";
-import reacTopic from "@/utils/react-topics-and-questions.json";
-import htmlTopic from "@/utils/html-topics-and-questions.json";
-import cssTopic from "@/utils/css-topics-and-questions.json";
+import useFetchTopics from '@/hooks/useFetchTopics';
 import Card from "@/components/Dashboard/Card";
 import ProgressBar from "@/components/ProgressBar";
 import useProgress from "@/hooks/useProgress";
@@ -16,15 +13,9 @@ const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const topicsMapping = {
-      react: reacTopic,
-      javascript: jsTopics,
-      html: htmlTopic,
-      css: cssTopic,
-    };    
+  const { topicsData, loading, error } = useFetchTopics(subject);
 
-  const topicsData = topicsMapping[subject] || [];
-  const limitFilter = topicsData.length;
+  const limitFilter = topicsData?.length || 0;
   const { progress, selectedTopics, handleCheckboxChange } = useProgress(
     limitFilter,
     subject
@@ -37,7 +28,7 @@ const Subject = ({ params: { subject } }) => {
     return <CompletedContent title={subject} />;
   }
 
-  const filteredTopics = topicsData.filter((topic) =>
+  const filteredTopics = topicsData?.filter((topic) =>
     topic.title.toLowerCase().includes(searchTopic.toLowerCase())
   );
 
@@ -78,3 +69,4 @@ const Subject = ({ params: { subject } }) => {
 };
 
 export default Subject;
+
