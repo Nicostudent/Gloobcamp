@@ -21,14 +21,11 @@ const Subject = ({ params: { subject } }) => {
       javascript: jsTopics,
       html: htmlTopic,
       css: cssTopic,
-    };    
+    };
 
   const topicsData = topicsMapping[subject] || [];
   const limitFilter = topicsData.length;
-  const { progress, selectedTopics, handleCheckboxChange } = useProgress(
-    limitFilter,
-    subject
-  );
+  const { progress } = useProgress(limitFilter, subject);
 
   const PROGRESS_MAX_VALUE = 100;
   const PROGRESS_VALUE = progress.toFixed(2);
@@ -68,9 +65,7 @@ const Subject = ({ params: { subject } }) => {
       />
       <ProgressBar progress={progress} />
       <Card
-        handleCheckboxChange={handleCheckboxChange}
         topics={topicsData}
-        selectedTopics={selectedTopics}
         subject={subject}
       />
     </section>
