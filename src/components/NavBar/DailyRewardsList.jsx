@@ -14,12 +14,19 @@ const DailyRewardsList = () => {
   ];
 
   const [rewards, setRewards] = useState(initialRewards);
+  const [lastClaimTime, setLastClaimTime] = useState(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedRewards = localStorage.getItem("rewards");
+      const storedLastClaimTime = localStorage.getItem("lastClaimTime");
+
       if (storedRewards) {
         setRewards(JSON.parse(storedRewards));
+      }
+
+      if (storedLastClaimTime) {
+        setLastClaimTime(JSON.parse(storedLastClaimTime));
       }
     }
   }, []);
@@ -27,9 +34,15 @@ const DailyRewardsList = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("rewards", JSON.stringify(rewards));
-//      console.log("Rewards state updated succesfully ", rewards)
+      localStorage.setItem("lastClaimTime", JSON.stringify(lastClaimTime));
     }
-  }, [rewards]);
+  }, [rewards, lastClaimTime]);
+
+  useEffect(() => {
+    if (lastClaimTime && hasOneDayPassed(lastClaimTime)) {
+      resetRewards();
+    }
+  }, [lastClaimTime]);
 
   const toggleList = () => {
     setIsListOpen(!isListOpen);
@@ -69,6 +82,19 @@ const DailyRewardsList = () => {
         return newRewards;
       });
     }, 100); // time interval
+
+    setLastClaimTime(new Date().getTime());
+  };
+
+  const resetRewards = () => {
+    setRewards(initialRewards);
+    setLastClaimTime(null);
+  };
+
+  const hasOneDayPassed = (lastTime) => {
+    const ONE_DAY_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    const currentTime = new Date().getTime();
+    return currentTime - lastTime >= ONE_DAY_MS;
   };
 
   return (
@@ -85,7 +111,7 @@ const DailyRewardsList = () => {
             <li
               key={index}
               onClick={() => redeemPoints(index)}
-              className={`cursor-pointer border rounded-lg border-primary mb-2 px-4 py-2 text-sm ${
+              className={`cursor-pointer bg-white border rounded-lg border-primary mb-2 px-4 py-2 text-sm ${
                 reward.claimed ? "line-through text-gray-400" : "text-gray-700"
               } hover:bg-primary hover:text-white duration-200 ease-in-out`}
             >
