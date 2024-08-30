@@ -2,7 +2,7 @@
 import ContentPage from "@/components/ContentPage.jsx";
 import Quiz from "@/components/Quiz";
 import EndTopic from "@/components/EndTopic";
-import useFetchTopics from '@/hooks/useFetchTopics';
+import useFetchTopics from "@/hooks/useFetchTopics";
 
 const TopicPage = ({ params: { topics, subject } }) => {
   const { topicsData, loading, error } = useFetchTopics(subject);
@@ -11,7 +11,7 @@ const TopicPage = ({ params: { topics, subject } }) => {
 
   if (loading) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex justify-center items-center h-screen">
         Loading...
       </div>
     );
@@ -19,7 +19,7 @@ const TopicPage = ({ params: { topics, subject } }) => {
 
   if (error) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex justify-center items-center h-screen">
         Error: {error}
       </div>
     );
@@ -35,7 +35,7 @@ const TopicPage = ({ params: { topics, subject } }) => {
 
   if (!topicData) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex justify-center items-center h-screen">
         Topic not found
       </div>
     );
@@ -47,6 +47,8 @@ const TopicPage = ({ params: { topics, subject } }) => {
         <Quiz
           questions={topicData.questions}
           nextTopicPath={`/content/${subject}/${topicData.next}`}
+          subject={subject}
+          topic={topicData}
         />
       </ContentPage>
     </div>

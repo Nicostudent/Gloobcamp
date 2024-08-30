@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const Quiz = ({ questions, nextTopicPath }) => {
+const Quiz = ({ questions, nextTopicPath, subject, topic }) => {
+  console.log(subject);
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const [isFinished, setIsFinished] = useState(false);
@@ -13,6 +14,10 @@ const Quiz = ({ questions, nextTopicPath }) => {
   const [incorrectChoices, setIncorrectChoices] = useState(0);
 
   const currentQuestion = questions[questionIndex];
+
+  const currentTopic = topic.id;
+
+  console.log(currentTopic);
 
   const totalQuestions = questions.length;
 
@@ -33,6 +38,15 @@ const Quiz = ({ questions, nextTopicPath }) => {
     }
   };
 
+  if (correctChoices === totalQuestions) {
+    const selectedTopics = JSON.parse(
+      localStorage.getItem(`selectedTopics${subject}`) || "{}"
+    );
+    localStorage.setItem(
+      `selectedTopics${subject}`,
+      JSON.stringify({ ...selectedTopics, [currentTopic]: true })
+    );
+  }
   const handleRestartQuiz = () => {
     setQuestionIndex(0);
     setCorrectChoices(0);
