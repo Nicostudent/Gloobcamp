@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const useProgress = (limit, subject) => {
   const [progress, setProgress] = useState(0);
@@ -10,8 +9,12 @@ const useProgress = (limit, subject) => {
       const storedCompletedTopicsKey = `completedTopics_${subject}`;
       const storedCompletedTopics = JSON.parse(localStorage.getItem(storedCompletedTopicsKey)) || [];
 
-      const newProgress = (storedCompletedTopics.length / limit) * 100;
-      setProgress(newProgress > 100 ? 100 : newProgress);
+      if (limit > 0) { 
+        const newProgress = (storedCompletedTopics.length / limit) * 100;
+        setProgress(newProgress > 100 ? 100 : newProgress);
+      } else {
+        setProgress(0); 
+      }
     }
   }, [limit, subject]);
 
