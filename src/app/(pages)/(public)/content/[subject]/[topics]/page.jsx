@@ -35,7 +35,7 @@ const TopicPage = ({ params: { topics, subject } }) => {
 
   if (!topicData) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex justify-center items-center h-screen">
         Topic not found
       </div>
     );
@@ -47,6 +47,8 @@ const TopicPage = ({ params: { topics, subject } }) => {
         <Quiz
           questions={topicData.questions}
           nextTopicPath={`/content/${subject}/${topicData.next}`}
+          topicId={topicData.id}
+          subject={subject}
         />
       </ContentPage>
     </div>

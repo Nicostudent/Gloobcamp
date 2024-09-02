@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const TopicList = ({ topics, pathname }) => {
-  console.log("pathname", pathname)
   return (
     <ul className="space-y-2">
       {topics.map((topic) => {

@@ -1,9 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const Quiz = ({ questions, nextTopicPath }) => {
+const decodeHTML = (html) => {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+};
+
+const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const [isFinished, setIsFinished] = useState(false);
@@ -16,9 +22,18 @@ const Quiz = ({ questions, nextTopicPath }) => {
 
   const totalQuestions = questions.length;
 
+
+  useEffect(() => {
+    const storedCompletedTopics = JSON.parse(localStorage.getItem("completedTopics")) || [];
+    if (!Array.isArray(storedCompletedTopics)) {
+      localStorage.setItem("completedTopics", JSON.stringify([]));
+    }
+  }, []);
+
   const handleIsCorrectChoice = (e) => {
-    const selectedChoice = e.target.innerHTML;
-    if (selectedChoice === currentQuestion.correctAnswer) {
+    const selectedChoice = decodeHTML(e.target.innerHTML);
+    const correctAnswer = decodeHTML(currentQuestion.correctAnswer);
+    if (selectedChoice == correctAnswer) {
       setCorrectChoices((prev) => prev + 1);
     } else {
       setIncorrectChoices((prev) => prev + 1);
@@ -30,6 +45,16 @@ const Quiz = ({ questions, nextTopicPath }) => {
 
     if (questionIndex + 1 === totalQuestions) {
       setIsFinished(true);
+
+      if (incorrectChoices === 0 && correctChoices + 1 === totalQuestions) {
+        const storedCompletedTopicsKey = `completedTopics_${subject}`;
+        const storedCompletedTopics = JSON.parse(localStorage.getItem(storedCompletedTopicsKey)) || [];
+      
+        if (!storedCompletedTopics.includes(topicId)) {
+          storedCompletedTopics.push(topicId);
+          localStorage.setItem(storedCompletedTopicsKey, JSON.stringify(storedCompletedTopics));
+        }
+      }
     }
   };
 
@@ -39,6 +64,7 @@ const Quiz = ({ questions, nextTopicPath }) => {
     setIncorrectChoices(0);
     setIsFinished(false);
   };
+
 
   if (isFinished) {
     return (

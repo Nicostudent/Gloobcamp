@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaCopy } from 'react-icons/fa';
 
 const CopyCodeButton = ({ code }) => {
   const [copied, setCopied] = useState(false);
@@ -14,12 +15,18 @@ const CopyCodeButton = ({ code }) => {
   };
 
   return (
-    <button 
-      onClick={handleCopy} 
-      className="bg-primary px-3 py-1 transition-all hover:scale-105 rounded text-white focus:outline-none"
-    >
-      {copied ? 'Copied!' : 'Copy Code'}
-    </button>
+    <div className="relative">
+      <button
+        onClick={handleCopy}
+        className="absolute top-2 right-2 p-1 text-gray-400 hover:text-gray-600 ease-in-out duration-300 dark:text-white dark:hover:text-gray-300 focus:outline-none"
+      >
+        {copied ? (
+          <span className="text-xs text-green-500">Copied!</span>
+        ) : (
+          <FaCopy size={18} />
+        )}
+      </button>
+    </div>
   );
 };
 

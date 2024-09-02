@@ -6,12 +6,13 @@ import { LinkButton } from "../LinkButton";
 import ShareOnSocialMedia from "@/components/Dashboard/ShareOnSocialMedia";
 
 const CompletedContent = ({ title }) => {
+  
   useEffect(() => {
     const jsConfetti = new JSConfetti();
     window.localStorage.removeItem(title);
-    window.localStorage.removeItem("selectedTopics" + title);
+    window.localStorage.removeItem(`completedTopics_${title}`);
     jsConfetti.addConfetti();
-  });
+  }, [title]);
 
   return (
     <section className="flex flex-col justify-center items-center space-y-6 py-24 h-[calc(100vh-256px)]">
