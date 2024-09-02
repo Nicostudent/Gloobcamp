@@ -13,10 +13,10 @@ const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { topicsData, loading, error } = useFetchTopics(subject);
+  const { topicsData } = useFetchTopics(subject);
 
   const limitFilter = topicsData?.length || 0;
-  const { progress, selectedTopics, handleCheckboxChange } = useProgress(
+  const { progress } = useProgress(
     limitFilter,
     subject
   );
@@ -59,9 +59,7 @@ const Subject = ({ params: { subject } }) => {
       />
       <ProgressBar progress={progress} />
       <Card
-        handleCheckboxChange={handleCheckboxChange}
         topics={topicsData}
-        selectedTopics={selectedTopics}
         subject={subject}
       />
     </section>
