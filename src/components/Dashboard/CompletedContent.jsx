@@ -6,9 +6,11 @@ import { LinkButton } from "../LinkButton";
 import ShareOnSocialMedia from "@/components/Dashboard/ShareOnSocialMedia";
 
 const CompletedContent = ({ title }) => {
+  
   useEffect(() => {
     const jsConfetti = new JSConfetti();
     window.localStorage.removeItem(title);
+    window.localStorage.removeItem(`completedTopics_${title}`);
     jsConfetti.addConfetti();
   }, [title]);
 
