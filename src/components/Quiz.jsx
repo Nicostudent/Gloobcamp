@@ -22,9 +22,9 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
 
   const totalQuestions = questions.length;
 
-
   useEffect(() => {
-    const storedCompletedTopics = JSON.parse(localStorage.getItem("completedTopics")) || [];
+    const storedCompletedTopics =
+      JSON.parse(localStorage.getItem("completedTopics")) || [];
     if (!Array.isArray(storedCompletedTopics)) {
       localStorage.setItem("completedTopics", JSON.stringify([]));
     }
@@ -48,11 +48,15 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
 
       if (incorrectChoices === 0 && correctChoices + 1 === totalQuestions) {
         const storedCompletedTopicsKey = `completedTopics_${subject}`;
-        const storedCompletedTopics = JSON.parse(localStorage.getItem(storedCompletedTopicsKey)) || [];
-      
+        const storedCompletedTopics =
+          JSON.parse(localStorage.getItem(storedCompletedTopicsKey)) || [];
+
         if (!storedCompletedTopics.includes(topicId)) {
           storedCompletedTopics.push(topicId);
-          localStorage.setItem(storedCompletedTopicsKey, JSON.stringify(storedCompletedTopics));
+          localStorage.setItem(
+            storedCompletedTopicsKey,
+            JSON.stringify(storedCompletedTopics)
+          );
         }
       }
     }
@@ -64,6 +68,8 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
     setIncorrectChoices(0);
     setIsFinished(false);
   };
+console.log("correct", correctChoices)
+console.log("incorrectChoices", incorrectChoices)
 
 
   if (isFinished) {
@@ -79,18 +85,21 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
           <p className="text-xl">Incorrect Answers: {incorrectChoices}</p>
         </div>
         <div className="flex md:flex-row flex-col justify-center items-center">
-          <button
-            className="bg-gray-100 dark:bg-primary hover:opacity-90 md:mx-3 mb-3 md:mb-0 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
-            onClick={handleRestartQuiz}
-          >
-            Try again
-          </button>
-          <Link
-            href={nextTopicPath}
-            className="bg-gray-100 dark:bg-primary hover:opacity-90 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
-          >
-            Next Topic
-          </Link>
+          {incorrectChoices !== 0 ? (
+            <button
+              className="bg-gray-100 dark:bg-primary hover:opacity-90 md:mx-3 mb-3 md:mb-0 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
+              onClick={handleRestartQuiz}
+            >
+              Try again
+            </button>
+          ) : (
+            <Link
+              href={nextTopicPath}
+              className="bg-gray-100 dark:bg-primary hover:opacity-90 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
+            >
+              Next Topic
+            </Link>
+          )}
         </div>
       </div>
     );
