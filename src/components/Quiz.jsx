@@ -11,20 +11,16 @@ const decodeHTML = (html) => {
 
 const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
   const [questionIndex, setQuestionIndex] = useState(0);
-
   const [isFinished, setIsFinished] = useState(false);
-
-  const [correctChoices, setCorrectChoices] = useState(0);
-
-  const [incorrectChoices, setIncorrectChoices] = useState(0);
+  const [correctChoices, setCorrectChoices] = useState([]);
+  const [incorrectChoices, setIncorrectChoices] = useState([]);
 
   const currentQuestion = questions[questionIndex];
-
   const totalQuestions = questions.length;
 
-
   useEffect(() => {
-    const storedCompletedTopics = JSON.parse(localStorage.getItem("completedTopics")) || [];
+    const storedCompletedTopics =
+      JSON.parse(localStorage.getItem("completedTopics")) || [];
     if (!Array.isArray(storedCompletedTopics)) {
       localStorage.setItem("completedTopics", JSON.stringify([]));
     }
@@ -34,9 +30,12 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
     const selectedChoice = decodeHTML(e.target.innerHTML);
     const correctAnswer = decodeHTML(currentQuestion.correctAnswer);
     if (selectedChoice == correctAnswer) {
-      setCorrectChoices((prev) => prev + 1);
+      setCorrectChoices((prev) => [...prev, selectedChoice]);
     } else {
-      setIncorrectChoices((prev) => prev + 1);
+      setIncorrectChoices((prev) => [
+        ...prev,
+        { choice: selectedChoice, index: questionIndex },
+      ]);
     }
 
     if (questionIndex < totalQuestions) {
@@ -48,11 +47,15 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
 
       if (incorrectChoices === 0 && correctChoices + 1 === totalQuestions) {
         const storedCompletedTopicsKey = `completedTopics_${subject}`;
-        const storedCompletedTopics = JSON.parse(localStorage.getItem(storedCompletedTopicsKey)) || [];
-      
+        const storedCompletedTopics =
+          JSON.parse(localStorage.getItem(storedCompletedTopicsKey)) || [];
+
         if (!storedCompletedTopics.includes(topicId)) {
           storedCompletedTopics.push(topicId);
-          localStorage.setItem(storedCompletedTopicsKey, JSON.stringify(storedCompletedTopics));
+          localStorage.setItem(
+            storedCompletedTopicsKey,
+            JSON.stringify(storedCompletedTopics)
+          );
         }
       }
     }
@@ -60,37 +63,52 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
 
   const handleRestartQuiz = () => {
     setQuestionIndex(0);
-    setCorrectChoices(0);
-    setIncorrectChoices(0);
+    setCorrectChoices([]);
+    setIncorrectChoices([]);
     setIsFinished(false);
   };
 
-
+  console.log(correctChoices, incorrectChoices);
+  console.log("questionIndex", questionIndex)
   if (isFinished) {
     return (
       <div className="flex flex-col justify-center items-center border-2 bg-primary dark:bg-stone-900 p-6 rounded-xl max-w-7xl h-full text-center text-gray-100">
         <h2 className="mb-6 font-black text-2xl text-center md:text-4xl">
           Quiz Result!
         </h2>
+        <p className="text-xl mb-6">Correct Answers: {correctChoices.length}</p>
         <div className="mb-6">
-          <p className="text-xl">Correct Answers: {correctChoices}</p>
-        </div>
-        <div className="mb-6">
-          <p className="text-xl">Incorrect Answers: {incorrectChoices}</p>
+          <p className="text-xl mb-2">
+            Incorrect Answers: {incorrectChoices.length}
+          </p>
+          <ul>
+            {incorrectChoices.map((item, index) => (
+              <li className="border-2 m-1  px-2 bg-slate-500 rounded-lg opacity-65" key={index}>
+                <p className="text-start">Question {item.index + 1}: {questions[item.index].question}</p>
+                <p className="text-start">Your answer: {item.choice} <span className="text-red-500 drop-shadow-sm font-bold items-center text-center">X</span></p>
+                {/* <p>Correct answer: {questions[item.index].correctAnswer}</p> */}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="flex md:flex-row flex-col justify-center items-center">
-          <button
-            className="bg-gray-100 dark:bg-primary hover:opacity-90 md:mx-3 mb-3 md:mb-0 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
-            onClick={handleRestartQuiz}
-          >
-            Try again
-          </button>
-          <Link
-            href={nextTopicPath}
-            className="bg-gray-100 dark:bg-primary hover:opacity-90 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
-          >
-            Next Topic
-          </Link>
+          {incorrectChoices.length !== 0 ? (
+            <div>
+              <button
+                className="bg-gray-100 dark:bg-primary hover:opacity-90 md:mx-3 mb-3 md:mb-0 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
+                onClick={handleRestartQuiz}
+              >
+                Try again
+              </button>
+            </div>
+          ) : (
+            <Link
+              href={nextTopicPath}
+              className="bg-gray-100 dark:bg-primary hover:opacity-90 p-3 rounded-md w-fit font-semibold text-center text-primary dark:text-white"
+            >
+              Next Topic
+            </Link>
+          )}
         </div>
       </div>
     );
