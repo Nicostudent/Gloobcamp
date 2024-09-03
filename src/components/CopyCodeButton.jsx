@@ -15,7 +15,6 @@ const CopyCodeButton = ({ code }) => {
   };
 
   return (
-    <div className="relative">
       <button
         onClick={handleCopy}
         className="absolute top-2 right-2 p-1 text-gray-400 hover:text-gray-600 ease-in-out duration-300 dark:text-white dark:hover:text-gray-300 focus:outline-none"
@@ -26,7 +25,6 @@ const CopyCodeButton = ({ code }) => {
           <FaCopy size={18} />
         )}
       </button>
-    </div>
   );
 };
 

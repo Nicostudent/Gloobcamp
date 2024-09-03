@@ -2,7 +2,7 @@
 import ContentPage from "@/components/ContentPage.jsx";
 import Quiz from "@/components/Quiz";
 import EndTopic from "@/components/EndTopic";
-import useFetchTopics from '@/hooks/useFetchTopics';
+import useFetchTopics from "@/hooks/useFetchTopics";
 
 const TopicPage = ({ params: { topics, subject } }) => {
   const { topicsData, loading, error } = useFetchTopics(subject);
@@ -42,16 +42,17 @@ const TopicPage = ({ params: { topics, subject } }) => {
   }
 
   return (
-    <div>
-      <ContentPage title={topicData.title} content={topicData.content}>
+    <>
+      <ContentPage title={topicData.title} content={topicData.content} />
+      <div className="flex justify-center w-full max-w-7xl">
         <Quiz
           questions={topicData.questions}
           nextTopicPath={`/content/${subject}/${topicData.next}`}
           topicId={topicData.id}
           subject={subject}
         />
-      </ContentPage>
-    </div>
+      </div>
+    </>
   );
 };
 
