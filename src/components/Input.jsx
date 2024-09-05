@@ -5,7 +5,7 @@ const Input = React.forwardRef(function Input({ type, placeholder, className, bu
   const hasButton = buttonText || icon;
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-between items-center w-full">
       <input
         ref={ref}
         type={type}
