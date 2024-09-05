@@ -8,6 +8,7 @@ import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import CompletedContent from "@/components/Dashboard/CompletedContent";
 import { FaSearch } from "react-icons/fa";
+import CustomButton from "@/components/CustomButton";
 
 const Subject = ({ params: { subject } }) => {
   const [searchTopic, setSearchTopic] = useState("");
@@ -42,13 +43,14 @@ const Subject = ({ params: { subject } }) => {
     <section className="flex flex-col gap-4 py-10">
       <Heading addClass="dark:text-white">{title}</Heading>
       <SubTitle addClass="dark:text-white">Content</SubTitle>
-      <button
-        className="flex justify-start items-center md:gap-4 bg-primary p-2 rounded-md w-fit font-bold text-white"
+      <CustomButton
         onClick={handleInputClick}
-      >
-        <FaSearch className="w-5 h-5" />
-        <p className="pr-2">Search...</p>
-      </button>
+        icon={<FaSearch className="w-4 h-4" />}
+        text="Search"
+        purple
+        className="w-fit"
+        aria-label="Open Searchbar"
+      />
       <SearchBar
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
