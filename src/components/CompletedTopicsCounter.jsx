@@ -22,7 +22,7 @@ const CompletedTopicsCounter = () => {
   return (
     <div className="flex justify-center items-center w-full bg-gray-200 dark:bg-gray-800 p-4 my-6">
       <h2 className="text-lg font-semibold dark:text-white">
-        Completed Topics: {completedCount}
+        Completed Topics: {completedCount +"/72"}
       </h2>
     </div>
   );

@@ -3,11 +3,12 @@ import { Heading, Paragraph } from "@/components/Writing";
 import ContentCard from "@/components/ContentCard";
 import { IoLogoHtml5, IoLogoJavascript } from "react-icons/io";
 import { FaCss3Alt, FaReact } from "react-icons/fa";
+import CompletedTopicsCounter from "@/components/CompletedTopicsCounter"; // Import the new component
 
 const page = () => {
   return (
-    <section className="flex flex-col justify-center items-center space-y-8 my-12 ">
-      <Heading addClass="dark:text-white  text-center ">
+    <section className="flex flex-col justify-center items-center space-y-8 my-12">
+      <Heading addClass="dark:text-white text-center">
         Welcome to GloobCamp
       </Heading>
       <Paragraph addClass="dark:text-white px-4 max-w-3xl text-center">
@@ -18,7 +19,8 @@ const page = () => {
         to begin?
       </Paragraph>
       <Paragraph addClass="dark:text-white">Choose your content</Paragraph>
-      <div className="justify-between items-center gap-8 grid md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 ">
+      
+      <div className="justify-between items-center gap-8 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <ContentCard
           icon={<IoLogoHtml5 className="w-14 h-14 dark:text-white" />}
           subject="html"
@@ -50,7 +52,11 @@ const page = () => {
           orientada a la creación de aplicaciones web interactivas.
         </ContentCard>
       </div>
+      
+      <CompletedTopicsCounter />
+      
     </section>
   );
 };
+
 export default page;
