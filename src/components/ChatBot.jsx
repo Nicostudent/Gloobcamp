@@ -5,6 +5,7 @@ import { BsChatText } from "react-icons/bs";
 import { IoMdClose, IoMdSend } from "react-icons/io";
 import { UuidGenerator } from "../helpers/UuidGenerator";
 import Input from "./Input";
+import CustomButton from "./CustomButton";
 
 const STORAGE_KEY = "chatMessages";
 const INITIAL_BOT_MESSAGE =
@@ -101,12 +102,13 @@ export default function ChatComponent() {
   return (
     <div className="right-0 bottom-0 fixed mr-4 sm:mr-8 mb-4 sm:mb-8">
       {!isOpen ? (
-        <button
+        <CustomButton
+          aria-label="Open Chatbot"
+          purple
           onClick={() => setIsOpen(true)}
           className="flex items-center bg-primary hover:opacity-85 px-4 py-2 rounded-full text-white transition duration-300"
-        >
-          <BsChatText className="w-10 h-14" />
-        </button>
+          icon={<BsChatText className="w-10 h-14" />}
+        />
       ) : (
         <div className="right-4 bottom-0 fixed flex flex-col shadow-md rounded-lg w-11/12 sm:w-96 h-1/2">
           <div className="flex justify-between items-center bg-primary p-4 rounded-t-lg text-white">
