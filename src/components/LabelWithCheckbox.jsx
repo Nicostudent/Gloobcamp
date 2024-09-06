@@ -9,6 +9,7 @@ const LabelWithCheckbox = ({ children, inputId, isChecked, handleChange }) => {
     >
       {isChecked && (
         <input
+        tabIndex={-1}
           type="checkbox"
           id={inputId}
           className="m-4 accent-primary size-4"
