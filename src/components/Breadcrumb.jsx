@@ -18,14 +18,17 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
   };
 
   return (
-    <div>
+    <div
+    >
       <ul
         className={`flex flex-wrap bg-transparent ${
           pathNames.includes("content") && "md:mx-32"
         } pt-24`}
       >
         <li className="mx-2 font-bold dark:text-white hover:underline">
-          <Link href={"/"} aria-label="back to homepage">
+          <Link 
+          tabIndex={-1}
+          href={"/"} aria-label="back to homepage">
             {homeElement}
           </Link>
         </li>
@@ -40,8 +43,11 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
 
           return (
             <React.Fragment key={index}>
-              <li className={itemClasses}>
-                <Link href={href} aria-label={"go to " + href.slice(1)}>
+              <li
+               className={itemClasses}>
+                <Link 
+                tabIndex={-1}
+                href={href} aria-label={"go to " + href.slice(1)}>
                   {itemLink}
                 </Link>
               </li>

@@ -115,11 +115,11 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
   return (
     <div className="border-primary border-x-2 dark:bg-stone-900 drop-shadow-xl border-t border-b-2 rounded-xl w-2/3 h-2/3">
       <div className="flex flex-col p-6 rounded-xl w-full h-full text-black text-start dark:text-white">
-        <p className="mb-3 text-center md:text-start">
+        <p tabIndex={0} className="mb-3 text-center md:text-start">
           QUESTION {questionIndex + 1}/{totalQuestions}
         </p>
         <hr className="border-primary mb-6" />
-        <h2 className="text-center text-pretty text-xl md:text-2xl md:text-start">
+        <h2 tabIndex={0} className="text-center text-pretty text-xl md:text-2xl md:text-start">
           {currentQuestion.question}
         </h2>
         <section className="flex flex-col justify-center items-center h-auto text-center">

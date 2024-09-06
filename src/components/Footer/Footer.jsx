@@ -6,7 +6,9 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="gap-2 grid mx-auto my-12 px-6 max-w-7xl">
+    <footer 
+    tabIndex={-1}
+    className="gap-2 grid mx-auto my-12 px-6 max-w-7xl">
       <Container>
         <nav className="flex flex-wrap gap-8">
           <NavigationLink className="text-primary dark:text-white" href="/">Home</NavigationLink>

@@ -20,7 +20,8 @@ const CustomButton = ({
     : defaultStyles;
 
   return (
-    <button
+    <button 
+    tabIndex={-1}
       aria-label={text}
       className={`${baseStyles} ${buttonStyles} ${className}`}
       disabled={disabled}
