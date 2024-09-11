@@ -1,6 +1,6 @@
 "use client";
 import ContentPage from "@/components/ContentPage.jsx";
-import jsTopics from "@/utils/js-topics-and-questions.json";
+import jsTopics from "@/utils/javascript-topics-and-questions.json";
 import Quiz from "@/components/Quiz";
 import EndTopic from "@/components/EndTopic";
 
