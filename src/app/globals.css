@@ -29,3 +29,14 @@ body {
   display: block; 
   box-sizing: border-box; 
 }
+
+/* To hide scrollbar for Chrome, Safari, and Edge */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* To hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}

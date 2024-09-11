@@ -1,44 +1,16 @@
-import jsTopics from "@/utils/js-topics-and-questions.json";
-import reactTopics from "@/utils/react-topics-and-questions.json";
-import htmlTopic from "@/utils/html-topics-and-questions.json";
-import cssTopic from "@/utils/css-topics-and-questions.json";
 import { useState } from "react";
 import TopicList from "./TopicList";
+import useFetchTopics from "@/hooks/useFetchTopics";
+import BurgerButton from "./NavBar/BurgerButton";
 
 const Sidebar = ({ pathname }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { topicsData, loading } = useFetchTopics(pathname.split("/")[2]);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
 
-  let topics = [];
-  let title = "";
-
-  if (pathname.startsWith("/content/javascript")) {
-    topics = jsTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/javascript",
-    }));
-    title = "JavaScript";
-  } else if (pathname.startsWith("/content/react")) {
-    topics = reactTopics.map((topic) => ({
-      ...topic,
-      basePath: "/content/react",
-    }));
-    title = "React";
-  } else if (pathname.startsWith("/content/html")) {
-    topics = htmlTopic.map((topic) => ({
-      ...topic,
-      basePath: "/content/html",
-    }));
-    title = "HTML";
-  } else if (pathname.startsWith("/content/css")) {
-    topics = cssTopic.map((topic) => ({
-      ...topic,
-      basePath: "/content/css",
-    }));
-    title = "CSS";
-  }
+  if (loading) return null;
 
   return (
     <>
@@ -77,9 +49,9 @@ const Sidebar = ({ pathname }) => {
       >
         <nav className="flex flex-col py-9 p-4">
           <h2 className="mb-4 font-bold text-2xl text-gray-900 dark:text-white">
-            {title}
+            {pathname.split("/")[2]}
           </h2>
-          <TopicList topics={topics} pathname={pathname} />
+          <TopicList topics={topicsData} pathname={pathname} />
         </nav>
       </aside>
     </>

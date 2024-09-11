@@ -1,14 +1,27 @@
 import React from "react";
+import CustomButton from "./CustomButton";
 
-const Input = React.forwardRef(function Input({ type, placeholder, className, ...props }, ref) {
+const Input = React.forwardRef(function Input({ type, placeholder, className, buttonText, icon, ...props }, ref) {
+  const hasButton = buttonText || icon;
+
   return (
-    <input
-      ref={ref}
-      type={type}
-      className={`w-full shadow-sm dark:bg-tertiary dark:text-white text-gray-600 placeholder-text-400 text-lg font-normal leading-7 rounded-xl border border-gray-200 focus:outline-none py-2 px-4 ${className}`}
-      placeholder={placeholder}
-      {...props}
-    />
+    <div className="flex justify-center items-center">
+      <input
+        ref={ref}
+        type={type}
+        className={`w-full shadow-sm dark:bg-tertiary dark:text-white rounded-l-md border dark:border-tertiary focus:outline-none px-3 py-2  ${hasButton ? 'rounded-l-md' : 'rounded-md'} ${className}`}
+        placeholder={placeholder}
+        {...props}
+      />
+      {hasButton && (
+        <CustomButton
+          forInput
+          purple
+          text={buttonText}
+          icon={icon}
+        />
+      )}
+    </div>
   );
 });
 
