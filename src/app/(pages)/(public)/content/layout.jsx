@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
+import ChatComponent from "@/components/ChatBot";
 
 export default function Layout({ children }) {
   return (
@@ -9,6 +10,7 @@ export default function Layout({ children }) {
           capitalizeLinks
       />
       <main>{children}</main>
+      <ChatComponent />
     </>
   )
 }

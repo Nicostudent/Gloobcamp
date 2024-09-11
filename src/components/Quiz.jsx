@@ -62,20 +62,19 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
 
   if (isFinished) {
     return (
-      <div className="flex flex-col justify-center items-center border-2
-       bg-primary dark:bg-stone-900 p-6 rounded-xl  w-2/3 max-w-7xl h-full text-center text-gray-100 ease-in-out duration-700">
+      <div className="flex flex-col justify-center items-center border-2 bg-primary dark:bg-stone-900 p-6 rounded-xl w-2/3 max-w-7xl h-full text-center text-gray-100 duration-700 ease-in-out">
         <h2 className="mb-6 font-black text-2xl text-center md:text-4xl">
           Quiz Result!
         </h2>
-        <p className="text-xl mb-6">Correct Answers: {correctChoices.length}</p>
+        <p className="mb-6 text-xl">Correct Answers: {correctChoices.length}</p>
         <div className="mb-6">
-          <p className="text-xl mb-2">
+          <p className="mb-2 text-xl">
             Incorrect Answers: {incorrectChoices.length}
           </p>
           <ul>
             {incorrectChoices.map((item, index) => (
               <li
-                className="border-2 m-1 px-2 bg-slate-500 rounded-lg opacity-65"
+                className="border-2 bg-slate-500 opacity-65 m-1 px-2 rounded-lg"
                 key={index}
               >
                 <p className="text-start">
@@ -83,7 +82,7 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
                 </p>
                 <p className="text-start">
                   Your answer: {item.choice}{" "}
-                  <span className="text-red-500 drop-shadow-sm font-bold items-center text-center">
+                  <span className="items-center drop-shadow-sm font-bold text-center text-red-500">
                     X
                   </span>
                 </p>
@@ -113,7 +112,7 @@ const Quiz = ({ questions, nextTopicPath, topicId, subject }) => {
   }
 
   return (
-    <div className="border-primary border-x-2 dark:bg-stone-900 drop-shadow-xl border-t border-b-2 rounded-xl w-2/3 h-2/3">
+    <div className="border-primary border-x-2 dark:bg-stone-900 drop-shadow-xl border-t border-b-2 rounded-xl w-full sm:w-2/3 h-2/3">
       <div className="flex flex-col p-6 rounded-xl w-full h-full text-black text-start dark:text-white">
         <p className="mb-3 text-center md:text-start">
           QUESTION {questionIndex + 1}/{totalQuestions}
