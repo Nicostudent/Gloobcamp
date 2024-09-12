@@ -155,6 +155,7 @@ export default function ChatComponent() {
               onKeyDown={handleKeyPress}
               buttonText="Send"
               icon={<IoMdSend />}
+              onButtonClick={handleSend}
             />
           </div>
         </div>

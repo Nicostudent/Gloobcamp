@@ -1,7 +1,7 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 
-const Input = React.forwardRef(function Input({ type, placeholder, className, buttonText, icon, ...props }, ref) {
+const Input = React.forwardRef(function Input({ type, placeholder, className, buttonText, icon, onButtonClick, ...props }, ref) {
   const hasButton = buttonText || icon;
 
   return (
@@ -19,6 +19,7 @@ const Input = React.forwardRef(function Input({ type, placeholder, className, bu
           purple
           text={buttonText}
           icon={icon}
+          onClick={onButtonClick}
         />
       )}
     </div>
