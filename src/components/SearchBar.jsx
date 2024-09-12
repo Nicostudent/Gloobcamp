@@ -57,7 +57,7 @@ const SearchBar = ({ isOpen, onClose, searchValue, setSearchValue, results, topi
           </div>
           {searchValue ? 
             (results.length > 0 ? 
-              <div className="left-0 absolute bg-white dark:bg-stone-900 shadow-lg mt-2 rounded w-full max-h-64 text-primary overflow-y-auto">
+              <div className="left-0 absolute bg-white dark:bg-stone-900 shadow-lg mt-2 w-full max-h-64 text-primary overflow-y-auto">
                 {
                   results.map((result, index) => (
                     <Link

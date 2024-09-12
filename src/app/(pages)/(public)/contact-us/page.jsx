@@ -102,7 +102,7 @@ const ContactUs = () => {
                   <textarea
                     id="text"
                     name="message"
-                    className="border-gray-200 dark:bg-tertiary shadow-sm mt-8 px-4 py-4 border rounded-xl w-full h-48 font-normal placeholder-text-400 text-gray-600 text-lg dark:text-white leading-7 resize-none focus:outline-none"
+                    className="dark:bg-tertiary shadow-sm mt-8 px-4 py-4 border dark:border-tertiary rounded-l-md w-full h-48 font-normal placeholder-text-400 text-gray-600 text-lg dark:text-white focus:outline-none rounded-md resize-none"
                     placeholder="Message"
                     value={formik.values.message}
                     onChange={formik.handleChange}
@@ -113,7 +113,7 @@ const ContactUs = () => {
                   )}
                 </div>
                 <CustomButton
-                  className="justify-center mt-8 w-full"
+                  className="justify-center mt-8 rounded-md w-full"
                   purple
                   text="Submit"
                   type="submit"
