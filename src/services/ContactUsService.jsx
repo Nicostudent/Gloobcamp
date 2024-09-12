@@ -8,14 +8,14 @@ export const sendForm = async (values) => {
       body: JSON.stringify(values),
     });
 
-    const data = await response.json();
-
     if (!response.ok) {
-      return { success: false };
+      const errorData = await response.json();
+      return { success: false, data: errorData };
     }
 
     return { success: true };
   } catch (error) {
+    
     return { success: false, data: { message: error.message } };
   }
 };

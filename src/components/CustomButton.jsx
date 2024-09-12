@@ -10,7 +10,7 @@ const CustomButton = ({
   ...props
 }) => {
   const baseStyles =
-    `h-12 text-center h-full border border-primary ${forInput ? "rounded-r-md" : "rounded-md"} flex items-center hover:opacity-90 px-2 py-2 transition duration-300`;
+    `h-12 text-center h-full border border-primary ${forInput && "rounded-r-md"} flex items-center hover:opacity-90 px-2 py-2 transition duration-300`;
   const purpleStyles = "text-white bg-primary";
   const defaultStyles = "text-black bg-white hover:bg-gray-50";
   const disabledStyles = "text-white bg-gray-500 cursor-not-allowed";

@@ -48,7 +48,7 @@ const Subject = ({ params: { subject } }) => {
         icon={<FaSearch className="w-4 h-4" />}
         text="Search"
         purple
-        className="w-fit"
+        className="rounded-md w-fit"
         aria-label="Open Searchbar"
       />
       <SearchBar
